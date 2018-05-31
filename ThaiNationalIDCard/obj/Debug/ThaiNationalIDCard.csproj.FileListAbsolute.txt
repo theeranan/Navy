@@ -1,0 +1,31 @@
+C:\Users\Theeranan\Desktop\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.csprojResolveAssemblyReference.cache
+C:\Users\Theeranan\Desktop\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.csproj.CoreCompileInputs.cache
+C:\Users\Theeranan\Desktop\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Debug\ThaiNationalIDCard.dll
+C:\Users\Theeranan\Desktop\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Debug\ThaiNationalIDCard.pdb
+C:\Users\Theeranan\Desktop\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Debug\PCSC.dll
+C:\Users\Theeranan\Desktop\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Debug\PCSC.Iso7816.dll
+C:\Users\Theeranan\Desktop\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Debug\PCSC.xml
+C:\Users\Theeranan\Desktop\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Debug\PCSC.Iso7816.xml
+C:\Users\Theeranan\Desktop\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.csproj.CopyComplete
+C:\Users\Theeranan\Desktop\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.dll
+C:\Users\Theeranan\Desktop\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.pdb
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.csprojResolveAssemblyReference.cache
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.dll
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.pdb
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Debug\ThaiNationalIDCard.dll
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Debug\ThaiNationalIDCard.pdb
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Debug\PCSC.dll
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Debug\PCSC.Iso7816.dll
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Debug\PCSC.xml
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Debug\PCSC.Iso7816.xml
+D:\Navy2017\NavyOrange\ThaiNationalIDCard\bin\Debug\ThaiNationalIDCard.dll
+D:\Navy2017\NavyOrange\ThaiNationalIDCard\bin\Debug\ThaiNationalIDCard.pdb
+D:\Navy2017\NavyOrange\ThaiNationalIDCard\bin\Debug\PCSC.dll
+D:\Navy2017\NavyOrange\ThaiNationalIDCard\bin\Debug\PCSC.Iso7816.dll
+D:\Navy2017\NavyOrange\ThaiNationalIDCard\bin\Debug\PCSC.xml
+D:\Navy2017\NavyOrange\ThaiNationalIDCard\bin\Debug\PCSC.Iso7816.xml
+D:\Navy2017\NavyOrange\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.csprojResolveAssemblyReference.cache
+D:\Navy2017\NavyOrange\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.csproj.CoreCompileInputs.cache
+D:\Navy2017\NavyOrange\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.csproj.CopyComplete
+D:\Navy2017\NavyOrange\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.dll
+D:\Navy2017\NavyOrange\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.pdb

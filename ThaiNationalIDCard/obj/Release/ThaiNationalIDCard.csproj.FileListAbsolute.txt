@@ -1,0 +1,9 @@
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Release\ThaiNationalIDCard.dll
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Release\ThaiNationalIDCard.pdb
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Release\PCSC.dll
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Release\PCSC.Iso7816.dll
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Release\PCSC.xml
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\bin\Release\PCSC.Iso7816.xml
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\obj\Release\ThaiNationalIDCard.csprojResolveAssemblyReference.cache
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\obj\Release\ThaiNationalIDCard.dll
+D:\แก้ไข Program Navy\Navy2017_Add_TelephonNumber\ThaiNationalIDCard\obj\Release\ThaiNationalIDCard.pdb

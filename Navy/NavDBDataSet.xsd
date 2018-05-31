@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NavDBDataSet" targetNamespace="http://tempuri.org/NavDBDataSet.xsd" xmlns:mstns="http://tempuri.org/NavDBDataSet.xsd" xmlns="http://tempuri.org/NavDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NavDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NavDBConnectionString (Settings)" PropertyReference="ApplicationSettings.Navy.Properties.Settings.GlobalReference.Default.NavDBConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="peopleTableAdapter" GeneratorDataComponentClassName="peopleTableAdapter" Name="people" UserDataComponentName="peopleTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NavDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select per.`NAME`,per.SNAME,per.YEARIN,p.ID13,p.book_number,p.rank,per.ID8,au.unit_name
+
+,CONCAT('เลขที่ ',IFNULL(au.ADDRESS,' - '),' หมู่ที่ ',IFNULL(au.ADDRESS_MU,' - '),' ถนน', IFNULL(au.ADDRESS_ROAD,' - '),'  ซอย ',IFNULL(au.ADDRESS_SOIL,' - ')) as full_address 
+
+,CONCAT('  ตำบล',IFNULL(t3.TOWNNAME,'-'),'  อำเภอ',IFNULL(t2.TOWNNAME,''),'  จังหวัด',IFNULL(t1.TOWNNAME,'-')) as TOWNNAME   from people p 
+left join person per on p.navyid=per.NAVYID
+left join address_unit au on au.unit_id=per.UNIT3
+LEFT JOIN townname t1 on CONCAT(SUBSTR(au.TOWNCODE,1,2),'0000') = t1.TOWNCODE
+LEFT JOIN townname t2 on CONCAT(SUBSTR(au.TOWNCODE,1,4),'00') = t2.TOWNCODE
+LEFT JOIN townname t3 on au.TOWNCODE = t3.TOWNCODE
+WHERE per.UNIT3='22'
+ORDER BY book_number*1 asc</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="book_number" DataSetColumn="book_number" />
+              <Mapping SourceColumn="rank" DataSetColumn="rank" />
+              <Mapping SourceColumn="NAME" DataSetColumn="NAME" />
+              <Mapping SourceColumn="SNAME" DataSetColumn="SNAME" />
+              <Mapping SourceColumn="YEARIN" DataSetColumn="YEARIN" />
+              <Mapping SourceColumn="ID8" DataSetColumn="ID8" />
+              <Mapping SourceColumn="unit_name" DataSetColumn="unit_name" />
+              <Mapping SourceColumn="full_address" DataSetColumn="full_address" />
+              <Mapping SourceColumn="ID13" DataSetColumn="ID13" />
+              <Mapping SourceColumn="TOWNNAME" DataSetColumn="TOWNNAME" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NavDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="NavDBDataSet" msprop:Generator_UserDSName="NavDBDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="people" msprop:Generator_TableClassName="peopleDataTable" msprop:Generator_TableVarName="tablepeople" msprop:Generator_RowChangedName="peopleRowChanged" msprop:Generator_TablePropName="people" msprop:Generator_RowDeletingName="peopleRowDeleting" msprop:Generator_RowChangingName="peopleRowChanging" msprop:Generator_RowEvHandlerName="peopleRowChangeEventHandler" msprop:Generator_RowDeletedName="peopleRowDeleted" msprop:Generator_RowClassName="peopleRow" msprop:Generator_UserTableName="people" msprop:Generator_RowEvArgName="peopleRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="book_number" msprop:Generator_ColumnVarNameInTable="columnbook_number" msprop:Generator_ColumnPropNameInRow="book_number" msprop:Generator_ColumnPropNameInTable="book_numberColumn" msprop:Generator_UserColumnName="book_number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="rank" msprop:Generator_ColumnVarNameInTable="columnrank" msprop:Generator_ColumnPropNameInRow="rank" msprop:Generator_ColumnPropNameInTable="rankColumn" msprop:Generator_UserColumnName="rank" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SNAME" msprop:Generator_ColumnVarNameInTable="columnSNAME" msprop:Generator_ColumnPropNameInRow="SNAME" msprop:Generator_ColumnPropNameInTable="SNAMEColumn" msprop:Generator_UserColumnName="SNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEARIN" msprop:Generator_ColumnVarNameInTable="columnYEARIN" msprop:Generator_ColumnPropNameInRow="YEARIN" msprop:Generator_ColumnPropNameInTable="YEARINColumn" msprop:Generator_UserColumnName="YEARIN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID8" msprop:Generator_ColumnVarNameInTable="columnID8" msprop:Generator_ColumnPropNameInRow="ID8" msprop:Generator_ColumnPropNameInTable="ID8Column" msprop:Generator_UserColumnName="ID8" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="unit_name" msprop:Generator_ColumnVarNameInTable="columnunit_name" msprop:Generator_ColumnPropNameInRow="unit_name" msprop:Generator_ColumnPropNameInTable="unit_nameColumn" msprop:Generator_UserColumnName="unit_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="full_address" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfull_address" msprop:Generator_ColumnPropNameInRow="full_address" msprop:Generator_ColumnPropNameInTable="full_addressColumn" msprop:Generator_UserColumnName="full_address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="221" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID13" msprop:Generator_ColumnVarNameInTable="columnID13" msprop:Generator_ColumnPropNameInRow="ID13" msprop:Generator_ColumnPropNameInTable="ID13Column" msprop:Generator_UserColumnName="ID13" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="39" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TOWNNAME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTOWNNAME" msprop:Generator_ColumnPropNameInRow="TOWNNAME" msprop:Generator_ColumnPropNameInTable="TOWNNAMEColumn" msprop:Generator_UserColumnName="TOWNNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="127" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

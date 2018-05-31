@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NavDBDataSet2" targetNamespace="http://tempuri.org/NavDBDataSet2.xsd" xmlns:mstns="http://tempuri.org/NavDBDataSet2.xsd" xmlns="http://tempuri.org/NavDBDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NavDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NavDBConnectionString (Settings)" PropertyReference="ApplicationSettings.Navy.Properties.Settings.GlobalReference.Default.NavDBConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="peopleTableAdapter" GeneratorDataComponentClassName="peopleTableAdapter" Name="people" UserDataComponentName="peopleTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NavDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>                                
+select  per.UNIT3,u.UNITNAME,COUNT(per1.UNIT3) as peopleIN,COUNT(per2.UNIT3)  as peopleOUT
+from people p 
+LEFT JOIN  person per on (per.NAVYID = p.navyid)
+LEFT JOIN unittab u on u.REFNUM = per.UNIT3
+LEFT JOIN  person per1 on (per1.NAVYID = p.navyid and p.`status`=1)
+LEFT JOIN  person per2 on (per2.NAVYID = p.navyid and p.`status` in('2','3'))
+WHERE p.navyid is not null
+
+GROUP BY UNIT3
+
+UNION 
+
+select per.UNIT3,u.UNITNAME,COUNT(per1.UNIT3) as peopleIN,COUNT(per2.UNIT3)  as peopleOUT
+from people p 
+LEFT JOIN  person per on (per.NAVYID = p.navyid)
+LEFT JOIN unittab u on u.REFNUM = per.UNIT3
+LEFT JOIN  person per1 on (per1.NAVYID = p.navyid and p.`status`=1)
+LEFT JOIN  person per2 on (per2.NAVYID = p.navyid and p.`status` in('2','3'))
+WHERE p.navyid is not null
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UNIT3" DataSetColumn="UNIT3" />
+              <Mapping SourceColumn="UNITNAME" DataSetColumn="UNITNAME" />
+              <Mapping SourceColumn="peopleIN" DataSetColumn="peopleIN" />
+              <Mapping SourceColumn="peopleOUT" DataSetColumn="peopleOUT" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NavDBDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="NavDBDataSet2" msprop:Generator_UserDSName="NavDBDataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="people" msprop:Generator_TableClassName="peopleDataTable" msprop:Generator_TableVarName="tablepeople" msprop:Generator_RowChangedName="peopleRowChanged" msprop:Generator_TablePropName="people" msprop:Generator_RowDeletingName="peopleRowDeleting" msprop:Generator_RowChangingName="peopleRowChanging" msprop:Generator_RowEvHandlerName="peopleRowChangeEventHandler" msprop:Generator_RowDeletedName="peopleRowDeleted" msprop:Generator_RowClassName="peopleRow" msprop:Generator_UserTableName="people" msprop:Generator_RowEvArgName="peopleRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UNIT3" msprop:Generator_ColumnVarNameInTable="columnUNIT3" msprop:Generator_ColumnPropNameInRow="UNIT3" msprop:Generator_ColumnPropNameInTable="UNIT3Column" msprop:Generator_UserColumnName="UNIT3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UNITNAME" msprop:Generator_ColumnVarNameInTable="columnUNITNAME" msprop:Generator_ColumnPropNameInRow="UNITNAME" msprop:Generator_ColumnPropNameInTable="UNITNAMEColumn" msprop:Generator_UserColumnName="UNITNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="peopleIN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnpeopleIN" msprop:Generator_ColumnPropNameInRow="peopleIN" msprop:Generator_ColumnPropNameInTable="peopleINColumn" msprop:Generator_UserColumnName="peopleIN" type="xs:long" minOccurs="0" />
+              <xs:element name="peopleOUT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnpeopleOUT" msprop:Generator_ColumnPropNameInRow="peopleOUT" msprop:Generator_ColumnPropNameInTable="peopleOUTColumn" msprop:Generator_UserColumnName="peopleOUT" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NavDBDataSet1" targetNamespace="http://tempuri.org/NavDBDataSet11.xsd" xmlns:mstns="http://tempuri.org/NavDBDataSet11.xsd" xmlns="http://tempuri.org/NavDBDataSet11.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NavDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NavDBConnectionString (Settings)" PropertyReference="ApplicationSettings.Navy.Properties.Settings.GlobalReference.Default.NavDBConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="personTableAdapter" GeneratorDataComponentClassName="personTableAdapter" Name="person" UserDataComponentName="personTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NavDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  `NAME`, `SNAME`,IFNULL(OLDYEARIN,`YEARIN`) as `YEARIN`,`ID8` ,HEIGHT,e.EDUCNAME,pt.POSTNAME ,addict.addname as ADDICTIVE,p.Note
+FROM `person` p
+LEFT JOIN eductab e on e.ECODE1 = p.EDUCODE1 and e.ECODE2=p.EDUCODE2
+LEFT JOIN positiontab pt on pt.POSTCODE = p.POSTCODE
+LEFT JOIN addictivetab addict on addict.addcode = p.addictive</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID8" DataSetColumn="ID8" />
+              <Mapping SourceColumn="NAME" DataSetColumn="NAME" />
+              <Mapping SourceColumn="SNAME" DataSetColumn="SNAME" />
+              <Mapping SourceColumn="HEIGHT" DataSetColumn="HEIGHT" />
+              <Mapping SourceColumn="EDUCNAME" DataSetColumn="EDUCNAME" />
+              <Mapping SourceColumn="POSTNAME" DataSetColumn="POSTNAME" />
+              <Mapping SourceColumn="YEARIN" DataSetColumn="YEARIN" />
+              <Mapping SourceColumn="ADDICTIVE" DataSetColumn="ADDICTIVE" />
+              <Mapping SourceColumn="Note" DataSetColumn="Note" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NavDBDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="NavDBDataSet1" msprop:Generator_UserDSName="NavDBDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="person" msprop:Generator_TableClassName="personDataTable" msprop:Generator_TableVarName="tableperson" msprop:Generator_RowChangedName="personRowChanged" msprop:Generator_TablePropName="person" msprop:Generator_RowDeletingName="personRowDeleting" msprop:Generator_RowChangingName="personRowChanging" msprop:Generator_RowEvHandlerName="personRowChangeEventHandler" msprop:Generator_RowDeletedName="personRowDeleted" msprop:Generator_RowClassName="personRow" msprop:Generator_UserTableName="person" msprop:Generator_RowEvArgName="personRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID8" msprop:Generator_ColumnVarNameInTable="columnID8" msprop:Generator_ColumnPropNameInRow="ID8" msprop:Generator_ColumnPropNameInTable="ID8Column" msprop:Generator_UserColumnName="ID8" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SNAME" msprop:Generator_ColumnVarNameInTable="columnSNAME" msprop:Generator_ColumnPropNameInRow="SNAME" msprop:Generator_ColumnPropNameInTable="SNAMEColumn" msprop:Generator_UserColumnName="SNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HEIGHT" msprop:Generator_ColumnVarNameInTable="columnHEIGHT" msprop:Generator_ColumnPropNameInRow="HEIGHT" msprop:Generator_ColumnPropNameInTable="HEIGHTColumn" msprop:Generator_UserColumnName="HEIGHT" type="xs:int" />
+              <xs:element name="EDUCNAME" msprop:Generator_ColumnVarNameInTable="columnEDUCNAME" msprop:Generator_ColumnPropNameInRow="EDUCNAME" msprop:Generator_ColumnPropNameInTable="EDUCNAMEColumn" msprop:Generator_UserColumnName="EDUCNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="POSTNAME" msprop:Generator_ColumnVarNameInTable="columnPOSTNAME" msprop:Generator_ColumnPropNameInRow="POSTNAME" msprop:Generator_ColumnPropNameInTable="POSTNAMEColumn" msprop:Generator_UserColumnName="POSTNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEARIN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYEARIN" msprop:Generator_ColumnPropNameInRow="YEARIN" msprop:Generator_ColumnPropNameInTable="YEARINColumn" msprop:Generator_UserColumnName="YEARIN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADDICTIVE" msprop:Generator_ColumnVarNameInTable="columnADDICTIVE" msprop:Generator_ColumnPropNameInRow="ADDICTIVE" msprop:Generator_ColumnPropNameInTable="ADDICTIVEColumn" msprop:Generator_UserColumnName="ADDICTIVE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="765" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Note" msprop:Generator_ColumnVarNameInTable="columnNote" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_UserColumnName="Note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
