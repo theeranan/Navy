@@ -1557,7 +1557,15 @@ namespace Navy.Forms
         {
             RefreshDriver();
             Personal personal = idcard.readAll();
-            CardInserted(personal);
+            if (personal != null)
+            {
+                CardInserted(personal);
+                readfromIDCard = "1";
+                textBoxName.Focus();
+            }
+            else {
+                MessageBox.Show("ไม่สามารถดึงข้อมูลจากบัตรประชาชนได้");
+            }
         }
 
         private void print_slip_Click(object sender, EventArgs e)

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_IDCard = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.btnReadcard = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -144,7 +145,6 @@
             this.textBoxBatt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lbl_IDCard = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -180,6 +180,17 @@
             this.groupBox1.TabIndex = 666;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ข้อมูลส่วนตัว";
+            // 
+            // lbl_IDCard
+            // 
+            this.lbl_IDCard.AutoSize = true;
+            this.lbl_IDCard.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.lbl_IDCard.Font = new System.Drawing.Font("TH SarabunPSK", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lbl_IDCard.Location = new System.Drawing.Point(137, 0);
+            this.lbl_IDCard.Name = "lbl_IDCard";
+            this.lbl_IDCard.Size = new System.Drawing.Size(67, 26);
+            this.lbl_IDCard.TabIndex = 681;
+            this.lbl_IDCard.Text = "label39";
             // 
             // textBoxName
             // 
@@ -1524,17 +1535,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1209, 40);
             this.panel4.TabIndex = 1004;
-            // 
-            // lbl_IDCard
-            // 
-            this.lbl_IDCard.AutoSize = true;
-            this.lbl_IDCard.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.lbl_IDCard.Font = new System.Drawing.Font("TH SarabunPSK", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lbl_IDCard.Location = new System.Drawing.Point(137, 0);
-            this.lbl_IDCard.Name = "lbl_IDCard";
-            this.lbl_IDCard.Size = new System.Drawing.Size(67, 26);
-            this.lbl_IDCard.TabIndex = 681;
-            this.lbl_IDCard.Text = "label39";
             // 
             // AddNewPersonForm
             // 
