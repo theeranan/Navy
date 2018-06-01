@@ -177,7 +177,7 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Size = new System.Drawing.Size(382, 176);
-            this.groupBox1.TabIndex = 666;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ข้อมูลส่วนตัว";
             // 
@@ -200,7 +200,7 @@
             this.textBoxName.MaxLength = 50;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(110, 32);
-            this.textBoxName.TabIndex = 2;
+            this.textBoxName.TabIndex = 5;
             // 
             // btnReadcard
             // 
@@ -211,7 +211,7 @@
             this.btnReadcard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnReadcard.Name = "btnReadcard";
             this.btnReadcard.Size = new System.Drawing.Size(106, 32);
-            this.btnReadcard.TabIndex = 680;
+            this.btnReadcard.TabIndex = 2;
             this.btnReadcard.Text = "อ่านบัตร";
             this.btnReadcard.UseVisualStyleBackColor = false;
             this.btnReadcard.Click += new System.EventHandler(this.btnReadcard_Click);
@@ -236,7 +236,7 @@
             this.btnSearchNivy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSearchNivy.Name = "btnSearchNivy";
             this.btnSearchNivy.Size = new System.Drawing.Size(111, 32);
-            this.btnSearchNivy.TabIndex = 1;
+            this.btnSearchNivy.TabIndex = 4;
             this.btnSearchNivy.Text = "ค้นหา";
             this.btnSearchNivy.UseVisualStyleBackColor = false;
             this.btnSearchNivy.Click += new System.EventHandler(this.btnSearchNivy_Click);
@@ -259,7 +259,7 @@
             this.mtextBoxBD.Mask = "00/00/0000";
             this.mtextBoxBD.Name = "mtextBoxBD";
             this.mtextBoxBD.Size = new System.Drawing.Size(110, 32);
-            this.mtextBoxBD.TabIndex = 4;
+            this.mtextBoxBD.TabIndex = 7;
             this.mtextBoxBD.ValidatingType = typeof(System.DateTime);
             // 
             // label3
@@ -303,7 +303,7 @@
             this.textBoxSName.MaxLength = 50;
             this.textBoxSName.Name = "textBoxSName";
             this.textBoxSName.Size = new System.Drawing.Size(110, 32);
-            this.textBoxSName.TabIndex = 3;
+            this.textBoxSName.TabIndex = 6;
             // 
             // textBoxID13
             // 
@@ -313,7 +313,7 @@
             this.textBoxID13.MaxLength = 13;
             this.textBoxID13.Name = "textBoxID13";
             this.textBoxID13.Size = new System.Drawing.Size(110, 32);
-            this.textBoxID13.TabIndex = 0;
+            this.textBoxID13.TabIndex = 3;
             this.textBoxID13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxID13_KeyDown);
             // 
             // textBoxID10
@@ -326,7 +326,7 @@
             this.textBoxID10.Name = "textBoxID10";
             this.textBoxID10.ReadOnly = true;
             this.textBoxID10.Size = new System.Drawing.Size(146, 31);
-            this.textBoxID10.TabIndex = 46;
+            this.textBoxID10.TabIndex = 56;
             this.textBoxID10.TabStop = false;
             // 
             // textBoxID8_1
@@ -369,7 +369,7 @@
             this.cbbType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbType.Name = "cbbType";
             this.cbbType.Size = new System.Drawing.Size(110, 33);
-            this.cbbType.TabIndex = 13;
+            this.cbbType.TabIndex = 17;
             this.cbbType.SelectedIndexChanged += new System.EventHandler(this.cbbType_SelectedIndexChanged);
             // 
             // label26
@@ -390,7 +390,7 @@
             this.textBoxRunNum.MaxLength = 19;
             this.textBoxRunNum.Name = "textBoxRunNum";
             this.textBoxRunNum.Size = new System.Drawing.Size(110, 32);
-            this.textBoxRunNum.TabIndex = 1;
+            this.textBoxRunNum.TabIndex = 19;
             this.textBoxRunNum.TextChanged += new System.EventHandler(this.textBoxRunNum_TextChanged);
             this.textBoxRunNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRunNum_KeyPress);
             // 
@@ -424,7 +424,7 @@
             this.checkBoxRequest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkBoxRequest.Name = "checkBoxRequest";
             this.checkBoxRequest.Size = new System.Drawing.Size(173, 29);
-            this.checkBoxRequest.TabIndex = 300;
+            this.checkBoxRequest.TabIndex = 37;
             this.checkBoxRequest.Text = "ร้องขอเข้ากองประจำการ";
             this.checkBoxRequest.UseVisualStyleBackColor = true;
             // 
@@ -448,7 +448,7 @@
             this.textBoxTelephone.MaxLength = 10;
             this.textBoxTelephone.Name = "textBoxTelephone";
             this.textBoxTelephone.Size = new System.Drawing.Size(96, 32);
-            this.textBoxTelephone.TabIndex = 4;
+            this.textBoxTelephone.TabIndex = 39;
             // 
             // cmb_Addictive_Status
             // 
@@ -457,7 +457,7 @@
             this.cmb_Addictive_Status.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmb_Addictive_Status.Name = "cmb_Addictive_Status";
             this.cmb_Addictive_Status.Size = new System.Drawing.Size(152, 33);
-            this.cmb_Addictive_Status.TabIndex = 667;
+            this.cmb_Addictive_Status.TabIndex = 48;
             // 
             // btnSubmitAndNew
             // 
@@ -469,7 +469,7 @@
             this.btnSubmitAndNew.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSubmitAndNew.Name = "btnSubmitAndNew";
             this.btnSubmitAndNew.Size = new System.Drawing.Size(167, 45);
-            this.btnSubmitAndNew.TabIndex = 98;
+            this.btnSubmitAndNew.TabIndex = 52;
             this.btnSubmitAndNew.Text = "บันทึก และเริ่มคนถัดไป";
             this.btnSubmitAndNew.UseVisualStyleBackColor = false;
             this.btnSubmitAndNew.Click += new System.EventHandler(this.btnSubmitAndNew_Click);
@@ -493,7 +493,7 @@
             this.cmBoxkpt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmBoxkpt.Name = "cmBoxkpt";
             this.cmBoxkpt.Size = new System.Drawing.Size(150, 33);
-            this.cmBoxkpt.TabIndex = 178;
+            this.cmBoxkpt.TabIndex = 47;
             // 
             // labelPercent
             // 
@@ -512,7 +512,7 @@
             this.textPercent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textPercent.Name = "textPercent";
             this.textPercent.Size = new System.Drawing.Size(150, 32);
-            this.textPercent.TabIndex = 177;
+            this.textPercent.TabIndex = 46;
             this.textPercent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPercent_KeyPress);
             // 
             // labeldpregdate
@@ -547,7 +547,7 @@
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(130, 45);
-            this.btnSubmit.TabIndex = 99;
+            this.btnSubmit.TabIndex = 53;
             this.btnSubmit.Text = "บันทึก";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Visible = false;
@@ -559,7 +559,7 @@
             this.dprepdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dprepdate.Name = "dprepdate";
             this.dprepdate.Size = new System.Drawing.Size(149, 32);
-            this.dprepdate.TabIndex = 33;
+            this.dprepdate.TabIndex = 44;
             // 
             // dpregdate
             // 
@@ -567,7 +567,7 @@
             this.dpregdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dpregdate.Name = "dpregdate";
             this.dpregdate.Size = new System.Drawing.Size(149, 32);
-            this.dpregdate.TabIndex = 32;
+            this.dpregdate.TabIndex = 43;
             // 
             // labelskill
             // 
@@ -587,7 +587,7 @@
             this.cmbskill.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbskill.Name = "cmbskill";
             this.cmbskill.Size = new System.Drawing.Size(150, 33);
-            this.cmbskill.TabIndex = 104;
+            this.cmbskill.TabIndex = 45;
             // 
             // lbOrigin
             // 
@@ -736,7 +736,7 @@
             this.btnClearForm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClearForm.Name = "btnClearForm";
             this.btnClearForm.Size = new System.Drawing.Size(111, 45);
-            this.btnClearForm.TabIndex = 100;
+            this.btnClearForm.TabIndex = 54;
             this.btnClearForm.Text = "ล้างค่า";
             this.btnClearForm.UseVisualStyleBackColor = true;
             this.btnClearForm.Click += new System.EventHandler(this.btnClearForm_Click);
@@ -771,7 +771,7 @@
             this.textBoxHomeNum.MaxLength = 10;
             this.textBoxHomeNum.Name = "textBoxHomeNum";
             this.textBoxHomeNum.Size = new System.Drawing.Size(66, 32);
-            this.textBoxHomeNum.TabIndex = 5;
+            this.textBoxHomeNum.TabIndex = 9;
             // 
             // label20
             // 
@@ -792,7 +792,7 @@
             this.textBoxMoo.MaxLength = 2;
             this.textBoxMoo.Name = "textBoxMoo";
             this.textBoxMoo.Size = new System.Drawing.Size(39, 32);
-            this.textBoxMoo.TabIndex = 6;
+            this.textBoxMoo.TabIndex = 10;
             // 
             // textBoxHeight
             // 
@@ -801,7 +801,7 @@
             this.textBoxHeight.MaxLength = 3;
             this.textBoxHeight.Name = "textBoxHeight";
             this.textBoxHeight.Size = new System.Drawing.Size(110, 32);
-            this.textBoxHeight.TabIndex = 27;
+            this.textBoxHeight.TabIndex = 34;
             this.textBoxHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRunNum_KeyPress);
             // 
             // textBoxSoy
@@ -812,7 +812,7 @@
             this.textBoxSoy.MaxLength = 50;
             this.textBoxSoy.Name = "textBoxSoy";
             this.textBoxSoy.Size = new System.Drawing.Size(110, 32);
-            this.textBoxSoy.TabIndex = 7;
+            this.textBoxSoy.TabIndex = 11;
             // 
             // label21
             // 
@@ -833,7 +833,7 @@
             this.textBoxRoad.MaxLength = 50;
             this.textBoxRoad.Name = "textBoxRoad";
             this.textBoxRoad.Size = new System.Drawing.Size(110, 32);
-            this.textBoxRoad.TabIndex = 8;
+            this.textBoxRoad.TabIndex = 12;
             // 
             // cbbReligion
             // 
@@ -842,7 +842,7 @@
             this.cbbReligion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbReligion.Name = "cbbReligion";
             this.cbbReligion.Size = new System.Drawing.Size(110, 33);
-            this.cbbReligion.TabIndex = 19;
+            this.cbbReligion.TabIndex = 33;
             // 
             // textBoxFname
             // 
@@ -852,7 +852,7 @@
             this.textBoxFname.MaxLength = 50;
             this.textBoxFname.Name = "textBoxFname";
             this.textBoxFname.Size = new System.Drawing.Size(110, 32);
-            this.textBoxFname.TabIndex = 20;
+            this.textBoxFname.TabIndex = 29;
             // 
             // textBoxFSname
             // 
@@ -862,7 +862,7 @@
             this.textBoxFSname.MaxLength = 50;
             this.textBoxFSname.Name = "textBoxFSname";
             this.textBoxFSname.Size = new System.Drawing.Size(110, 32);
-            this.textBoxFSname.TabIndex = 21;
+            this.textBoxFSname.TabIndex = 30;
             // 
             // cbbOcc
             // 
@@ -871,7 +871,7 @@
             this.cbbOcc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbOcc.Name = "cbbOcc";
             this.cbbOcc.Size = new System.Drawing.Size(110, 33);
-            this.cbbOcc.TabIndex = 18;
+            this.cbbOcc.TabIndex = 28;
             // 
             // textBoxMname
             // 
@@ -881,7 +881,7 @@
             this.textBoxMname.MaxLength = 50;
             this.textBoxMname.Name = "textBoxMname";
             this.textBoxMname.Size = new System.Drawing.Size(110, 32);
-            this.textBoxMname.TabIndex = 22;
+            this.textBoxMname.TabIndex = 31;
             // 
             // textBoxMSname
             // 
@@ -891,7 +891,7 @@
             this.textBoxMSname.MaxLength = 50;
             this.textBoxMSname.Name = "textBoxMSname";
             this.textBoxMSname.Size = new System.Drawing.Size(110, 32);
-            this.textBoxMSname.TabIndex = 23;
+            this.textBoxMSname.TabIndex = 32;
             // 
             // cbbEdu
             // 
@@ -900,7 +900,7 @@
             this.cbbEdu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbEdu.Name = "cbbEdu";
             this.cbbEdu.Size = new System.Drawing.Size(110, 33);
-            this.cbbEdu.TabIndex = 17;
+            this.cbbEdu.TabIndex = 27;
             // 
             // label5
             // 
@@ -1009,7 +1009,7 @@
             this.cbbProvince.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbProvince.Name = "cbbProvince";
             this.cbbProvince.Size = new System.Drawing.Size(110, 33);
-            this.cbbProvince.TabIndex = 9;
+            this.cbbProvince.TabIndex = 13;
             this.cbbProvince.SelectedIndexChanged += new System.EventHandler(this.cbbArmtown_SelectedIndexChanged);
             // 
             // cbbCity
@@ -1019,7 +1019,7 @@
             this.cbbCity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbCity.Name = "cbbCity";
             this.cbbCity.Size = new System.Drawing.Size(110, 33);
-            this.cbbCity.TabIndex = 10;
+            this.cbbCity.TabIndex = 14;
             this.cbbCity.SelectedIndexChanged += new System.EventHandler(this.cbbCity_SelectedIndexChanged);
             // 
             // cbbTumbon
@@ -1030,7 +1030,7 @@
             this.cbbTumbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbTumbon.Name = "cbbTumbon";
             this.cbbTumbon.Size = new System.Drawing.Size(110, 33);
-            this.cbbTumbon.TabIndex = 11;
+            this.cbbTumbon.TabIndex = 15;
             // 
             // textBoxChessOut
             // 
@@ -1039,7 +1039,7 @@
             this.textBoxChessOut.MaxLength = 3;
             this.textBoxChessOut.Name = "textBoxChessOut";
             this.textBoxChessOut.Size = new System.Drawing.Size(44, 32);
-            this.textBoxChessOut.TabIndex = 29;
+            this.textBoxChessOut.TabIndex = 36;
             // 
             // label34
             // 
@@ -1059,7 +1059,7 @@
             this.textBoxChessIn.MaxLength = 3;
             this.textBoxChessIn.Name = "textBoxChessIn";
             this.textBoxChessIn.Size = new System.Drawing.Size(44, 32);
-            this.textBoxChessIn.TabIndex = 28;
+            this.textBoxChessIn.TabIndex = 35;
             // 
             // label35
             // 
@@ -1127,7 +1127,7 @@
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox4.Size = new System.Drawing.Size(382, 162);
-            this.groupBox4.TabIndex = 676;
+            this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ที่อยู่";
             // 
@@ -1162,7 +1162,7 @@
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox5.Size = new System.Drawing.Size(493, 275);
-            this.groupBox5.TabIndex = 677;
+            this.groupBox5.TabIndex = 25;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "ข้อมูลเพิ่มเติม";
             // 
@@ -1173,7 +1173,7 @@
             this.textBoxMark.MaxLength = 50;
             this.textBoxMark.Name = "textBoxMark";
             this.textBoxMark.Size = new System.Drawing.Size(230, 32);
-            this.textBoxMark.TabIndex = 9;
+            this.textBoxMark.TabIndex = 26;
             // 
             // label17
             // 
@@ -1219,7 +1219,7 @@
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1209, 45);
-            this.panel3.TabIndex = 679;
+            this.panel3.TabIndex = 51;
             // 
             // groupBox3
             // 
@@ -1253,7 +1253,7 @@
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Size = new System.Drawing.Size(334, 435);
-            this.groupBox3.TabIndex = 678;
+            this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "อื่นๆ";
             // 
@@ -1274,7 +1274,7 @@
             this.textBoxAccountNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxAccountNum.Name = "textBoxAccountNum";
             this.textBoxAccountNum.Size = new System.Drawing.Size(150, 32);
-            this.textBoxAccountNum.TabIndex = 676;
+            this.textBoxAccountNum.TabIndex = 50;
             // 
             // label25
             // 
@@ -1294,7 +1294,7 @@
             this.cbbBankID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbBankID.Name = "cbbBankID";
             this.cbbBankID.Size = new System.Drawing.Size(150, 33);
-            this.cbbBankID.TabIndex = 675;
+            this.cbbBankID.TabIndex = 49;
             // 
             // textBoxPTelephone
             // 
@@ -1304,7 +1304,7 @@
             this.textBoxPTelephone.MaxLength = 10;
             this.textBoxPTelephone.Name = "textBoxPTelephone";
             this.textBoxPTelephone.Size = new System.Drawing.Size(96, 32);
-            this.textBoxPTelephone.TabIndex = 31;
+            this.textBoxPTelephone.TabIndex = 42;
             // 
             // textBoxMTelephone
             // 
@@ -1314,7 +1314,7 @@
             this.textBoxMTelephone.MaxLength = 10;
             this.textBoxMTelephone.Name = "textBoxMTelephone";
             this.textBoxMTelephone.Size = new System.Drawing.Size(93, 32);
-            this.textBoxMTelephone.TabIndex = 30;
+            this.textBoxMTelephone.TabIndex = 41;
             // 
             // textBoxFTelephone
             // 
@@ -1324,7 +1324,7 @@
             this.textBoxFTelephone.MaxLength = 10;
             this.textBoxFTelephone.Name = "textBoxFTelephone";
             this.textBoxFTelephone.Size = new System.Drawing.Size(96, 32);
-            this.textBoxFTelephone.TabIndex = 29;
+            this.textBoxFTelephone.TabIndex = 40;
             // 
             // labelFTelephone
             // 
@@ -1386,7 +1386,7 @@
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox8.Size = new System.Drawing.Size(382, 96);
-            this.groupBox8.TabIndex = 1002;
+            this.groupBox8.TabIndex = 55;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "ทะเบียน";
             // 
@@ -1412,7 +1412,7 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Size = new System.Drawing.Size(493, 160);
-            this.groupBox2.TabIndex = 1003;
+            this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "สังกัด";
             // 
@@ -1425,7 +1425,7 @@
             this.print_slip.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.print_slip.Name = "print_slip";
             this.print_slip.Size = new System.Drawing.Size(111, 32);
-            this.print_slip.TabIndex = 38;
+            this.print_slip.TabIndex = 24;
             this.print_slip.Text = "พิมพ์";
             this.print_slip.UseVisualStyleBackColor = false;
             this.print_slip.Click += new System.EventHandler(this.print_slip_Click);
@@ -1451,7 +1451,7 @@
             this.textBoxPseq.MaxLength = 6;
             this.textBoxPseq.Name = "textBoxPseq";
             this.textBoxPseq.Size = new System.Drawing.Size(50, 32);
-            this.textBoxPseq.TabIndex = 17;
+            this.textBoxPseq.TabIndex = 23;
             // 
             // label24
             // 
@@ -1471,7 +1471,7 @@
             this.textBoxPlatoon.MaxLength = 6;
             this.textBoxPlatoon.Name = "textBoxPlatoon";
             this.textBoxPlatoon.Size = new System.Drawing.Size(50, 32);
-            this.textBoxPlatoon.TabIndex = 16;
+            this.textBoxPlatoon.TabIndex = 22;
             // 
             // label23
             // 
@@ -1491,7 +1491,7 @@
             this.textBoxCompany.MaxLength = 6;
             this.textBoxCompany.Name = "textBoxCompany";
             this.textBoxCompany.Size = new System.Drawing.Size(50, 32);
-            this.textBoxCompany.TabIndex = 15;
+            this.textBoxCompany.TabIndex = 21;
             // 
             // label22
             // 
@@ -1511,7 +1511,7 @@
             this.textBoxBatt.MaxLength = 6;
             this.textBoxBatt.Name = "textBoxBatt";
             this.textBoxBatt.Size = new System.Drawing.Size(50, 32);
-            this.textBoxBatt.TabIndex = 14;
+            this.textBoxBatt.TabIndex = 20;
             // 
             // label10
             // 

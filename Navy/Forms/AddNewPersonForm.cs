@@ -222,7 +222,11 @@ namespace Navy.Forms
             //this.reportViewer1.LocalReport.SetParameters(param);
             //this.reportViewer1.RefreshReport();
             LoadControlsValueEdit(param);
-            checkDatafromIDCard(param);          
+            checkDatafromIDCard(param);
+
+            //Editmode ปิดปุ่ม checkruncode กับปุ่ม print_slip
+            btn_chechruncode.Visible = false;
+            print_slip.Visible = false;
         }
 
         #region LoadInitialFormValue
@@ -410,6 +414,7 @@ namespace Navy.Forms
             this.Name = "แก้ไขข้อมูลทหาร";
             mode = "edit";
             textBoxID13.Focus();
+
         }
         
         private void LoadID8Number(string armid)
@@ -916,28 +921,27 @@ namespace Navy.Forms
         private void AddEnterKeyDown()
         {         
             foreach (Control c in groupBox1.Controls)
+            {            
+                c.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            }
+            foreach (Control c in groupBox2.Controls)
             {
-               
                 c.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             }
             foreach (Control c in groupBox4.Controls)
             {
-
                 c.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             }
             foreach (Control c in groupBox5.Controls)
             {
-
                 c.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             }
             foreach (Control c in groupBox3.Controls)
             {
-
                 c.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             }
             foreach (Control c in groupBox8.Controls)
             {
-
                 c.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             }
         }
@@ -1512,16 +1516,6 @@ namespace Navy.Forms
         {
             this.btnSubmitAndNew.Visible = isVisible;
         }
-
-
-
-
-
-
-
-
-
-
 
         #endregion
 
