@@ -59,12 +59,12 @@ namespace Navy.Forms
                 LoadNewFormControls();
                 LoadControlsValue();
                 setOptionAddNewperson();
-                this.Size = new Size(891, 594);
+                this.Size = new Size(876, 493);
             }
             else
             {
 
-                this.Size = new Size(1225, 594);
+                this.Size = new Size(1202, 493);
             }
         }
 
@@ -88,6 +88,16 @@ namespace Navy.Forms
             LoadControlsValue();
             this.cbbProvince.Enabled = false;
             groupBox5.Visible = false;
+            btnReadcard.Visible = true;
+            lblplatoon.Visible = true;
+            lblbatt.Visible = true;
+            lblcompany.Visible = true;
+            lblpseq.Visible = true;
+            textBoxBatt.Visible = true;
+            textBoxCompany.Visible = true;
+            textBoxPlatoon.Visible = true;
+            textBoxPseq.Visible = true;
+            btn_chechruncode.Visible = true;
             modecard = m;
             year = yearin;
             RefreshDriver();
@@ -222,7 +232,11 @@ namespace Navy.Forms
             //this.reportViewer1.LocalReport.SetParameters(param);
             //this.reportViewer1.RefreshReport();
             LoadControlsValueEdit(param);
-            checkDatafromIDCard(param);          
+            checkDatafromIDCard(param);
+
+            //Editmode ปิดปุ่ม checkruncode กับปุ่ม print_slip
+            btn_chechruncode.Visible = false;
+            print_slip.Visible = false;
         }
 
         #region LoadInitialFormValue
@@ -410,6 +424,7 @@ namespace Navy.Forms
             this.Name = "แก้ไขข้อมูลทหาร";
             mode = "edit";
             textBoxID13.Focus();
+
         }
         
         private void LoadID8Number(string armid)
@@ -732,7 +747,11 @@ namespace Navy.Forms
             string value = "";
             bool isDuplicate = false;
             isDuplicate = dcore.CheckPersonDuplicateKeys(param, out key, out value);
-
+            if (IsValidCheckPersonID(param.id13))
+            {
+                MessageBox.Show("เลขบัตรประชาชนไม่ถูกต้อง");
+                isDuplicate = true;
+            }
             if (key == "ID13")
             {
                 MessageBox.Show("ข้อมูล [" + key + ":" + value + "] มีอยู่ในระบบแล้ว");
@@ -916,28 +935,27 @@ namespace Navy.Forms
         private void AddEnterKeyDown()
         {         
             foreach (Control c in groupBox1.Controls)
+            {            
+                c.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            }
+            foreach (Control c in groupBox2.Controls)
             {
-               
                 c.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             }
             foreach (Control c in groupBox4.Controls)
             {
-
                 c.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             }
             foreach (Control c in groupBox5.Controls)
             {
-
                 c.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             }
             foreach (Control c in groupBox3.Controls)
             {
-
                 c.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             }
             foreach (Control c in groupBox8.Controls)
             {
-
                 c.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             }
         }
@@ -1256,13 +1274,55 @@ namespace Navy.Forms
                 MessageBox.Show(ex.ToString());
             }
         }
-        
+        private bool IsValidCheckPersonID(string pid)
+        {
+
+            char[] numberChars = pid.ToCharArray();
+
+            int total = 0;
+            int mul = 13;
+            int mod = 0, mod2 = 0;
+            int nsub = 0;
+            int numberChars12 = 0;
+
+            for (int i = 0; i < numberChars.Length - 1; i++)
+            {
+                int num = 0;
+                int.TryParse(numberChars[i].ToString(), out num);
+
+                total = total + num * mul;
+                mul = mul - 1;
+
+                //Debug.Log(total + " - " + num + " - "+mul);
+            }
+
+            mod = total % 11;
+            nsub = 11 - mod;
+            mod2 = nsub % 10;
+
+            //Debug.Log(mod);
+            //Debug.Log(nsub);
+            //Debug.Log(mod2);
+
+
+            int.TryParse(numberChars[12].ToString(), out numberChars12);
+
+            //Debug.Log(numberChars12);
+
+            if (mod2 != numberChars12)
+                return true;
+            else
+                return false;
+        }
         private void btnSubmitAndNew_Click(object sender, EventArgs e)
         {
             //save and new form for record next person
-            if (textBoxRunNum.Text.Trim() == "")
+            if (modecard != "")
             {
-                Request_Runcode();
+                if (textBoxRunNum.Text.Trim() == "")
+                {
+                    Request_Runcode();
+                }
             }
             string val = ValidateValue();
             if (val != "")
@@ -1288,7 +1348,10 @@ namespace Navy.Forms
                         dcoreUpdateUsedPerson.UpdatePersonUsed(param.id13);
 
                         MessageBox.Show("บันทึกเรียบร้อย");
-                        print_dialog();
+                        if (modecard != "")
+                        {
+                            print_dialog();
+                        }
                         ClearValueForNewPerson();
                         SetInitialPerson(param.yearin, param.armid, param.regDate, param.repDate, param.origincode);
                         SetControlSelectAll();
@@ -1513,16 +1576,6 @@ namespace Navy.Forms
             this.btnSubmitAndNew.Visible = isVisible;
         }
 
-
-
-
-
-
-
-
-
-
-
         #endregion
 
         private void label40_Click(object sender, EventArgs e)
@@ -1557,7 +1610,15 @@ namespace Navy.Forms
         {
             RefreshDriver();
             Personal personal = idcard.readAll();
-            CardInserted(personal);
+            if (personal != null)
+            {
+                CardInserted(personal);
+                readfromIDCard = "1";
+                textBoxName.Focus();
+            }
+            else {
+                MessageBox.Show("ไม่สามารถดึงข้อมูลจากบัตรประชาชนได้");
+            }
         }
 
         private void print_slip_Click(object sender, EventArgs e)
@@ -1628,7 +1689,7 @@ namespace Navy.Forms
         private void setOptionAddNewperson() {
             groupBox3.Visible = false;
             panel3.TabIndex = 667;
-
+            
         }
 
         private void btn_chechruncode_Click(object sender, EventArgs e)
