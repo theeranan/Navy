@@ -367,7 +367,7 @@ namespace Navy.Data.DataTemplate
             AccountNum = reader["AccountNum"].ToString();
         }
     }
-    
+
     public class PersonSearch
     {
         [DisplayName("ผลัด")]
@@ -421,8 +421,8 @@ namespace Navy.Data.DataTemplate
             this.id8 = reader["id8"].ToString();
             this.navyid = reader["navyid"].ToString();
             this.battCompanyPlatoonPseq = //reader["batt"].ToString() + "/" + reader["company"].ToString() + "/" + reader["platoon"].ToString() + "/" + reader["pseq"].ToString();
-                                          reader["company"].ToString() + "/" + reader["batt"].ToString() + "(" + reader["platoon"].ToString() + string.Format("{0:0#}", reader["pseq"])+ ")";
-        }   
+                                          reader["company"].ToString() + "/" + reader["batt"].ToString() + "(" + reader["platoon"].ToString() + string.Format("{0:0#}", reader["pseq"]) + ")";
+        }
     }
 
     public class IndicmentDataSearch
@@ -434,7 +434,7 @@ namespace Navy.Data.DataTemplate
         [DisplayName("วันที่ถูกจับกุม")]
         public string datecapture { get; set; }
         public IndicmentDataSearch()
-        {          
+        {
             this.navyid = "";
             this.indictment = "";
             this.datecapture = "";
@@ -452,10 +452,11 @@ namespace Navy.Data.DataTemplate
             int Thyear;
             string dateconverted = "";
             string[] datesplit = strDate.Split('/');
-            if (Int32.Parse(datesplit[2]) < 2500) {
+            if (Int32.Parse(datesplit[2]) < 2500)
+            {
                 Thyear = Int32.Parse(datesplit[2]) + 543;
             }
-            dateconverted = datesplit[0] +"/"+ converNumber2tMonth(datesplit[1]) +"/"+ Int32.Parse(datesplit[2]).ToString();
+            dateconverted = datesplit[0] + "/" + converNumber2tMonth(datesplit[1]) + "/" + Int32.Parse(datesplit[2]).ToString();
 
             return dateconverted;
         }
@@ -778,7 +779,7 @@ namespace Navy.Data.DataTemplate
             this.request = new Request(reader);
         }
     }
-    
+
     public class NLabelPerson
     {
         [DisplayName("หน่วย")]
@@ -796,7 +797,7 @@ namespace Navy.Data.DataTemplate
 
         public NLabelPerson()
         {
-                
+
         }
 
         public NLabelPerson(MySql.Data.MySqlClient.MySqlDataReader reader)
@@ -811,9 +812,9 @@ namespace Navy.Data.DataTemplate
     {
         public string id13 { get; set; }
         public string navyid { get; set; }
-       
-      
-     
+
+
+
         public DateTime in_date { get; set; }
         public DateTime dead_date { get; set; }
         public DateTime out_date { get; set; }
@@ -823,13 +824,13 @@ namespace Navy.Data.DataTemplate
         public string address_soid_in { get; set; }
         public string address_road_in { get; set; }
         public string towncode_in { get; set; }
-      
+
         public string address_out { get; set; }
         public string address_mu_out { get; set; }
         public string address_soid_out { get; set; }
         public string address_road_out { get; set; }
         public string towncode_out { get; set; }
-  
+
         public string type_out { get; set; }
         public string book_number { get; set; }
         public string rank { get; set; }
@@ -849,7 +850,8 @@ namespace Navy.Data.DataTemplate
                 mcon.Open();
                 string sql = "SELECT * FROM person p where(1=1) ";
 
-                if (!string.IsNullOrEmpty(id13)) {
+                if (!string.IsNullOrEmpty(id13))
+                {
 
                     sql += " p.id13 ='" + id13 + "' ";
                 }
@@ -869,7 +871,7 @@ namespace Navy.Data.DataTemplate
                         address_soid_in = reader["address_soid_in"].ToString();
                         address_road_in = reader["address_road_in"].ToString();
                         towncode_in = reader["towncode_in"].ToString();
-                      
+
                         address_in = reader["address_out"].ToString();
                         address_mu_in = reader["address_mu_out"].ToString();
                         address_soid_in = reader["address_soid_out"].ToString();
@@ -885,5 +887,5 @@ namespace Navy.Data.DataTemplate
             }
         }
     }
-   
+
 }

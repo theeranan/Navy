@@ -31,7 +31,7 @@ namespace Navy.Forms
         //public static string SetValueForText2 = "";
         enum PersonGroups { All, Prepare, Trans, Request, SelectExam, Educ, Skill, General };
         PersonGroups pgroup = PersonGroups.All;
-        DataTable dtPersonAll ;
+        DataTable dtPersonAll;
         DataTable dtPersonPrepare;
         DataTable dtPersonTrans;
         DataTable dtPersonRequest;
@@ -50,13 +50,17 @@ namespace Navy.Forms
             textBoxRunNum.SelectAll();
             textBoxName.SelectAll();
             textBoxSname.SelectAll();
+            cbbCompany.SelectAll();
+            cbbBatt.SelectAll();
+            setBattCompanyValue();
             AddEnterKeyDown();
             btnNextPage.Enabled = false;
             btnPrevPage.Enabled = false;
             GVsSetAutoSizeColumns();
+
             DataControls.LoadComboBoxData(cbbProvince, DataDefinition.GetArmtownTab(), "ARMNAME", "ARMID");
         }
-        
+
         private void EnableButtonPage()
         {
             if (page < totalPage)
@@ -91,10 +95,12 @@ namespace Navy.Forms
                 paramSearch.id13 = textBoxID13.Text;
                 paramSearch.yearin = mtxtYearin.Text;
                 paramSearch.runcode = textBoxRunNum.Text.Trim();
-                
+                paramSearch.company = cbbCompany.Text.Trim();
+                paramSearch.batt = cbbBatt.Text.Trim();
+
                 if (checkBoxSearchNivyAll.Checked)
                 {
-                    personTable = dcore.GetSearchPersonTable("",  paramSearch, itemsPerPage, page, out count);
+                    personTable = dcore.GetSearchPersonTable("", paramSearch, itemsPerPage, page, out count);
                     dgv.DataSource = personTable;
                 }
                 else
@@ -186,7 +192,7 @@ namespace Navy.Forms
                 }
                 dgv.CalculatePaging();
                 dgv.Refresh();
-                dgv.Focus();                
+                dgv.Focus();
             }
             catch (Exception ex)
             {
@@ -238,7 +244,7 @@ namespace Navy.Forms
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dcore = new DataCoreLibrary();
-            page = 1;            
+            page = 1;
             GetSearchData();
             mtxtYearin.Focus();
             mtxtYearin.SelectAll();
@@ -248,8 +254,8 @@ namespace Navy.Forms
             textBoxName.SelectAll();
             textBoxSname.SelectAll();
             SetValueForText1 = textBoxID13.Text;
-            
-            
+
+
         }
 
         private void btnPrevPage_Click(object sender, EventArgs e)
@@ -355,7 +361,7 @@ namespace Navy.Forms
         {
             if (e.KeyCode == Keys.Enter)
             {
-              //  btnSubmit_Click(sender, e);
+                //  btnSubmit_Click(sender, e);
                 ViewForm f = new ViewForm(gvResult.SelectedRows[0].Cells["navyid"].Value.ToString());
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.ShowDialog();
@@ -365,14 +371,14 @@ namespace Navy.Forms
 
         private void gvResult_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-          //  btnSubmit_Click(sender, e);
-                ViewForm f = new ViewForm(gvResult.SelectedRows[0].Cells["navyid"].Value.ToString());
-                f.StartPosition = FormStartPosition.CenterParent;
-                f.ShowDialog();
+            //  btnSubmit_Click(sender, e);
+            ViewForm f = new ViewForm(gvResult.SelectedRows[0].Cells["navyid"].Value.ToString());
+            f.StartPosition = FormStartPosition.CenterParent;
+            f.ShowDialog();
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {            
+        {
             if (tabControl1.SelectedIndex == 1)
             {
                 pgroup = PersonGroups.Prepare;
@@ -479,6 +485,8 @@ namespace Navy.Forms
             textBoxSname.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             textBoxRunNum.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             cbbProvince.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            cbbCompany.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            cbbBatt.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
         }
         #endregion
 
@@ -488,10 +496,10 @@ namespace Navy.Forms
             //
             DataControls.ControlFinder<DataGridView> cf = new DataControls.ControlFinder<DataGridView>();
             cf.FindChildControlsRecursive(groupBox2);
-            
+
             foreach (DataGridView gv in cf.FoundControls)
             {
-                gv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;                
+                gv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             }
 
             ////set button event
@@ -508,7 +516,7 @@ namespace Navy.Forms
 
         private void gvResult_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -520,7 +528,20 @@ namespace Navy.Forms
         {
 
         }
-       
+
+        private void setBattCompanyValue()
+        {
+            cbbBatt.Items.Add("1");
+            cbbBatt.Items.Add("2");
+            cbbBatt.Items.Add("3");
+            cbbBatt.Items.Add("4");
+            cbbCompany.Items.Add("1");
+            cbbCompany.Items.Add("2");
+            cbbCompany.Items.Add("3");
+            cbbCompany.Items.Add("4");
+            cbbCompany.Items.Add("5");
+            cbbCompany.Items.Add("6");
+        }
 
     }
 }
