@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchPersonForm));
             this.gvResult = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbBatt = new System.Windows.Forms.ComboBox();
+            this.cbbCompany = new System.Windows.Forms.ComboBox();
+            this.labelBatt = new System.Windows.Forms.Label();
+            this.labelCompany = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxID13 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -117,6 +121,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbbBatt);
+            this.groupBox1.Controls.Add(this.cbbCompany);
+            this.groupBox1.Controls.Add(this.labelBatt);
+            this.groupBox1.Controls.Add(this.labelCompany);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.textBoxID13);
             this.groupBox1.Controls.Add(this.label6);
@@ -138,15 +146,53 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(783, 95);
+            this.groupBox1.Size = new System.Drawing.Size(801, 119);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ฟอร์มค้นหา";
             // 
+            // cbbBatt
+            // 
+            this.cbbBatt.DropDownWidth = 100;
+            this.cbbBatt.FormattingEnabled = true;
+            this.cbbBatt.Location = new System.Drawing.Point(747, 51);
+            this.cbbBatt.Name = "cbbBatt";
+            this.cbbBatt.Size = new System.Drawing.Size(47, 24);
+            this.cbbBatt.TabIndex = 8;
+            // 
+            // cbbCompany
+            // 
+            this.cbbCompany.DropDownWidth = 100;
+            this.cbbCompany.FormattingEnabled = true;
+            this.cbbCompany.Location = new System.Drawing.Point(628, 51);
+            this.cbbCompany.Name = "cbbCompany";
+            this.cbbCompany.Size = new System.Drawing.Size(47, 24);
+            this.cbbCompany.TabIndex = 7;
+            // 
+            // labelBatt
+            // 
+            this.labelBatt.AutoSize = true;
+            this.labelBatt.Location = new System.Drawing.Point(691, 54);
+            this.labelBatt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelBatt.Name = "labelBatt";
+            this.labelBatt.Size = new System.Drawing.Size(49, 16);
+            this.labelBatt.TabIndex = 31;
+            this.labelBatt.Text = "กองพันที่";
+            // 
+            // labelCompany
+            // 
+            this.labelCompany.AutoSize = true;
+            this.labelCompany.Location = new System.Drawing.Point(569, 54);
+            this.labelCompany.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCompany.Name = "labelCompany";
+            this.labelCompany.Size = new System.Drawing.Size(52, 16);
+            this.labelCompany.TabIndex = 29;
+            this.labelCompany.Text = "กองร้อยที่";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(241, 23);
+            this.label9.Location = new System.Drawing.Point(267, 23);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(112, 16);
@@ -155,7 +201,7 @@
             // 
             // textBoxID13
             // 
-            this.textBoxID13.Location = new System.Drawing.Point(374, 19);
+            this.textBoxID13.Location = new System.Drawing.Point(400, 19);
             this.textBoxID13.MaxLength = 13;
             this.textBoxID13.Name = "textBoxID13";
             this.textBoxID13.Size = new System.Drawing.Size(186, 22);
@@ -164,7 +210,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(599, 23);
+            this.label6.Location = new System.Drawing.Point(620, 23);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 16);
@@ -173,7 +219,7 @@
             // 
             // textBoxRunNum
             // 
-            this.textBoxRunNum.Location = new System.Drawing.Point(673, 20);
+            this.textBoxRunNum.Location = new System.Drawing.Point(694, 20);
             this.textBoxRunNum.MaxLength = 10;
             this.textBoxRunNum.Name = "textBoxRunNum";
             this.textBoxRunNum.Size = new System.Drawing.Size(100, 22);
@@ -182,10 +228,10 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(657, 67);
+            this.btnSearch.Location = new System.Drawing.Point(700, 87);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(95, 23);
-            this.btnSearch.TabIndex = 7;
+            this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "ค้นหา";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -230,7 +276,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(191, 54);
+            this.label3.Location = new System.Drawing.Point(181, 54);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 16);
@@ -240,7 +286,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 54);
+            this.label5.Location = new System.Drawing.Point(11, 54);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(21, 16);
@@ -249,7 +295,7 @@
             // 
             // textBoxSname
             // 
-            this.textBoxSname.Location = new System.Drawing.Point(245, 51);
+            this.textBoxSname.Location = new System.Drawing.Point(235, 51);
             this.textBoxSname.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSname.MaxLength = 50;
             this.textBoxSname.Name = "textBoxSname";
@@ -258,7 +304,7 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(44, 51);
+            this.textBoxName.Location = new System.Drawing.Point(40, 51);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.MaxLength = 50;
             this.textBoxName.Name = "textBoxName";
@@ -268,7 +314,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(410, 54);
+            this.label1.Location = new System.Drawing.Point(376, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 16);
             this.label1.TabIndex = 15;
@@ -278,7 +324,7 @@
             // 
             this.cbbProvince.DropDownWidth = 100;
             this.cbbProvince.FormattingEnabled = true;
-            this.cbbProvince.Location = new System.Drawing.Point(460, 51);
+            this.cbbProvince.Location = new System.Drawing.Point(426, 51);
             this.cbbProvince.Name = "cbbProvince";
             this.cbbProvince.Size = new System.Drawing.Size(121, 24);
             this.cbbProvince.TabIndex = 6;
@@ -286,7 +332,7 @@
             // checkBoxSearchNivyAll
             // 
             this.checkBoxSearchNivyAll.AutoSize = true;
-            this.checkBoxSearchNivyAll.Location = new System.Drawing.Point(7, 73);
+            this.checkBoxSearchNivyAll.Location = new System.Drawing.Point(11, 86);
             this.checkBoxSearchNivyAll.Name = "checkBoxSearchNivyAll";
             this.checkBoxSearchNivyAll.Size = new System.Drawing.Size(126, 20);
             this.checkBoxSearchNivyAll.TabIndex = 10;
@@ -404,7 +450,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(676, 615);
+            this.btnSubmit.Location = new System.Drawing.Point(676, 647);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(100, 28);
@@ -415,7 +461,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(24, 615);
+            this.btnDelete.Location = new System.Drawing.Point(24, 647);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 28);
@@ -609,9 +655,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tabControl1);
-            this.groupBox2.Location = new System.Drawing.Point(16, 111);
+            this.groupBox2.Location = new System.Drawing.Point(16, 138);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(801, 502);
+            this.groupBox2.Size = new System.Drawing.Size(801, 504);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ผลการค้นหา";
@@ -620,7 +666,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 647);
+            this.ClientSize = new System.Drawing.Size(826, 681);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSubmit);
@@ -703,5 +749,9 @@
         private MyControls.GridviewResultControl gridviewResultControl7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxID13;
+        private System.Windows.Forms.ComboBox cbbBatt;
+        private System.Windows.Forms.ComboBox cbbCompany;
+        private System.Windows.Forms.Label labelBatt;
+        private System.Windows.Forms.Label labelCompany;
     }
 }

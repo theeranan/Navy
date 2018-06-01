@@ -24,7 +24,7 @@ namespace Navy.Core
             {
                 return "SELECT * FROM origintab;";
             }
-            
+
             public string occtab()
             {
                 return "SELECT * FROM occtab ORDER BY OCCCODE ASC;";
@@ -76,16 +76,17 @@ namespace Navy.Core
             {
                 return "SELECT * FROM address_unit where level='0' ";
             }
-            public string subunitmoretab( string unit_id)
+            public string subunitmoretab(string unit_id)
             {
                 string sql = "SELECT * FROM address_unit where level='1' ";
 
-                if (!string.IsNullOrEmpty(unit_id)) {
+                if (!string.IsNullOrEmpty(unit_id))
+                {
 
                     sql += " and unit_id='" + unit_id + "' ";
                 }
                 return sql;
-                
+
             }
             public string status_move()
             {
@@ -212,7 +213,7 @@ namespace Navy.Core
                 return sqlWhere;
             }
 
-            public static string whereLikeNameSName(string sqlWhere,string columnName,string columnSName,string inputName,string inputSName)
+            public static string whereLikeNameSName(string sqlWhere, string columnName, string columnSName, string inputName, string inputSName)
             {
                 if (!String.IsNullOrWhiteSpace(inputName))
                 {
@@ -242,7 +243,7 @@ namespace Navy.Core
                 }
                 return sqlWhere;
             }
-                       
+
             public Search() { }
 
             public string CountRecord(string sql)
@@ -316,10 +317,10 @@ namespace Navy.Core
 
             public string searchPersonNivy2CountRecord(string id13, string name, string sname, string yearBD, bool getUsedPerson)
             {
-                 return CountRecord(searchPersonNivy2(id13, name, sname, yearBD, getUsedPerson, 0, 0, false));
+                return CountRecord(searchPersonNivy2(id13, name, sname, yearBD, getUsedPerson, 0, 0, false));
             }
 
-            public string searchPerson(string navyid, string id13, string name, string sname, string yearBD, string armid, string yearin, string id8, string runcode, int limit1, int limit2, bool isLimit)
+            public string searchPerson(string navyid, string id13, string name, string sname, string yearBD, string armid, string yearin, string id8, string runcode, int limit1, int limit2, bool isLimit, string batt, string company)
             {
                 string sql = "";
                 string sqlSelect = "SELECT * FROM person \n";
@@ -333,7 +334,9 @@ namespace Navy.Core
                 sqlWhere = whereLikeID8(sqlWhere, "ID8", id8);
                 sqlWhere = whereYearin(sqlWhere, "YEARIN", yearin);
                 sqlWhere = whereEqualsClause(sqlWhere, "RUNCODE", runcode);
-                
+                sqlWhere = whereEqualsClause(sqlWhere, "BATT", batt);
+                sqlWhere = whereEqualsClause(sqlWhere, "COMPANY", company);
+
                 if (!String.IsNullOrWhiteSpace(yearBD))
                 {
                     sqlWhere += (sqlWhere == "" ? "WHERE" : "AND") + " SUBSTR(BIRTHDATE,1,4) = '" + yearBD + "'\n";
@@ -348,7 +351,7 @@ namespace Navy.Core
                 }
 
                 sql = sqlSelect + sqlWhere + sqlLimit;
-                //Console.WriteLine(sql);
+                Console.WriteLine("SQL  = " + sql.ToString());
                 return sql;
             }
 
@@ -364,7 +367,7 @@ namespace Navy.Core
                 sqlWhere = whereYearin(sqlWhere, "YEARIN", yearin);
 
                 string sqlGroup = "GROUP BY ind.NavyID";
-                sql = sqlSelect + sqlWhere+ sqlGroup;
+                sql = sqlSelect + sqlWhere + sqlGroup;
                 return sql;
             }
 
@@ -402,15 +405,15 @@ namespace Navy.Core
                 {
                     sql += " and p.PSEQ = '" + PSEQ + "' ";
                 }
-               
-                    sql += " order by p.id8 ";
-               
+
+                sql += " order by p.id8 ";
+
                 return sql;
             }
 
-            public string searchPersonCountRecord(string navyid, string id13, string name, string sname, string yearBD, string armid, string yearin, string id8, string runcode)
+            public string searchPersonCountRecord(string navyid, string id13, string name, string sname, string yearBD, string armid, string yearin, string id8, string runcode, string batt, string company)
             {
-                return CountRecord(searchPerson(navyid, id13, name, sname, yearBD, armid, yearin, id8, runcode, 0, 0, false));
+                return CountRecord(searchPerson(navyid, id13, name, sname, yearBD, armid, yearin, id8, runcode, 0, 0, false, batt, company));
             }
 
             //new
@@ -427,7 +430,7 @@ namespace Navy.Core
                 sql = sqlSelect + sqlWhere;
                 return sql;
             }
-          
+
             public string searchPersonCountRecordbyunit(string UNIT3)
             {
                 return CountRecord(searchPersonbyunit(UNIT3));
@@ -455,7 +458,7 @@ namespace Navy.Core
                 sql = sqlSelect + sqlWhere;
                 return sql;
             }
-         
+
             public string searchNlabelNotInUnitCountRecord(string UNIT3)
             {
                 return CountRecord(searchNlabelNotInUnit(UNIT3));
@@ -529,7 +532,7 @@ left join eductab e2 on (e2.ECODE2 =e1.ECODE2 and e1.ECODE1 =e2.ECODE1 )
                 ";
 
 
-                if (string.IsNullOrEmpty(navyid) )
+                if (string.IsNullOrEmpty(navyid))
                 {
                     sqlWhere += " and (1=2) ";
                 }
@@ -537,7 +540,7 @@ left join eductab e2 on (e2.ECODE2 =e1.ECODE2 and e1.ECODE1 =e2.ECODE1 )
                 {
 
                     sqlWhere += " and p.navyid = '" + navyid + "' ";
-                   
+
                 }
 
 
@@ -573,10 +576,10 @@ where (1=1)
                     }
                 }
 
-             
+
                 return sqlWhere;
             }
-            public string searchPeople(string id13, string name, string sname,string rank,string book_number,string status)
+            public string searchPeople(string id13, string name, string sname, string rank, string book_number, string status)
             {
 
                 string sqlWhere = @" SELECT ps.`NAME`,ps.SNAME,ps.yearin,ps.oldyearin,u.UNITNAME as unit3,p.* FROM people p
@@ -591,31 +594,31 @@ LEFT JOIN unittab u on u.REFNUM = ps.UNIT3
                 //}
                 //else
                 //{
-                    if (!string.IsNullOrEmpty(id13))
-                    {
-                        sqlWhere += " and p.id13 = '" + id13 + "' ";
-                    }
-                    if (!string.IsNullOrEmpty(name))
-                    {
-                        sqlWhere += " and ps.name like '" + name + "%' ";
-                    }
-                    if (!string.IsNullOrEmpty(sname))
-                    {
-                        sqlWhere += " and ps.sname like '" + sname + "%' ";
-                    }
-                    if (!string.IsNullOrEmpty(book_number))
-                    {
-                        sqlWhere += " and p.book_number = '" + book_number + "' ";
-                    }
-                    if (!string.IsNullOrEmpty(rank))
-                    {
-                        sqlWhere += " and p.rank = '" + rank + "' ";
-                    }
-                    if (!string.IsNullOrEmpty(status))
-                    {
-                        sqlWhere += " and p.status = '" + status + "' ";
-                    }
-               // }
+                if (!string.IsNullOrEmpty(id13))
+                {
+                    sqlWhere += " and p.id13 = '" + id13 + "' ";
+                }
+                if (!string.IsNullOrEmpty(name))
+                {
+                    sqlWhere += " and ps.name like '" + name + "%' ";
+                }
+                if (!string.IsNullOrEmpty(sname))
+                {
+                    sqlWhere += " and ps.sname like '" + sname + "%' ";
+                }
+                if (!string.IsNullOrEmpty(book_number))
+                {
+                    sqlWhere += " and p.book_number = '" + book_number + "' ";
+                }
+                if (!string.IsNullOrEmpty(rank))
+                {
+                    sqlWhere += " and p.rank = '" + rank + "' ";
+                }
+                if (!string.IsNullOrEmpty(status))
+                {
+                    sqlWhere += " and p.status = '" + status + "' ";
+                }
+                // }
 
 
                 return sqlWhere;
@@ -686,7 +689,7 @@ LEFT JOIN unittab u on u.REFNUM = ps.UNIT3
                 {
                     sqlWhere += " and p.navyid = '" + navyid + "' ";
                 }
-               
+
                 // }
 
 
@@ -702,7 +705,7 @@ LEFT JOIN unittab u on u.REFNUM = ps.UNIT3
 
                 return sqlWhere;
             }
-            public string GetListPremoreAdress(string name, string sname, string report_number, string book_number, string rank, string id13, string YEARIN,bool move_in,string unit3)
+            public string GetListPremoreAdress(string name, string sname, string report_number, string book_number, string rank, string id13, string YEARIN, bool move_in, string unit3)
             {
 
                 string sqlWhere = @" select per.`NAME`
@@ -765,7 +768,7 @@ LEFT JOIN unittab u on u.REFNUM = ps.UNIT3
             {
 
                 string sqlWhere = @" select (MAX(p.report_number)+1) as report_number  from people p  ";
-              
+
                 return sqlWhere;
             }
 
@@ -817,7 +820,7 @@ LEFT JOIN unittab u on u.REFNUM = ps.UNIT3
                         sqlWhere += " and p.report_number = '" + report_number + "' ";
 
                     }
-                    
+
                 }
                 sqlWhere += " order by p.book_number*1,p.rank*1 ";
                 return sqlWhere;
@@ -886,17 +889,18 @@ LEFT JOIN unittab u on u.REFNUM = ps.UNIT3
                                     LEFT JOIN addictivetab addict on addict.addcode = p.addictive
                                     WHERE (1=1) 
 ";
-                                    if (!string.IsNullOrEmpty(unit_id)) {
-                                        sqlWhere += " and p.UNIT3 = '" + unit_id + "' ";
-                    Console.WriteLine("UNIT IS : "+ unit_id);
-                                    }
-                                    if (!string.IsNullOrEmpty(yearin)&& yearin!="/")
-                                    {
-                                        sqlWhere += " and p.YEARIN = '" + yearin + "' ";
+                if (!string.IsNullOrEmpty(unit_id))
+                {
+                    sqlWhere += " and p.UNIT3 = '" + unit_id + "' ";
+                    Console.WriteLine("UNIT IS : " + unit_id);
+                }
+                if (!string.IsNullOrEmpty(yearin) && yearin != "/")
+                {
+                    sqlWhere += " and p.YEARIN = '" + yearin + "' ";
 
-                                    }
-                                    sqlWhere += "  ORDER BY p.ID8  ";
-                                
+                }
+                sqlWhere += "  ORDER BY p.ID8  ";
+
 
                 return sqlWhere;
             }
@@ -970,7 +974,7 @@ GROUP BY UNIT3
 
 
 ";
-              
+
 
                 return sqlWhere;
             }
@@ -988,8 +992,8 @@ GROUP BY UNIT3
                 {
 
                     sqlWhere += " and u.unit_id = '" + unit + "' ";
-                    
-                    
+
+
                 }
 
 
@@ -1073,7 +1077,7 @@ GROUP BY UNIT3
                 sql = sqlSelect + sqlWhere + sqlLimit;
                 return sql;
             }
-            
+
             public string CheckRequestDuplicateNUM(string askby, string num)
             {
                 string sql = "SELECT COUNT(*) as countNUM FROM request WHERE (SUBSTR(ASKBY,1,2) = '" + askby.Substring(0, 2) + "' AND NUM = " + num + ") ;";
@@ -1163,7 +1167,7 @@ GROUP BY UNIT3
             {
                 string sql = "";
                 sql += "SELECT a.LEGION,a.ARMNAME,a.ABBNAME\n" +
-                        ",count(p.ID13) as 'count_person'\n"+
+                        ",count(p.ID13) as 'count_person'\n" +
                         ",SUM(CASE WHEN p.oldyearin IS NULL THEN 1 ELSE 0 END ) as 'count_all'\n" +
                         ",SUM(CASE WHEN p.BATT=7 AND p.oldyearin IS NULL THEN 1 ELSE 0 END ) 'count_escape'\n" +
                         ",SUM(CASE WHEN p.BATT<7 AND p.oldyearin IS NULL THEN 1 ELSE 0 END ) 'count_register'\n" +
@@ -1205,7 +1209,7 @@ GROUP BY UNIT3
                                     "FROM person p \n";
                 string sqlWhere = "";
                 string sqlLimit = "";
-                
+
                 sqlWhere = whereYearin(sqlWhere, "p.YEARIN", yearin);
                 sqlWhere += " ORDER BY p.BATT, p.COMPANY, p.PLATOON, p.PSEQ LIMIT 50 \n";
 
@@ -1379,7 +1383,8 @@ GROUP BY UNIT3
                                         )";
                 return sql;
             }
-            public string UpdatePeople() {
+            public string UpdatePeople()
+            {
 
                 string strSql = @"  Update people set
                                                              id13=@id13
@@ -1409,7 +1414,7 @@ GROUP BY UNIT3
                                                            
                                                              where navyid=@navyid ";
                 return strSql;
-            
+
             }
             public string UpdatePerson(string navyid)
             {
@@ -1420,8 +1425,8 @@ GROUP BY UNIT3
                     ",FATHER=@FATHER,FSNAME=@FSNAME,MOTHER=@MOTHER,MSNAME=@MSNAME,PERTYPE=@PERTYPE,RUNCODE=@RUNCODE,ID8=@ID8,ID=@ID \n" +
                     ",MARK=@MARK,EDUCODE0=@EDUCODE0,EDUCODE1=@EDUCODE1,EDUCODE2=@EDUCODE2,REGCODE=@REGCODE,OCCCODE=@OCCCODE,HEIGHT=@HEIGHT,WIDTH=@WIDTH,IS_REQUEST=@IS_REQUEST \n" +
                     ",BATT=@BATT,COMPANY=@COMPANY,PLATOON=@PLATOON,PSEQ=@PSEQ \n" +
-                    ",RECORDDATE=CONCAT(CURDATE(),' ',CURTIME()),RECORDBY=@RECORDBY"+
-                    ",kpt=@kpt,PERCENT=@percent,SKILLCODE=@SKILLCODE,Telephone=@Telephone"+
+                    ",RECORDDATE=CONCAT(CURDATE(),' ',CURTIME()),RECORDBY=@RECORDBY" +
+                    ",kpt=@kpt,PERCENT=@percent,SKILLCODE=@SKILLCODE,Telephone=@Telephone" +
                     ",FTelephone=@FTelephone,MTelephone=@MTelephone,PTelephone=@PTelephone,Addictive=@addictive_status,FlagReadfrom_IDCard = @flagreadfrom_IDCard,BankID = @BankID,AccountNum = @AccountNum \n" +
                     " \n";
                 sql += "WHERE NAVYID = '" + navyid + "'";
@@ -1474,7 +1479,7 @@ GROUP BY UNIT3
                 string sql = "SELECT NAVYID,ASKBY,UNIT,piority FROM request WHERE NAVYID = '" + navyid + "' AND ASKBY = '" + askby + "' AND UNIT = '" + unit + "' AND piority = '" + piority + "' ;";
                 return sql;
             }
-            
+
             public string UpdateNLabel()
             {
                 string sql = "UPDATE person p\n" +

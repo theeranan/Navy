@@ -40,16 +40,16 @@ namespace Navy.Core
         {
             return base.getNumberPrototype(search.GetMaxID8(armid), "maxID8", -1);
         }
-        public string RequestRuncode(ParamPerson param, string batt, string company,string platoon,string pseq, string pertype)
+        public string RequestRuncode(ParamPerson param, string batt, string company, string platoon, string pseq, string pertype)
         {
             int count_runcode = Int32.Parse(param.runcodefrom);
             int count_runcodeto = Int32.Parse(param.runcodeto);
             string runcode;
             bool check_batt_company = false;
             bool checkruncode = false;
-            int i,bit1=0,bit2=0,bit4=0,bit8=0;
-            int b1=0,b2=0,b4=0,b8=0;
-            if (batt != "" || company != "" || platoon !="" || pseq !="")
+            int i, bit1 = 0, bit2 = 0, bit4 = 0, bit8 = 0;
+            int b1 = 0, b2 = 0, b4 = 0, b8 = 0;
+            if (batt != "" || company != "" || platoon != "" || pseq != "")
             {
                 if (pseq != "")
                 {
@@ -59,11 +59,11 @@ namespace Navy.Core
                 {
                     bit2 = 1;
                 }
-                if(company != "")
+                if (company != "")
                 {
                     bit4 = 1;
                 }
-                if(batt != "")
+                if (batt != "")
                 {
                     bit8 = 1;
                 }
@@ -81,7 +81,7 @@ namespace Navy.Core
                             if (pertype == "1")
                             {
                                 NavyRunNumber num = Function.GenRunningNumber(i);
-                                if(batt == num.batt)
+                                if (batt == num.batt)
                                 {
                                     b8 = 1;
                                 }
@@ -89,7 +89,7 @@ namespace Navy.Core
                                 {
                                     b8 = 0;
                                 }
-                                if(company == num.company)
+                                if (company == num.company)
                                 {
                                     b4 = 1;
                                 }
@@ -97,7 +97,7 @@ namespace Navy.Core
                                 {
                                     b4 = 0;
                                 }
-                                if(platoon == num.platoon)
+                                if (platoon == num.platoon)
                                 {
                                     b2 = 1;
                                 }
@@ -105,7 +105,7 @@ namespace Navy.Core
                                 {
                                     b2 = 0;
                                 }
-                                if(pseq == num.pseq)
+                                if (pseq == num.pseq)
                                 {
                                     b1 = 1;
                                 }
@@ -116,7 +116,7 @@ namespace Navy.Core
 
                                 param.runcode = Function.GetNavyRunningNumber(num);
                             }
-                            if (bit8 == b8 && bit4==b4 && bit2 == b2 && bit1 == b1)
+                            if (bit8 == b8 && bit4 == b4 && bit2 == b2 && bit1 == b1)
                             {
                                 while (reader.Read())
                                 {
@@ -357,8 +357,8 @@ namespace Navy.Core
         public List<PersonSearch> GetSearchPerson(string navyid, string armid, InputSearchPersonNivy param, int itemsPerPage, int pageNo, out int countAllRecord)
         {
             LimitMySQL limit = Function.GetLimitFromPage(itemsPerPage, pageNo);
-            string queryStr = search.searchPerson(navyid, param.id13, param.name, param.sname, param.yearBD, armid, "", "", "", limit.limit1, limit.limit2, true);
-            string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, param.yearBD, armid, "", "", "");
+            string queryStr = search.searchPerson(navyid, param.id13, param.name, param.sname, param.yearBD, armid, "", "", "", limit.limit1, limit.limit2, true, "", "");
+            string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, param.yearBD, armid, "", "", "", "", "");
 
             List<PersonSearch> p = new List<PersonSearch>();
             try
@@ -390,8 +390,8 @@ namespace Navy.Core
         public List<PersonSearch> GetSearchPerson(string navyid, string armid, ParamSearchPerson param, int itemsPerPage, int pageNo, out int countAllRecord)
         {
             LimitMySQL limit = Function.GetLimitFromPage(itemsPerPage, pageNo);
-            string queryStr = search.searchPerson(navyid, param.id13, param.name, param.sname, "", armid, param.yearin, param.id8, param.runcode, limit.limit1, limit.limit2, true);
-            string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, "", armid, param.yearin, param.id8, param.runcode);
+            string queryStr = search.searchPerson(navyid, param.id13, param.name, param.sname, "", armid, param.yearin, param.id8, param.runcode, limit.limit1, limit.limit2, true, param.batt, param.company);
+            string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, "", armid, param.yearin, param.id8, param.runcode, param.batt, param.company);
 
             List<PersonSearch> p = new List<PersonSearch>();
             try
@@ -423,7 +423,7 @@ namespace Navy.Core
         {
             LimitMySQL limit = Function.GetLimitFromPage(itemsPerPage, pageNo);
             string queryStr = search.searchPerson_OnlyIndictment(param.id13, param.name, param.sname, param.yearin, param.id8);
-            string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, "", armid, param.yearin, param.id8, param.runcode);
+            string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, "", armid, param.yearin, param.id8, param.runcode, param.batt, param.company);
 
             List<PersonSearch> p = new List<PersonSearch>();
             try
@@ -455,7 +455,7 @@ namespace Navy.Core
         {
             //LimitMySQL limit = Function.GetLimitFromPage(itemsPerPage, pageNo);
             string queryStr = search.SearchData_Indictment(navyid);
-           // string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, "", armid, param.yearin, param.id8, param.runcode);
+            // string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, "", armid, param.yearin, param.id8, param.runcode);
 
             List<IndicmentDataSearch> p = new List<IndicmentDataSearch>();
             try
@@ -486,7 +486,7 @@ namespace Navy.Core
         //temp search
         public List<PersonSearch> GetSearchPerson(string navyid, string armid, ParamSearchPerson param)
         {
-            string queryStr = search.searchPerson(navyid, param.id13, param.name, param.sname, "", armid, param.yearin, param.id8, param.runcode, 0, 0, false);
+            string queryStr = search.searchPerson(navyid, param.id13, param.name, param.sname, "", armid, param.yearin, param.id8, param.runcode, 0, 0, false, param.batt, param.company);
             List<PersonSearch> p = new List<PersonSearch>();
             try
             {
@@ -515,8 +515,8 @@ namespace Navy.Core
         {
             LimitMySQL limit = Function.GetLimitFromPage(itemsPerPage, pageNo);
             DataTable dt = new DataTable();
-            string queryStr = search.searchPerson(navyid, param.id13, param.name, param.sname, param.yearBD, armid, "", "", "", limit.limit1, limit.limit2, true);
-            string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, param.yearBD, armid, "", "", "");
+            string queryStr = search.searchPerson(navyid, param.id13, param.name, param.sname, param.yearBD, armid, "", "", "", limit.limit1, limit.limit2, true, "", "");
+            string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, param.yearBD, armid, "", "", "", "", "");
             dt = base.getSearchPrototype(queryStr, queryStrCount, out countAllRecord);
             return dt;
         }
@@ -525,8 +525,8 @@ namespace Navy.Core
         {
             LimitMySQL limit = Function.GetLimitFromPage(itemsPerPage, pageNo);
             DataTable dt = new DataTable();
-            string queryStr = search.searchPerson(navyid, param.id13, param.name, param.sname, "", "", param.yearin, param.id8, param.runcode, limit.limit1, limit.limit2, true);
-            string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, "", "", param.yearin, param.id8, param.runcode);
+            string queryStr = search.searchPerson(navyid, param.id13, param.name, param.sname, "", "", param.yearin, param.id8, param.runcode, limit.limit1, limit.limit2, true, param.batt, param.company);
+            string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, "", "", param.yearin, param.id8, param.runcode, param.batt, param.company);
             dt = base.getSearchPrototype(queryStr, queryStrCount, out countAllRecord);
             return dt;
         }
@@ -534,8 +534,8 @@ namespace Navy.Core
         public DataTable GetSearchPersonTable(string navyid, ParamSearchPerson param, out int countAllRecord)
         {
             DataTable dt = new DataTable();
-            string queryStr = search.searchPerson(navyid, param.id13, param.name, param.sname, "", "", param.yearin, param.id8, param.runcode, 0, 0, false);
-            string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, "", "", param.yearin, param.id8, param.runcode);
+            string queryStr = search.searchPerson(navyid, param.id13, param.name, param.sname, "", "", param.yearin, param.id8, param.runcode, 0, 0, false, param.batt, param.company);
+            string queryStrCount = search.searchPersonCountRecord(navyid, param.id13, param.name, param.sname, "", "", param.yearin, param.id8, param.runcode, param.batt, param.company);
             dt = base.getSearchPrototype(queryStr, queryStrCount, out countAllRecord);
             return dt;
         }
@@ -564,13 +564,13 @@ namespace Navy.Core
             dt = base.getSearchPrototype(queryStr, queryStrCount, out countAllRecord);
             return dt;
         }
-     
+
 
         public ParamPerson GetPersonParam(string navyid)
         {
             LimitMySQL limit = Function.GetLimitFromPage(50, 1);
-            string queryStr = search.searchPerson(navyid, "", "", "", "", "", "", "", "", limit.limit1, limit.limit2, true);
-            string queryStrCount = search.searchPersonCountRecord(navyid, "", "", "", "", "", "", "", "");
+            string queryStr = search.searchPerson(navyid, "", "", "", "", "", "", "", "", limit.limit1, limit.limit2, true, "", "");
+            string queryStrCount = search.searchPersonCountRecord(navyid, "", "", "", "", "", "", "", "", "", "");
 
             ParamPerson p = new ParamPerson();
             try
@@ -720,7 +720,7 @@ namespace Navy.Core
                         cmd.Parameters.AddWithValue("@out_date", (param["out_date"]));
                         cmd.Parameters.AddWithValue("@in_date", (param["in_date"]));
                         cmd.Parameters.AddWithValue("@pseq", (param["pseq"]));
-                     
+
 
                         cmd.ExecuteNonQuery();
                     }
@@ -755,7 +755,7 @@ namespace Navy.Core
                     {
                         cmd.Parameters.AddWithValue("@id13", (param.id13));
                         cmd.Parameters.AddWithValue("@navyid", (param.navyid));
-                        
+
                         cmd.Parameters.AddWithValue("@address_in", (param.address_in));
                         cmd.Parameters.AddWithValue("@address_mu_in", (param.address_mu_in));
                         cmd.Parameters.AddWithValue("@address_soid_in", (param.address_soid_in));
@@ -840,7 +840,7 @@ namespace Navy.Core
                         cmd.Parameters.AddWithValue("@report_number", (param["report_number"]));
                         cmd.Parameters.AddWithValue("@report_date", (param["report_date"]));
                         cmd.Parameters.AddWithValue("@pseq", (param["pseq"]));
-             
+
                         cmd.ExecuteNonQuery();
                     }
                     //trans.Commit();
@@ -964,7 +964,7 @@ namespace Navy.Core
                         cmd.Parameters.AddWithValue("@level", (param["level"]));
 
 
-                      
+
 
                         cmd.ExecuteNonQuery();
                     }
@@ -1411,7 +1411,7 @@ namespace Navy.Core
                 conn.Close();
             }
             return dt;
-        }        
+        }
 
         public PersonRequest GetPersonRequestDetail(string navyid, string askby, string unit)
         {
@@ -1654,7 +1654,7 @@ namespace Navy.Core
                             cmd.Parameters.AddWithValue("@username", Environment.MachineName);
                             cmd.Parameters.AddWithValue("@updatecount", Convert.ToInt16(r.updatecount) + 1);
 
-                            rowsAffect += cmd.ExecuteNonQuery();                            
+                            rowsAffect += cmd.ExecuteNonQuery();
                         }
                         success = true;
                         trans.Commit();
@@ -1725,7 +1725,7 @@ namespace Navy.Core
         }
         #endregion
 
-        public DataTable GetSearchPerson(string id13, string name, string sname,string status,string mode_search)
+        public DataTable GetSearchPerson(string id13, string name, string sname, string status, string mode_search)
         {
             DataTable dt = new DataTable();
             try
@@ -1736,20 +1736,20 @@ namespace Navy.Core
                         dt = base.getDataTablePrototype(search.searchPerson(id13, name, sname));
                         break;
                     case "edit":
-                        dt = base.getDataTablePrototype(search.searchPeople(id13, name, sname,"","",status));
+                        dt = base.getDataTablePrototype(search.searchPeople(id13, name, sname, "", "", status));
                         break;
                     case "out":
                         dt = base.getDataTablePrototype(search.searchPeople(id13, name, sname, "", "", status));
                         break;
                 }
-               
+
             }
-            catch ( Exception ex)
+            catch (Exception ex)
             {
 
                 dt = null;
             }
-           
+
             return dt;
         }
 
@@ -1758,10 +1758,10 @@ namespace Navy.Core
             DataTable dt = new DataTable();
             try
             {
-               
-                        dt = base.getDataTablePrototype(search.GetReportHistory());
-                    
-                
+
+                dt = base.getDataTablePrototype(search.GetReportHistory());
+
+
 
             }
             catch (Exception ex)
@@ -1784,20 +1784,22 @@ namespace Navy.Core
 
                 dt = null;
             }
-            if (dt != null )
+            if (dt != null)
             {
                 if (dt.Rows.Count > 0)
                 {
                     return dt.Rows[0];
                 }
-                else {
+                else
+                {
 
                     return null;
                 }
             }
-            else {
+            else
+            {
                 return null;
-            
+
             }
         }
 
@@ -1806,7 +1808,7 @@ namespace Navy.Core
             DataTable dt = new DataTable();
             try
             {
-                dt = base.getDataTablePrototype(search.searchPerson(BATT,COMPANY,PLATOON,PSEQ));
+                dt = base.getDataTablePrototype(search.searchPerson(BATT, COMPANY, PLATOON, PSEQ));
             }
             catch (Exception ex)
             {
@@ -1815,11 +1817,11 @@ namespace Navy.Core
             }
             if (dt != null)
             {
-                
-                    return dt;
-              
 
-              
+                return dt;
+
+
+
             }
             else
             {
@@ -1827,7 +1829,7 @@ namespace Navy.Core
 
             }
         }
-        
+
         public DataTable GetViewdata(string navyid)
         {
             DataTable dt = new DataTable();
@@ -1842,7 +1844,8 @@ namespace Navy.Core
             }
             return dt;
         }
-        public DataRow GetSearchPeople(string navyid) {
+        public DataRow GetSearchPeople(string navyid)
+        {
             DataTable dt = new DataTable();
             try
             {
@@ -1872,12 +1875,12 @@ namespace Navy.Core
             }
         }
 
-        public DataRow GetSearchPeople(string id13,string rank,string book_number)
+        public DataRow GetSearchPeople(string id13, string rank, string book_number)
         {
             DataTable dt = new DataTable();
             try
             {
-                dt = base.getDataTablePrototype(search.searchPeople(id13, "", "",rank,book_number,""));
+                dt = base.getDataTablePrototype(search.searchPeople(id13, "", "", rank, book_number, ""));
             }
             catch (Exception ex)
             {
@@ -1914,9 +1917,9 @@ namespace Navy.Core
 
                 dt = null;
             }
-            
-                return dt;
-          
+
+            return dt;
+
         }
         public DataTable GetReportListPeople(string report_number)
         {
@@ -2001,12 +2004,12 @@ namespace Navy.Core
 
         }
 
-        public DataTable GetSearchListPreAddressmore(string name, string lname, string report_number, string book_number, string rank, string id13, string yearin,bool move_in,string unit_id)
+        public DataTable GetSearchListPreAddressmore(string name, string lname, string report_number, string book_number, string rank, string id13, string yearin, bool move_in, string unit_id)
         {
             DataTable dt = new DataTable();
             try
             {
-                dt = base.getDataTablePrototype(search.GetListPremoreAdress(name, lname, report_number, book_number, rank, id13, yearin, move_in,unit_id));
+                dt = base.getDataTablePrototype(search.GetListPremoreAdress(name, lname, report_number, book_number, rank, id13, yearin, move_in, unit_id));
             }
             catch (Exception ex)
             {
@@ -2029,10 +2032,10 @@ namespace Navy.Core
 
                 dt = null;
             }
-           
-                return dt;
-           
-          
+
+            return dt;
+
+
         }
         public DataRow GetAddress(string unit_id)
         {
