@@ -83,12 +83,14 @@
             this.gvResult.AllowUserToDeleteRows = false;
             this.gvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvResult.Location = new System.Drawing.Point(8, 16);
+            this.gvResult.Location = new System.Drawing.Point(8, 15);
             this.gvResult.Margin = new System.Windows.Forms.Padding(4);
             this.gvResult.MultiSelect = false;
             this.gvResult.Name = "gvResult";
             this.gvResult.ReadOnly = true;
             this.gvResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvResult.Size = new System.Drawing.Size(744, 382);
+            this.gvResult.Size = new System.Drawing.Size(744, 383);
             this.gvResult.TabIndex = 1;
             this.gvResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResult_CellContentClick);
             this.gvResult.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvResult_CellMouseDoubleClick);
@@ -99,6 +101,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox1.Controls.Add(this.cbbBatt);
             this.groupBox1.Controls.Add(this.cbbCompany);
             this.groupBox1.Controls.Add(this.labelBatt);
@@ -206,12 +209,15 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(700, 87);
+            this.btnSearch.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnSearch.Location = new System.Drawing.Point(700, 81);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(95, 23);
+            this.btnSearch.Size = new System.Drawing.Size(95, 29);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "ค้นหา";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // mTextBoxID8
@@ -385,34 +391,40 @@
             this.panel1.Controls.Add(this.btnPrevPage);
             this.panel1.Controls.Add(this.btnNextPage);
             this.panel1.Controls.Add(this.labelPaging);
-            this.panel1.Location = new System.Drawing.Point(361, 4);
+            this.panel1.Location = new System.Drawing.Point(351, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 22);
+            this.panel1.Size = new System.Drawing.Size(198, 22);
             this.panel1.TabIndex = 2;
             // 
             // btnPrevPage
             // 
+            this.btnPrevPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnPrevPage.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevPage.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.btnPrevPage.Location = new System.Drawing.Point(0, 0);
             this.btnPrevPage.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrevPage.Name = "btnPrevPage";
-            this.btnPrevPage.Size = new System.Drawing.Size(67, 22);
+            this.btnPrevPage.Size = new System.Drawing.Size(76, 22);
             this.btnPrevPage.TabIndex = 1;
             this.btnPrevPage.Text = "< ย้อนกลับ";
-            this.btnPrevPage.UseVisualStyleBackColor = true;
+            this.btnPrevPage.UseVisualStyleBackColor = false;
             this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
             // 
             // btnNextPage
             // 
+            this.btnNextPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnNextPage.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnNextPage.Location = new System.Drawing.Point(133, 0);
+            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextPage.Font = new System.Drawing.Font("Segoe UI", 8.5F);
+            this.btnNextPage.Location = new System.Drawing.Point(128, 0);
             this.btnNextPage.Margin = new System.Windows.Forms.Padding(4);
             this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(55, 22);
+            this.btnNextPage.Size = new System.Drawing.Size(70, 22);
             this.btnNextPage.TabIndex = 2;
             this.btnNextPage.Text = "ต่อไป >";
-            this.btnNextPage.UseVisualStyleBackColor = true;
+            this.btnNextPage.UseVisualStyleBackColor = false;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
             // labelPaging
@@ -427,24 +439,28 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(676, 647);
+            this.btnSubmit.BackColor = System.Drawing.Color.Pink;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Location = new System.Drawing.Point(706, 646);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(100, 28);
             this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "แก้ไขข้อมูล";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.Pink;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Location = new System.Drawing.Point(24, 647);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 28);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "ลบ";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // tabControl1
@@ -482,7 +498,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 681);
+            this.ClientSize = new System.Drawing.Size(830, 681);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSubmit);
