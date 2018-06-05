@@ -351,7 +351,20 @@ namespace Navy.Core
                 }
 
                 sql = sqlSelect + sqlWhere + sqlLimit;
-                Console.WriteLine("SQL  = " + sql.ToString());
+               // Console.WriteLine("SQL  = " + sql.ToString());
+                return sql;
+            }
+
+            public string searchTelephone(string batt, string company)
+            {
+                string sql = "";
+                string sqlSelect = "select `NAME`,SNAME,Telephone,FTelephone,MTelephone,PTelephone from person \n";
+                string sqlWhere = "";
+
+                sqlWhere = whereEqualsClause(sqlWhere, "BATT", batt);
+                sqlWhere = whereEqualsClause(sqlWhere, "COMPANY", company);
+
+                sql = sqlSelect + sqlWhere;
                 return sql;
             }
 
@@ -414,6 +427,11 @@ namespace Navy.Core
             public string searchPersonCountRecord(string navyid, string id13, string name, string sname, string yearBD, string armid, string yearin, string id8, string runcode, string batt, string company)
             {
                 return CountRecord(searchPerson(navyid, id13, name, sname, yearBD, armid, yearin, id8, runcode, 0, 0, false, batt, company));
+            }
+
+            public string searchTelephoneCountRecord(string batt, string company)
+            {
+                return CountRecord(searchTelephone(batt, company));
             }
 
             //new
@@ -892,7 +910,7 @@ LEFT JOIN unittab u on u.REFNUM = ps.UNIT3
                 if (!string.IsNullOrEmpty(unit_id))
                 {
                     sqlWhere += " and p.UNIT3 = '" + unit_id + "' ";
-                    Console.WriteLine("UNIT IS : " + unit_id);
+                   // Console.WriteLine("UNIT IS : " + unit_id);
                 }
                 if (!string.IsNullOrEmpty(yearin) && yearin != "/")
                 {

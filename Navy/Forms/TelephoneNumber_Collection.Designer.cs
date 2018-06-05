@@ -35,14 +35,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gvResultPhonNumber = new System.Windows.Forms.DataGridView();
             this.Btn_Save = new System.Windows.Forms.Button();
-            this.Btn_Delete = new System.Windows.Forms.Button();
-            this.TxtBox_PhoneNumber = new System.Windows.Forms.TextBox();
-            this.Btn_Close = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Btn_Search = new System.Windows.Forms.Button();
             this.Cmb_Company = new System.Windows.Forms.ComboBox();
             this.Cmb_Batt = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label_Count = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultPhonNumber)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +104,7 @@
             // 
             // gvResultPhonNumber
             // 
+            this.gvResultPhonNumber.AllowUserToOrderColumns = true;
             this.gvResultPhonNumber.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvResultPhonNumber.Location = new System.Drawing.Point(12, 91);
             this.gvResultPhonNumber.Name = "gvResultPhonNumber";
@@ -113,42 +113,14 @@
             // 
             // Btn_Save
             // 
-            this.Btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Btn_Save.Location = new System.Drawing.Point(631, 566);
+            this.Btn_Save.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Save.Location = new System.Drawing.Point(681, 566);
             this.Btn_Save.Name = "Btn_Save";
-            this.Btn_Save.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Save.Size = new System.Drawing.Size(104, 39);
             this.Btn_Save.TabIndex = 6;
             this.Btn_Save.Text = "บันทึก";
             this.Btn_Save.UseVisualStyleBackColor = true;
-            // 
-            // Btn_Delete
-            // 
-            this.Btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Btn_Delete.Location = new System.Drawing.Point(712, 566);
-            this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Delete.TabIndex = 10;
-            this.Btn_Delete.Text = "ลบ";
-            this.Btn_Delete.UseVisualStyleBackColor = true;
-            // 
-            // TxtBox_PhoneNumber
-            // 
-            this.TxtBox_PhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.TxtBox_PhoneNumber.Location = new System.Drawing.Point(491, 567);
-            this.TxtBox_PhoneNumber.Name = "TxtBox_PhoneNumber";
-            this.TxtBox_PhoneNumber.Size = new System.Drawing.Size(127, 21);
-            this.TxtBox_PhoneNumber.TabIndex = 5;
-            // 
-            // Btn_Close
-            // 
-            this.Btn_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Btn_Close.Location = new System.Drawing.Point(712, 595);
-            this.Btn_Close.Name = "Btn_Close";
-            this.Btn_Close.Size = new System.Drawing.Size(75, 32);
-            this.Btn_Close.TabIndex = 11;
-            this.Btn_Close.Text = "ปิดหน้าต่าง";
-            this.Btn_Close.UseVisualStyleBackColor = true;
-            this.Btn_Close.Click += new System.EventHandler(this.Btn_Close_Click);
+            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
             // 
             // label3
             // 
@@ -196,25 +168,41 @@
             this.Cmb_Batt.Size = new System.Drawing.Size(88, 21);
             this.Cmb_Batt.TabIndex = 3;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 566);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "ผลลัพธ์";
+            // 
+            // label_Count
+            // 
+            this.label_Count.AutoSize = true;
+            this.label_Count.Location = new System.Drawing.Point(58, 566);
+            this.label_Count.Name = "label_Count";
+            this.label_Count.Size = new System.Drawing.Size(10, 13);
+            this.label_Count.TabIndex = 11;
+            this.label_Count.Text = ".";
+            // 
             // TelephoneNumber_Collection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 633);
+            this.ClientSize = new System.Drawing.Size(797, 612);
+            this.Controls.Add(this.label_Count);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.Cmb_Batt);
             this.Controls.Add(this.Cmb_Company);
             this.Controls.Add(this.Btn_Search);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.Btn_Close);
-            this.Controls.Add(this.TxtBox_PhoneNumber);
-            this.Controls.Add(this.Btn_Delete);
             this.Controls.Add(this.Btn_Save);
             this.Controls.Add(this.gvResultPhonNumber);
             this.Controls.Add(this.groupBox1);
             this.Name = "TelephoneNumber_Collection";
             this.Text = "ฟอร์มกรอกเบอร์โทรศัพท์";
-            this.Load += new System.EventHandler(this.TelephoneNumber_Collection_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultPhonNumber)).EndInit();
@@ -232,13 +220,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView gvResultPhonNumber;
         private System.Windows.Forms.Button Btn_Save;
-        private System.Windows.Forms.Button Btn_Delete;
-        private System.Windows.Forms.TextBox TxtBox_PhoneNumber;
-        private System.Windows.Forms.Button Btn_Close;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Btn_Search;
         private System.Windows.Forms.ComboBox Cmb_Company;
         private System.Windows.Forms.ComboBox Cmb_Batt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_Count;
     }
 }
