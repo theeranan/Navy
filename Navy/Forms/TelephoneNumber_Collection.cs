@@ -16,9 +16,9 @@ namespace Navy.Forms
         {
             InitializeComponent();
             AddEnterKeyDown();
-            TxtBox_Company.Focus();
-            TxtBox_Company.SelectAll();
-            TxtBox_Batt.SelectAll();
+            Cmb_Company.SelectAll();
+            Cmb_Batt.SelectAll();
+            setCmbItem();
         }
 
 
@@ -31,15 +31,16 @@ namespace Navy.Forms
 
         private void Btn_Search_Click(object sender, EventArgs e)
         {
-            //set label text
-            Label_Batt.Text = TxtBox_Batt.Text;
-            Label_Company.Text = TxtBox_Company.Text;
+            Label_Batt.Text = Cmb_Batt.Text;
+            Label_Company.Text = Cmb_Company.Text;
+            Cmb_Company.SelectAll();
+            Cmb_Batt.SelectAll();
         }
 
         private void AddEnterKeyDown()
         {
-            TxtBox_Company.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
-            TxtBox_Batt.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            Cmb_Company.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            Cmb_Batt.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             Btn_Search.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             TxtBox_PhoneNumber.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             Btn_Save.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
@@ -57,6 +58,20 @@ namespace Navy.Forms
         private void TelephoneNumber_Collection_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void setCmbItem() {
+            Cmb_Company.Items.Add(1);
+            Cmb_Company.Items.Add(2);
+            Cmb_Company.Items.Add(3);
+            Cmb_Company.Items.Add(4);
+            Cmb_Company.Items.Add(5);
+            Cmb_Company.Items.Add(6);
+            Cmb_Batt.Items.Add(1);
+            Cmb_Batt.Items.Add(2);
+            Cmb_Batt.Items.Add(3);
+            Cmb_Batt.Items.Add(4);
+            Cmb_Batt.Items.Add(5);
         }
     }
 }
