@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchPersonForm));
             this.gvResult = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbbBatt = new System.Windows.Forms.ComboBox();
@@ -64,20 +63,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.gridviewResultControl1 = new Navy.MyControls.GridviewResultControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.gridviewResultControl2 = new Navy.MyControls.GridviewResultControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.gridviewResultControl3 = new Navy.MyControls.GridviewResultControl();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.gridviewResultControl4 = new Navy.MyControls.GridviewResultControl();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.gridviewResultControl5 = new Navy.MyControls.GridviewResultControl();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.gridviewResultControl6 = new Navy.MyControls.GridviewResultControl();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.gridviewResultControl7 = new Navy.MyControls.GridviewResultControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvResult)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -89,13 +74,6 @@
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
-            this.tabPage8.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,13 +82,13 @@
             this.gvResult.AllowUserToAddRows = false;
             this.gvResult.AllowUserToDeleteRows = false;
             this.gvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvResult.Location = new System.Drawing.Point(8, 23);
+            this.gvResult.Location = new System.Drawing.Point(8, 16);
             this.gvResult.Margin = new System.Windows.Forms.Padding(4);
             this.gvResult.MultiSelect = false;
             this.gvResult.Name = "gvResult";
             this.gvResult.ReadOnly = true;
             this.gvResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvResult.Size = new System.Drawing.Size(744, 375);
+            this.gvResult.Size = new System.Drawing.Size(744, 382);
             this.gvResult.TabIndex = 1;
             this.gvResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResult_CellContentClick);
             this.gvResult.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvResult_CellMouseDoubleClick);
@@ -344,14 +322,13 @@
             this.groupBox3.Controls.Add(this.splitContainer1);
             this.groupBox3.Controls.Add(this.gvResult);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.groupBox3.Location = new System.Drawing.Point(7, 10);
+            this.groupBox3.Location = new System.Drawing.Point(7, 4);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(762, 437);
+            this.groupBox3.Size = new System.Drawing.Size(762, 443);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "ผลการค้นหา";
             // 
             // splitContainer1
             // 
@@ -473,13 +450,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Location = new System.Drawing.Point(11, 21);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -497,160 +467,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ทั้งหมด";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.gridviewResultControl1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(775, 451);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "ร้อยเตรียม";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // gridviewResultControl1
-            // 
-            this.gridviewResultControl1.EnablePagingData = false;
-            this.gridviewResultControl1.ExternalDataSource = false;
-            this.gridviewResultControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.gridviewResultControl1.Location = new System.Drawing.Point(7, 7);
-            this.gridviewResultControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.gridviewResultControl1.Name = "gridviewResultControl1";
-            this.gridviewResultControl1.Size = new System.Drawing.Size(752, 426);
-            this.gridviewResultControl1.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.gridviewResultControl2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(775, 451);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "เหตุ";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // gridviewResultControl2
-            // 
-            this.gridviewResultControl2.EnablePagingData = false;
-            this.gridviewResultControl2.ExternalDataSource = false;
-            this.gridviewResultControl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.gridviewResultControl2.Location = new System.Drawing.Point(7, 7);
-            this.gridviewResultControl2.Margin = new System.Windows.Forms.Padding(4);
-            this.gridviewResultControl2.Name = "gridviewResultControl2";
-            this.gridviewResultControl2.Size = new System.Drawing.Size(752, 426);
-            this.gridviewResultControl2.TabIndex = 0;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.gridviewResultControl3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(775, 451);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "ขอลงหน่วย";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // gridviewResultControl3
-            // 
-            this.gridviewResultControl3.EnablePagingData = false;
-            this.gridviewResultControl3.ExternalDataSource = false;
-            this.gridviewResultControl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.gridviewResultControl3.Location = new System.Drawing.Point(7, 7);
-            this.gridviewResultControl3.Margin = new System.Windows.Forms.Padding(4);
-            this.gridviewResultControl3.Name = "gridviewResultControl3";
-            this.gridviewResultControl3.Size = new System.Drawing.Size(752, 426);
-            this.gridviewResultControl3.TabIndex = 0;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.gridviewResultControl4);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(775, 451);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "คัดเลือกหน่วย";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // gridviewResultControl4
-            // 
-            this.gridviewResultControl4.EnablePagingData = false;
-            this.gridviewResultControl4.ExternalDataSource = false;
-            this.gridviewResultControl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.gridviewResultControl4.Location = new System.Drawing.Point(7, 7);
-            this.gridviewResultControl4.Margin = new System.Windows.Forms.Padding(4);
-            this.gridviewResultControl4.Name = "gridviewResultControl4";
-            this.gridviewResultControl4.Size = new System.Drawing.Size(752, 426);
-            this.gridviewResultControl4.TabIndex = 0;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.gridviewResultControl5);
-            this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(775, 451);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "การศึกษา";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // gridviewResultControl5
-            // 
-            this.gridviewResultControl5.EnablePagingData = false;
-            this.gridviewResultControl5.ExternalDataSource = false;
-            this.gridviewResultControl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.gridviewResultControl5.Location = new System.Drawing.Point(7, 7);
-            this.gridviewResultControl5.Margin = new System.Windows.Forms.Padding(4);
-            this.gridviewResultControl5.Name = "gridviewResultControl5";
-            this.gridviewResultControl5.Size = new System.Drawing.Size(752, 426);
-            this.gridviewResultControl5.TabIndex = 0;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.gridviewResultControl6);
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(775, 451);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "ความรู้พิเศษ";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // gridviewResultControl6
-            // 
-            this.gridviewResultControl6.EnablePagingData = false;
-            this.gridviewResultControl6.ExternalDataSource = false;
-            this.gridviewResultControl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.gridviewResultControl6.Location = new System.Drawing.Point(7, 7);
-            this.gridviewResultControl6.Margin = new System.Windows.Forms.Padding(4);
-            this.gridviewResultControl6.Name = "gridviewResultControl6";
-            this.gridviewResultControl6.Size = new System.Drawing.Size(752, 426);
-            this.gridviewResultControl6.TabIndex = 0;
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.gridviewResultControl7);
-            this.tabPage8.Location = new System.Drawing.Point(4, 25);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(775, 451);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "สามัญ";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // gridviewResultControl7
-            // 
-            this.gridviewResultControl7.EnablePagingData = false;
-            this.gridviewResultControl7.ExternalDataSource = false;
-            this.gridviewResultControl7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.gridviewResultControl7.Location = new System.Drawing.Point(7, 7);
-            this.gridviewResultControl7.Margin = new System.Windows.Forms.Padding(4);
-            this.gridviewResultControl7.Name = "gridviewResultControl7";
-            this.gridviewResultControl7.Size = new System.Drawing.Size(752, 426);
-            this.gridviewResultControl7.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -689,13 +505,6 @@
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
-            this.tabPage8.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -728,25 +537,11 @@
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxRunNum;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MyControls.GridviewResultControl gridviewResultControl1;
-        private MyControls.GridviewResultControl gridviewResultControl2;
-        private MyControls.GridviewResultControl gridviewResultControl3;
-        private MyControls.GridviewResultControl gridviewResultControl4;
-        private MyControls.GridviewResultControl gridviewResultControl5;
-        private MyControls.GridviewResultControl gridviewResultControl6;
-        private MyControls.GridviewResultControl gridviewResultControl7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxID13;
         private System.Windows.Forms.ComboBox cbbBatt;
