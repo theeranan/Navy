@@ -81,15 +81,14 @@
             // 
             this.gvResult.AllowUserToAddRows = false;
             this.gvResult.AllowUserToDeleteRows = false;
+            this.gvResult.AllowUserToOrderColumns = true;
             this.gvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvResult.Location = new System.Drawing.Point(8, 16);
             this.gvResult.Location = new System.Drawing.Point(8, 15);
             this.gvResult.Margin = new System.Windows.Forms.Padding(4);
             this.gvResult.MultiSelect = false;
             this.gvResult.Name = "gvResult";
             this.gvResult.ReadOnly = true;
             this.gvResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvResult.Size = new System.Drawing.Size(744, 382);
             this.gvResult.Size = new System.Drawing.Size(744, 383);
             this.gvResult.TabIndex = 1;
             this.gvResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResult_CellContentClick);
