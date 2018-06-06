@@ -59,12 +59,12 @@ namespace Navy.Forms
                 LoadNewFormControls();
                 LoadControlsValue();
                 setOptionAddNewperson();
-                this.Size = new Size(891, 594);
+                this.Size = new Size(876, 493);
             }
             else
             {
 
-                this.Size = new Size(1225, 594);
+                this.Size = new Size(1202, 493);
             }
         }
 
@@ -88,6 +88,16 @@ namespace Navy.Forms
             LoadControlsValue();
             this.cbbProvince.Enabled = false;
             groupBox5.Visible = false;
+            btnReadcard.Visible = true;
+            lblplatoon.Visible = true;
+            lblbatt.Visible = true;
+            lblcompany.Visible = true;
+            lblpseq.Visible = true;
+            textBoxBatt.Visible = true;
+            textBoxCompany.Visible = true;
+            textBoxPlatoon.Visible = true;
+            textBoxPseq.Visible = true;
+            btn_chechruncode.Visible = true;
             modecard = m;
             year = yearin;
             RefreshDriver();
@@ -737,7 +747,11 @@ namespace Navy.Forms
             string value = "";
             bool isDuplicate = false;
             isDuplicate = dcore.CheckPersonDuplicateKeys(param, out key, out value);
-
+            if (IsValidCheckPersonID(param.id13))
+            {
+                MessageBox.Show("เลขบัตรประชาชนไม่ถูกต้อง");
+                isDuplicate = true;
+            }
             if (key == "ID13")
             {
                 MessageBox.Show("ข้อมูล [" + key + ":" + value + "] มีอยู่ในระบบแล้ว");
@@ -1260,13 +1274,55 @@ namespace Navy.Forms
                 MessageBox.Show(ex.ToString());
             }
         }
-        
+        private bool IsValidCheckPersonID(string pid)
+        {
+
+            char[] numberChars = pid.ToCharArray();
+
+            int total = 0;
+            int mul = 13;
+            int mod = 0, mod2 = 0;
+            int nsub = 0;
+            int numberChars12 = 0;
+
+            for (int i = 0; i < numberChars.Length - 1; i++)
+            {
+                int num = 0;
+                int.TryParse(numberChars[i].ToString(), out num);
+
+                total = total + num * mul;
+                mul = mul - 1;
+
+                //Debug.Log(total + " - " + num + " - "+mul);
+            }
+
+            mod = total % 11;
+            nsub = 11 - mod;
+            mod2 = nsub % 10;
+
+            //Debug.Log(mod);
+            //Debug.Log(nsub);
+            //Debug.Log(mod2);
+
+
+            int.TryParse(numberChars[12].ToString(), out numberChars12);
+
+            //Debug.Log(numberChars12);
+
+            if (mod2 != numberChars12)
+                return true;
+            else
+                return false;
+        }
         private void btnSubmitAndNew_Click(object sender, EventArgs e)
         {
             //save and new form for record next person
-            if (textBoxRunNum.Text.Trim() == "")
+            if (modecard != "")
             {
-                Request_Runcode();
+                if (textBoxRunNum.Text.Trim() == "")
+                {
+                    Request_Runcode();
+                }
             }
             string val = ValidateValue();
             if (val != "")
@@ -1292,7 +1348,10 @@ namespace Navy.Forms
                         dcoreUpdateUsedPerson.UpdatePersonUsed(param.id13);
 
                         MessageBox.Show("บันทึกเรียบร้อย");
-                        print_dialog();
+                        if (modecard != "")
+                        {
+                            print_dialog();
+                        }
                         ClearValueForNewPerson();
                         SetInitialPerson(param.yearin, param.armid, param.regDate, param.repDate, param.origincode);
                         SetControlSelectAll();
@@ -1630,7 +1689,7 @@ namespace Navy.Forms
         private void setOptionAddNewperson() {
             groupBox3.Visible = false;
             panel3.TabIndex = 667;
-
+            
         }
 
         private void btn_chechruncode_Click(object sender, EventArgs e)
