@@ -66,6 +66,7 @@
             this.dateFormatSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ScancardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CheckRuncodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -317,7 +318,8 @@
             // 
             this.เครองมอToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createFolderToolStripMenuItem,
-            this.เปลยนชอรปToolStripMenuItem});
+            this.เปลยนชอรปToolStripMenuItem,
+            this.CheckRuncodeToolStripMenuItem});
             this.เครองมอToolStripMenuItem.Name = "เครองมอToolStripMenuItem";
             this.เครองมอToolStripMenuItem.Size = new System.Drawing.Size(91, 32);
             this.เครองมอToolStripMenuItem.Text = "เครื่องมือ";
@@ -374,6 +376,13 @@
             this.AboutToolStripMenuItem.Size = new System.Drawing.Size(81, 32);
             this.AboutToolStripMenuItem.Text = "เกี่ยวกับ";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
+            // 
+            // CheckRuncodeToolStripMenuItem
+            // 
+            this.CheckRuncodeToolStripMenuItem.Name = "CheckRuncodeToolStripMenuItem";
+            this.CheckRuncodeToolStripMenuItem.Size = new System.Drawing.Size(244, 32);
+            this.CheckRuncodeToolStripMenuItem.Text = "เช็ครันโค้ด";
+            this.CheckRuncodeToolStripMenuItem.Click += new System.EventHandler(this.CheckRuncodeToolStripMenuItem_Click);
             // 
             // MainWindowForm
             // 
@@ -437,5 +446,6 @@
         private System.Windows.Forms.ToolStripMenuItem AddTeplephonNUmberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ScancardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AddNewPersonScanCardMode;
+        private System.Windows.Forms.ToolStripMenuItem CheckRuncodeToolStripMenuItem;
     }
 }

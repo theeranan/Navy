@@ -284,5 +284,14 @@ namespace Navy
             else
             { }
         }
+
+        private void CheckRuncodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             RuncodeCheckForm r = new RuncodeCheckForm();
+            r.MdiParent = this;
+            r.WindowState = FormWindowState.Maximized;
+            r.StartPosition = FormStartPosition.CenterParent;                
+            r.Show();
+        }
     }
 }
