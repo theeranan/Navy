@@ -25,7 +25,14 @@ namespace Navy.Forms
                 cbbPrinter.Items.Add(printer);
             }
             LoadConfig();
-            string myText = File.ReadAllText(@"\Slip_Plant.txt", Encoding.UTF8);
+            var systemPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+            var path = Path.Combine(systemPath, "Slip_Plant.txt");
+            string myText = "";
+            if (File.Exists(path))
+            {
+                myText = File.ReadAllText(path, Encoding.UTF8);
+
+            }
             rtb_plant.Text = myText;
             // Create a PaperSize and specify the custom paper size through the constructor and add to combobox.
         }
@@ -69,7 +76,7 @@ namespace Navy.Forms
                         case "pass": { TextBox_Password.Text = value; } break;
                         case "database": { ComboBox_Database.Text = value; } break;*/
                 }
-                Console.WriteLine("Key: {0}, Value: {1}", key, value);
+                
             }
 
         }
@@ -125,7 +132,9 @@ namespace Navy.Forms
 
                 // Force a reload of a changed section.
                 ConfigurationManager.RefreshSection("appSettings");
-                using (StreamWriter sw = new StreamWriter(File.Open(@"\Slip_Plant.txt", FileMode.Create), Encoding.UTF8))
+                var systemPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+                var path = Path.Combine(systemPath, "Slip_Plant.txt");
+                using (StreamWriter sw = new StreamWriter(File.Open(path, FileMode.Create), Encoding.UTF8))
                 {
                     sw.Write(rtb_plant.Text);
                 }
@@ -189,6 +198,33 @@ namespace Navy.Forms
             // Force a reload of a changed section.
             ConfigurationManager.RefreshSection("appSettings");
             LoadConfig();
+            rtb_plant.Text = "";
+            rtb_plant.Text = "@title\n";
+            rtb_plant.Text += "------------------------------------------\n";
+            rtb_plant.Text += "@id13\n";
+            rtb_plant.Text += "@name\n";
+            rtb_plant.Text += "ผลัด @yearin\n";
+            rtb_plant.Text += "@address\n";
+            rtb_plant.Text += "@address2\n";
+            rtb_plant.Text += "\n";
+            rtb_plant.Text += "ร้อย @company พัน @batt(มว.@platoon @pseq)";
+            rtb_plant.Text += "\n";
+            rtb_plant.Text += "\n";
+            rtb_plant.Text += "------------------------------------------";
+            rtbSize.Text = "";
+            rtbSize.Text = "16,\n";
+            rtbSize.Text += "10,\n";
+            rtbSize.Text += "10,\n";
+            rtbSize.Text += "10,\n";
+            rtbSize.Text += "10,\n";
+            rtbSize.Text += "10,\n";
+            rtbSize.Text += "10,\n";
+            rtbSize.Text += "10,\n";
+            rtbSize.Text += "14,\n";
+            rtbSize.Text += "10,\n";
+            rtbSize.Text += "10,\n";
+            rtbSize.Text += "10,\n";
+            rtbSize.Text += "10";
         }
 
         private void btn_Color_Batt1_Click(object sender, EventArgs e)
