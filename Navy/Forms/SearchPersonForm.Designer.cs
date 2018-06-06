@@ -97,7 +97,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.BackColor = System.Drawing.Color.Khaki;
             this.groupBox1.Controls.Add(this.cbbBatt);
             this.groupBox1.Controls.Add(this.cbbCompany);
             this.groupBox1.Controls.Add(this.labelBatt);
@@ -453,6 +453,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.CadetBlue;
             this.groupBox2.Controls.Add(this.gvResult);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 137);
