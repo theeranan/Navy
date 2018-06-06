@@ -1,0 +1,9 @@
+diff a/Navy/Forms/SearchPersonForm.Designer.cs b/Navy/Forms/SearchPersonForm.Designer.cs	(rejected hunks)
+@@ -228,6 +228,7 @@
+             // 
+             // btnSearch
+             // 
++            this.btnSearch.Location = new System.Drawing.Point(699, 86);
+             this.btnSearch.Name = "btnSearch";
+             this.btnSearch.Size = new System.Drawing.Size(95, 23);
+             this.btnSearch.TabIndex = 9;
