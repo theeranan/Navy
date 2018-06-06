@@ -205,38 +205,7 @@ namespace Navy.Forms
 
         public void GetSearchData()
         {
-            if (pgroup == PersonGroups.Prepare)
-            {
-                Search(gridviewResultControl1);
-            }
-            else if (pgroup == PersonGroups.Trans)
-            {
-                Search(gridviewResultControl2);
-            }
-            else if (pgroup == PersonGroups.Request)
-            {
-                Search(gridviewResultControl3);
-            }
-            else if (pgroup == PersonGroups.SelectExam)
-            {
-                Search(gridviewResultControl4);
-            }
-            else if (pgroup == PersonGroups.Educ)
-            {
-                Search(gridviewResultControl5);
-            }
-            else if (pgroup == PersonGroups.Skill)
-            {
-                Search(gridviewResultControl6);
-            }
-            else if (pgroup == PersonGroups.General)
-            {
-                Search(gridviewResultControl7);
-            }
-            else
-            {
                 Search(gvResult);
-            }
         }
         #endregion
 

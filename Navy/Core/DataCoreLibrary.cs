@@ -419,6 +419,66 @@ namespace Navy.Core
             return p;
         }
 
+        public DataTable GetSearchTelephone(string batt, string company, out int countAllRecord)
+        {
+            string queryStr = search.searchTelephone(batt, company);
+            string queryStrCount = search.searchTelephoneCountRecord(batt, company);
+
+            DataTable dt = new DataTable();
+            //List<TelephoneSearch> p = new List<TelephoneSearch>();
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+                MySqlCommand cmd2 = new MySqlCommand(queryStrCount, conn);
+                dt.Load(cmd.ExecuteReader());
+                countAllRecord = Convert.ToInt32(cmd2.ExecuteScalar());
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public bool UpdateTelephone(string name,string sname,string TelNumber, string FTelNumber,string MTelNumber,string PTelNumber)
+        {
+            if (openConnection())
+            {
+                    using (MySqlTransaction trans = conn.BeginTransaction())
+                    {
+                        try
+                        {
+                            string sql = "UPDATE person ";
+                            sql += "SET Telephone = '" + TelNumber.Trim() + "',FTelephone = '"+ FTelNumber.Trim() + "',MTelephone = '" + MTelNumber.Trim() + "',PTelephone  = '"+ PTelNumber.Trim() + "'";
+                            sql += " WHERE NAME = '" + name + "' and SNAME = '"+ sname + "'";
+
+                            using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                            {
+                            cmd.ExecuteNonQuery();
+                            }
+                            trans.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            string e = ex.InnerException.Message;
+                            trans.Rollback();
+                            throw;
+                        }
+                        finally
+                        {
+                            closeConnection();
+                        }
+                    }
+                closeConnection();             
+            }
+            return true;
+        }
+
         public List<PersonSearch> GetSearchPersonOnlyIndictment(string navyid, string armid, ParamSearchPerson param, int itemsPerPage, int pageNo, out int countAllRecord)
         {
             LimitMySQL limit = Function.GetLimitFromPage(itemsPerPage, pageNo);

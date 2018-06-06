@@ -888,4 +888,41 @@ namespace Navy.Data.DataTemplate
         }
     }
 
+    //public class TelephoneSearch
+    //{
+
+    //    [DisplayName("ชื่อ")]
+    //    public string name { get; set; }
+    //    [DisplayName("นามสกุล")]
+    //    public string sname { get; set; }
+    //    [DisplayName("เบอร์โทรศัพท์")]
+    //    public string TelNumber { get; set; }
+    //    [DisplayName("เบอร์โทรศัพท์บิดา")]
+    //    public string FTelNumber { get; set; }
+    //    [DisplayName("เบอร์โทรศัพท์มารดา")]
+    //    public string MTelNumber { get; set; }
+    //    [DisplayName("เบอร์โทรศัพท์ผู้ปกครอง")] //[DisplayName("พัน/ร้อย/หมวด/ลำดับ")]
+    //    public string PTelephone { get; set; }
+
+    //    public TelephoneSearch()
+    //    {
+    //        this.name = "";
+    //        this.sname = "";
+    //        this.TelNumber = "";
+    //        this.FTelNumber = "";
+    //        this.MTelNumber = "";
+    //        this.PTelephone = "";
+    //    }
+
+    //    public TelephoneSearch(MySql.Data.MySqlClient.MySqlDataReader reader)
+    //    {
+    //        this.name = reader["NAME"].ToString();
+    //        this.sname = reader["SNAME"].ToString();
+    //        this.TelNumber = reader["Telephone"].ToString();
+    //        this.FTelNumber = reader["FTelephone"].ToString();
+    //        this.MTelNumber = reader["MTelephone"].ToString();
+    //        this.PTelephone = reader["PTelephone"].ToString();
+    //    }
+    //}
+
 }
