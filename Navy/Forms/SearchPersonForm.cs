@@ -512,5 +512,9 @@ namespace Navy.Forms
             cbbCompany.Items.Add("6");
         }
 
+        private void SearchPersonForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
