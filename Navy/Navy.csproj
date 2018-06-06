@@ -328,6 +328,12 @@
     <Compile Include="Forms\ProcessPersonCardForm.Designer.cs">
       <DependentUpon>ProcessPersonCardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RuncodeCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RuncodeCheckForm.Designer.cs">
+      <DependentUpon>RuncodeCheckForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Scancardsetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -737,6 +743,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\IndictmentForm.resx">
       <DependentUpon>IndictmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RuncodeCheckForm.resx">
+      <DependentUpon>RuncodeCheckForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Scancardsetting.resx">
       <DependentUpon>Scancardsetting.cs</DependentUpon>

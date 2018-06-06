@@ -120,6 +120,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.print_slip = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label38 = new System.Windows.Forms.Label();
             this.textBoxAccountNum = new System.Windows.Forms.TextBox();
@@ -134,7 +135,6 @@
             this.lbl_belong = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.print_slip = new System.Windows.Forms.Button();
             this.btn_chechruncode = new System.Windows.Forms.Button();
             this.textBoxPseq = new System.Windows.Forms.TextBox();
             this.lblpseq = new System.Windows.Forms.Label();
@@ -188,7 +188,7 @@
             this.lbl_IDCard.Font = new System.Drawing.Font("TH SarabunPSK", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lbl_IDCard.Location = new System.Drawing.Point(137, 0);
             this.lbl_IDCard.Name = "lbl_IDCard";
-            this.lbl_IDCard.Size = new System.Drawing.Size(67, 26);
+            this.lbl_IDCard.Size = new System.Drawing.Size(84, 33);
             this.lbl_IDCard.TabIndex = 681;
             this.lbl_IDCard.Text = "label39";
             // 
@@ -199,7 +199,7 @@
             this.textBoxName.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxName.MaxLength = 50;
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(110, 27);
+            this.textBoxName.Size = new System.Drawing.Size(110, 32);
             this.textBoxName.TabIndex = 5;
             // 
             // btnReadcard
@@ -224,7 +224,7 @@
             this.label11.Location = new System.Drawing.Point(251, 118);
             this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 20);
+            this.label11.Size = new System.Drawing.Size(118, 25);
             this.label11.TabIndex = 678;
             this.label11.Text = "(27/02/2539)";
             // 
@@ -249,7 +249,7 @@
             this.label4.Location = new System.Drawing.Point(245, 71);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 20);
+            this.label4.Size = new System.Drawing.Size(112, 25);
             this.label4.TabIndex = 676;
             this.label4.Text = "วันเดือนปีเกิด ";
             // 
@@ -259,7 +259,7 @@
             this.mtextBoxBD.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.mtextBoxBD.Mask = "00/00/0000";
             this.mtextBoxBD.Name = "mtextBoxBD";
-            this.mtextBoxBD.Size = new System.Drawing.Size(110, 27);
+            this.mtextBoxBD.Size = new System.Drawing.Size(110, 32);
             this.mtextBoxBD.TabIndex = 7;
             this.mtextBoxBD.ValidatingType = typeof(System.DateTime);
             // 
@@ -270,7 +270,7 @@
             this.label3.Location = new System.Drawing.Point(126, 71);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 20);
+            this.label3.Size = new System.Drawing.Size(43, 25);
             this.label3.TabIndex = 17;
             this.label3.Text = "สกุล";
             // 
@@ -281,7 +281,7 @@
             this.label2.Location = new System.Drawing.Point(6, 71);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 20);
+            this.label2.Size = new System.Drawing.Size(33, 25);
             this.label2.TabIndex = 16;
             this.label2.Text = "ชื่อ";
             // 
@@ -292,7 +292,7 @@
             this.label1.Location = new System.Drawing.Point(6, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 20);
+            this.label1.Size = new System.Drawing.Size(171, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "เลขประจำตัวประชาชน";
             // 
@@ -303,7 +303,7 @@
             this.textBoxSName.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxSName.MaxLength = 50;
             this.textBoxSName.Name = "textBoxSName";
-            this.textBoxSName.Size = new System.Drawing.Size(110, 27);
+            this.textBoxSName.Size = new System.Drawing.Size(110, 32);
             this.textBoxSName.TabIndex = 6;
             // 
             // textBoxID13
@@ -313,7 +313,7 @@
             this.textBoxID13.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxID13.MaxLength = 13;
             this.textBoxID13.Name = "textBoxID13";
-            this.textBoxID13.Size = new System.Drawing.Size(110, 27);
+            this.textBoxID13.Size = new System.Drawing.Size(110, 32);
             this.textBoxID13.TabIndex = 3;
             this.textBoxID13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxID13_KeyDown);
             // 
@@ -326,7 +326,7 @@
             this.textBoxID10.MaxLength = 10;
             this.textBoxID10.Name = "textBoxID10";
             this.textBoxID10.ReadOnly = true;
-            this.textBoxID10.Size = new System.Drawing.Size(146, 27);
+            this.textBoxID10.Size = new System.Drawing.Size(146, 32);
             this.textBoxID10.TabIndex = 56;
             this.textBoxID10.TabStop = false;
             // 
@@ -337,7 +337,7 @@
             this.textBoxID8_1.MaxLength = 4;
             this.textBoxID8_1.Name = "textBoxID8_1";
             this.textBoxID8_1.ReadOnly = true;
-            this.textBoxID8_1.Size = new System.Drawing.Size(31, 27);
+            this.textBoxID8_1.Size = new System.Drawing.Size(31, 32);
             this.textBoxID8_1.TabIndex = 45;
             this.textBoxID8_1.TabStop = false;
             // 
@@ -347,7 +347,7 @@
             this.mTextBoxID8.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.mTextBoxID8.Mask = "0000";
             this.mTextBoxID8.Name = "mTextBoxID8";
-            this.mTextBoxID8.Size = new System.Drawing.Size(73, 27);
+            this.mTextBoxID8.Size = new System.Drawing.Size(73, 32);
             this.mTextBoxID8.TabIndex = 12;
             this.mTextBoxID8.TextChanged += new System.EventHandler(this.mTextBoxID8_TextChanged);
             this.mTextBoxID8.Leave += new System.EventHandler(this.mTextBoxID8_Leave);
@@ -359,7 +359,7 @@
             this.label14.Location = new System.Drawing.Point(7, 22);
             this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 20);
+            this.label14.Size = new System.Drawing.Size(65, 25);
             this.label14.TabIndex = 28;
             this.label14.Text = "ประเภท";
             // 
@@ -369,7 +369,7 @@
             this.cbbType.Location = new System.Drawing.Point(11, 44);
             this.cbbType.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbbType.Name = "cbbType";
-            this.cbbType.Size = new System.Drawing.Size(110, 28);
+            this.cbbType.Size = new System.Drawing.Size(110, 33);
             this.cbbType.TabIndex = 17;
             this.cbbType.SelectedIndexChanged += new System.EventHandler(this.cbbType_SelectedIndexChanged);
             // 
@@ -380,7 +380,7 @@
             this.label26.Location = new System.Drawing.Point(126, 22);
             this.label26.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(104, 20);
+            this.label26.Size = new System.Drawing.Size(131, 25);
             this.label26.TabIndex = 407;
             this.label26.Text = "รหัส ทร. 10 หลัก";
             // 
@@ -390,7 +390,7 @@
             this.textBoxRunNum.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxRunNum.MaxLength = 19;
             this.textBoxRunNum.Name = "textBoxRunNum";
-            this.textBoxRunNum.Size = new System.Drawing.Size(110, 27);
+            this.textBoxRunNum.Size = new System.Drawing.Size(110, 32);
             this.textBoxRunNum.TabIndex = 19;
             this.textBoxRunNum.TextChanged += new System.EventHandler(this.textBoxRunNum_TextChanged);
             this.textBoxRunNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRunNum_KeyPress);
@@ -402,7 +402,7 @@
             this.label15.Location = new System.Drawing.Point(125, 22);
             this.label15.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 20);
+            this.label15.Size = new System.Drawing.Size(79, 25);
             this.label15.TabIndex = 29;
             this.label15.Text = "เลขลำดับ";
             // 
@@ -413,7 +413,7 @@
             this.label16.Location = new System.Drawing.Point(9, 22);
             this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(53, 20);
+            this.label16.Size = new System.Drawing.Size(67, 25);
             this.label16.TabIndex = 31;
             this.label16.Text = "ทะเบียน";
             // 
@@ -424,7 +424,7 @@
             this.checkBoxRequest.Location = new System.Drawing.Point(317, 158);
             this.checkBoxRequest.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.checkBoxRequest.Name = "checkBoxRequest";
-            this.checkBoxRequest.Size = new System.Drawing.Size(165, 24);
+            this.checkBoxRequest.Size = new System.Drawing.Size(206, 29);
             this.checkBoxRequest.TabIndex = 37;
             this.checkBoxRequest.Text = "ร้องขอเข้ากองประจำการ";
             this.checkBoxRequest.UseVisualStyleBackColor = true;
@@ -436,7 +436,7 @@
             this.labelTelephone.Location = new System.Drawing.Point(6, 32);
             this.labelTelephone.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelTelephone.Name = "labelTelephone";
-            this.labelTelephone.Size = new System.Drawing.Size(85, 20);
+            this.labelTelephone.Size = new System.Drawing.Size(108, 25);
             this.labelTelephone.TabIndex = 104;
             this.labelTelephone.Text = "เบอร์โทรศัพท์";
             this.labelTelephone.Click += new System.EventHandler(this.label40_Click);
@@ -448,7 +448,7 @@
             this.textBoxTelephone.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxTelephone.MaxLength = 10;
             this.textBoxTelephone.Name = "textBoxTelephone";
-            this.textBoxTelephone.Size = new System.Drawing.Size(95, 27);
+            this.textBoxTelephone.Size = new System.Drawing.Size(95, 32);
             this.textBoxTelephone.TabIndex = 39;
             // 
             // cmb_Addictive_Status
@@ -457,7 +457,7 @@
             this.cmb_Addictive_Status.Location = new System.Drawing.Point(165, 265);
             this.cmb_Addictive_Status.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmb_Addictive_Status.Name = "cmb_Addictive_Status";
-            this.cmb_Addictive_Status.Size = new System.Drawing.Size(153, 28);
+            this.cmb_Addictive_Status.Size = new System.Drawing.Size(153, 33);
             this.cmb_Addictive_Status.TabIndex = 48;
             // 
             // btnSubmitAndNew
@@ -482,7 +482,7 @@
             this.labelkpt.Location = new System.Drawing.Point(5, 242);
             this.labelkpt.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelkpt.Name = "labelkpt";
-            this.labelkpt.Size = new System.Drawing.Size(37, 20);
+            this.labelkpt.Size = new System.Drawing.Size(47, 25);
             this.labelkpt.TabIndex = 116;
             this.labelkpt.Text = "คพท";
             this.labelkpt.Click += new System.EventHandler(this.label45_Click);
@@ -493,7 +493,7 @@
             this.cmBoxkpt.Location = new System.Drawing.Point(8, 265);
             this.cmBoxkpt.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmBoxkpt.Name = "cmBoxkpt";
-            this.cmBoxkpt.Size = new System.Drawing.Size(150, 28);
+            this.cmBoxkpt.Size = new System.Drawing.Size(150, 33);
             this.cmBoxkpt.TabIndex = 47;
             // 
             // labelPercent
@@ -503,7 +503,7 @@
             this.labelPercent.Location = new System.Drawing.Point(165, 187);
             this.labelPercent.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelPercent.Name = "labelPercent";
-            this.labelPercent.Size = new System.Drawing.Size(73, 20);
+            this.labelPercent.Size = new System.Drawing.Size(92, 25);
             this.labelPercent.TabIndex = 114;
             this.labelPercent.Text = "คะแนนสอบ";
             // 
@@ -512,7 +512,7 @@
             this.textPercent.Location = new System.Drawing.Point(166, 212);
             this.textPercent.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textPercent.Name = "textPercent";
-            this.textPercent.Size = new System.Drawing.Size(150, 27);
+            this.textPercent.Size = new System.Drawing.Size(150, 32);
             this.textPercent.TabIndex = 46;
             this.textPercent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPercent_KeyPress);
             // 
@@ -523,7 +523,7 @@
             this.labeldpregdate.Location = new System.Drawing.Point(5, 133);
             this.labeldpregdate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labeldpregdate.Name = "labeldpregdate";
-            this.labeldpregdate.Size = new System.Drawing.Size(87, 20);
+            this.labeldpregdate.Size = new System.Drawing.Size(109, 25);
             this.labeldpregdate.TabIndex = 58;
             this.labeldpregdate.Text = "วันขึ้นทะเบียน";
             // 
@@ -534,7 +534,7 @@
             this.labeldprepdate.Location = new System.Drawing.Point(165, 132);
             this.labeldprepdate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labeldprepdate.Name = "labeldprepdate";
-            this.labeldprepdate.Size = new System.Drawing.Size(84, 20);
+            this.labeldprepdate.Size = new System.Drawing.Size(106, 25);
             this.labeldprepdate.TabIndex = 57;
             this.labeldprepdate.Text = "วันรายงานตัว";
             // 
@@ -559,7 +559,7 @@
             this.dprepdate.Location = new System.Drawing.Point(168, 155);
             this.dprepdate.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dprepdate.Name = "dprepdate";
-            this.dprepdate.Size = new System.Drawing.Size(149, 27);
+            this.dprepdate.Size = new System.Drawing.Size(149, 32);
             this.dprepdate.TabIndex = 44;
             // 
             // dpregdate
@@ -567,7 +567,7 @@
             this.dpregdate.Location = new System.Drawing.Point(9, 156);
             this.dpregdate.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dpregdate.Name = "dpregdate";
-            this.dpregdate.Size = new System.Drawing.Size(149, 27);
+            this.dpregdate.Size = new System.Drawing.Size(149, 32);
             this.dpregdate.TabIndex = 43;
             // 
             // labelskill
@@ -577,7 +577,7 @@
             this.labelskill.Location = new System.Drawing.Point(5, 187);
             this.labelskill.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelskill.Name = "labelskill";
-            this.labelskill.Size = new System.Drawing.Size(117, 20);
+            this.labelskill.Size = new System.Drawing.Size(150, 25);
             this.labelskill.TabIndex = 54;
             this.labelskill.Text = "ความสามารถพิเศษ";
             // 
@@ -587,7 +587,7 @@
             this.cmbskill.Location = new System.Drawing.Point(8, 212);
             this.cmbskill.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmbskill.Name = "cmbskill";
-            this.cmbskill.Size = new System.Drawing.Size(150, 28);
+            this.cmbskill.Size = new System.Drawing.Size(150, 33);
             this.cmbskill.TabIndex = 45;
             // 
             // lbOrigin
@@ -598,7 +598,7 @@
             this.lbOrigin.Location = new System.Drawing.Point(767, 4);
             this.lbOrigin.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbOrigin.Name = "lbOrigin";
-            this.lbOrigin.Size = new System.Drawing.Size(38, 20);
+            this.lbOrigin.Size = new System.Drawing.Size(49, 25);
             this.lbOrigin.TabIndex = 422;
             this.lbOrigin.Text = "ผลัด";
             // 
@@ -610,7 +610,7 @@
             this.lbArmtown.Location = new System.Drawing.Point(615, 4);
             this.lbArmtown.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbArmtown.Name = "lbArmtown";
-            this.lbArmtown.Size = new System.Drawing.Size(92, 20);
+            this.lbArmtown.Size = new System.Drawing.Size(116, 25);
             this.lbArmtown.TabIndex = 412;
             this.lbArmtown.Text = "นครราชสีมา";
             // 
@@ -622,7 +622,7 @@
             this.lbComeDate.Location = new System.Drawing.Point(466, 4);
             this.lbComeDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbComeDate.Name = "lbComeDate";
-            this.lbComeDate.Size = new System.Drawing.Size(93, 20);
+            this.lbComeDate.Size = new System.Drawing.Size(115, 25);
             this.lbComeDate.TabIndex = 332;
             this.lbComeDate.Text = "00 00. 0000";
             // 
@@ -634,7 +634,7 @@
             this.lbRegDate.Location = new System.Drawing.Point(286, 4);
             this.lbRegDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbRegDate.Name = "lbRegDate";
-            this.lbRegDate.Size = new System.Drawing.Size(93, 20);
+            this.lbRegDate.Size = new System.Drawing.Size(115, 25);
             this.lbRegDate.TabIndex = 402;
             this.lbRegDate.Text = "00 00. 0000";
             // 
@@ -646,7 +646,7 @@
             this.lbYearRegis.Location = new System.Drawing.Point(153, 4);
             this.lbYearRegis.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbYearRegis.Name = "lbYearRegis";
-            this.lbYearRegis.Size = new System.Drawing.Size(45, 20);
+            this.lbYearRegis.Size = new System.Drawing.Size(56, 25);
             this.lbYearRegis.TabIndex = 392;
             this.lbYearRegis.Text = "0000";
             // 
@@ -658,7 +658,7 @@
             this.lbYearin.Location = new System.Drawing.Point(32, 4);
             this.lbYearin.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbYearin.Name = "lbYearin";
-            this.lbYearin.Size = new System.Drawing.Size(43, 20);
+            this.lbYearin.Size = new System.Drawing.Size(53, 25);
             this.lbYearin.TabIndex = 382;
             this.lbYearin.Text = "0/00";
             // 
@@ -669,7 +669,7 @@
             this.label32.Location = new System.Drawing.Point(715, 4);
             this.label32.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(51, 20);
+            this.label32.Size = new System.Drawing.Size(65, 25);
             this.label32.TabIndex = 372;
             this.label32.Text = "ประเภท";
             // 
@@ -680,7 +680,7 @@
             this.label31.Location = new System.Drawing.Point(566, 4);
             this.label31.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(48, 20);
+            this.label31.Size = new System.Drawing.Size(60, 25);
             this.label31.TabIndex = 362;
             this.label31.Text = "จังหวัด";
             // 
@@ -691,7 +691,7 @@
             this.label30.Location = new System.Drawing.Point(381, 4);
             this.label30.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(84, 20);
+            this.label30.Size = new System.Drawing.Size(106, 25);
             this.label30.TabIndex = 352;
             this.label30.Text = "วันรายงานตัว";
             // 
@@ -702,7 +702,7 @@
             this.label29.Location = new System.Drawing.Point(206, 4);
             this.label29.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(84, 20);
+            this.label29.Size = new System.Drawing.Size(107, 25);
             this.label29.TabIndex = 134;
             this.label29.Text = "วันรับราชการ";
             // 
@@ -713,7 +713,7 @@
             this.label28.Location = new System.Drawing.Point(77, 4);
             this.label28.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(75, 20);
+            this.label28.Size = new System.Drawing.Size(96, 25);
             this.label28.TabIndex = 332;
             this.label28.Text = "ปีประจำการ";
             // 
@@ -724,7 +724,7 @@
             this.label27.Location = new System.Drawing.Point(1, 4);
             this.label27.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(35, 20);
+            this.label27.Size = new System.Drawing.Size(44, 25);
             this.label27.TabIndex = 322;
             this.label27.Text = "ผลัด";
             // 
@@ -749,7 +749,7 @@
             this.label18.Location = new System.Drawing.Point(126, 20);
             this.label18.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 20);
+            this.label18.Size = new System.Drawing.Size(82, 25);
             this.label18.TabIndex = 32;
             this.label18.Text = "การศึกษา";
             // 
@@ -760,7 +760,7 @@
             this.label19.Location = new System.Drawing.Point(246, 20);
             this.label19.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(43, 20);
+            this.label19.Size = new System.Drawing.Size(55, 25);
             this.label19.TabIndex = 33;
             this.label19.Text = "อาชีพ";
             // 
@@ -771,7 +771,7 @@
             this.textBoxHomeNum.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxHomeNum.MaxLength = 10;
             this.textBoxHomeNum.Name = "textBoxHomeNum";
-            this.textBoxHomeNum.Size = new System.Drawing.Size(66, 27);
+            this.textBoxHomeNum.Size = new System.Drawing.Size(66, 32);
             this.textBoxHomeNum.TabIndex = 9;
             // 
             // label20
@@ -781,7 +781,7 @@
             this.label20.Location = new System.Drawing.Point(363, 20);
             this.label20.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 20);
+            this.label20.Size = new System.Drawing.Size(62, 25);
             this.label20.TabIndex = 134;
             this.label20.Text = "ศาสนา";
             // 
@@ -792,7 +792,7 @@
             this.textBoxMoo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxMoo.MaxLength = 2;
             this.textBoxMoo.Name = "textBoxMoo";
-            this.textBoxMoo.Size = new System.Drawing.Size(39, 27);
+            this.textBoxMoo.Size = new System.Drawing.Size(39, 32);
             this.textBoxMoo.TabIndex = 10;
             // 
             // textBoxHeight
@@ -801,7 +801,7 @@
             this.textBoxHeight.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxHeight.MaxLength = 3;
             this.textBoxHeight.Name = "textBoxHeight";
-            this.textBoxHeight.Size = new System.Drawing.Size(110, 27);
+            this.textBoxHeight.Size = new System.Drawing.Size(110, 32);
             this.textBoxHeight.TabIndex = 34;
             this.textBoxHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRunNum_KeyPress);
             // 
@@ -812,7 +812,7 @@
             this.textBoxSoy.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxSoy.MaxLength = 50;
             this.textBoxSoy.Name = "textBoxSoy";
-            this.textBoxSoy.Size = new System.Drawing.Size(110, 27);
+            this.textBoxSoy.Size = new System.Drawing.Size(110, 32);
             this.textBoxSoy.TabIndex = 11;
             // 
             // label21
@@ -822,7 +822,7 @@
             this.label21.Location = new System.Drawing.Point(7, 129);
             this.label21.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(47, 20);
+            this.label21.Size = new System.Drawing.Size(59, 25);
             this.label21.TabIndex = 35;
             this.label21.Text = "ส่วนสูง";
             // 
@@ -833,7 +833,7 @@
             this.textBoxRoad.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxRoad.MaxLength = 50;
             this.textBoxRoad.Name = "textBoxRoad";
-            this.textBoxRoad.Size = new System.Drawing.Size(110, 27);
+            this.textBoxRoad.Size = new System.Drawing.Size(110, 32);
             this.textBoxRoad.TabIndex = 12;
             // 
             // cbbReligion
@@ -842,7 +842,7 @@
             this.cbbReligion.Location = new System.Drawing.Point(369, 44);
             this.cbbReligion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbbReligion.Name = "cbbReligion";
-            this.cbbReligion.Size = new System.Drawing.Size(114, 28);
+            this.cbbReligion.Size = new System.Drawing.Size(114, 33);
             this.cbbReligion.TabIndex = 33;
             // 
             // textBoxFname
@@ -852,7 +852,7 @@
             this.textBoxFname.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxFname.MaxLength = 50;
             this.textBoxFname.Name = "textBoxFname";
-            this.textBoxFname.Size = new System.Drawing.Size(110, 27);
+            this.textBoxFname.Size = new System.Drawing.Size(110, 32);
             this.textBoxFname.TabIndex = 29;
             // 
             // textBoxFSname
@@ -862,7 +862,7 @@
             this.textBoxFSname.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxFSname.MaxLength = 50;
             this.textBoxFSname.Name = "textBoxFSname";
-            this.textBoxFSname.Size = new System.Drawing.Size(110, 27);
+            this.textBoxFSname.Size = new System.Drawing.Size(110, 32);
             this.textBoxFSname.TabIndex = 30;
             // 
             // cbbOcc
@@ -871,7 +871,7 @@
             this.cbbOcc.Location = new System.Drawing.Point(251, 44);
             this.cbbOcc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbbOcc.Name = "cbbOcc";
-            this.cbbOcc.Size = new System.Drawing.Size(110, 28);
+            this.cbbOcc.Size = new System.Drawing.Size(110, 33);
             this.cbbOcc.TabIndex = 28;
             // 
             // textBoxMname
@@ -881,7 +881,7 @@
             this.textBoxMname.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxMname.MaxLength = 50;
             this.textBoxMname.Name = "textBoxMname";
-            this.textBoxMname.Size = new System.Drawing.Size(110, 27);
+            this.textBoxMname.Size = new System.Drawing.Size(110, 32);
             this.textBoxMname.TabIndex = 31;
             // 
             // textBoxMSname
@@ -891,7 +891,7 @@
             this.textBoxMSname.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxMSname.MaxLength = 50;
             this.textBoxMSname.Name = "textBoxMSname";
-            this.textBoxMSname.Size = new System.Drawing.Size(110, 27);
+            this.textBoxMSname.Size = new System.Drawing.Size(110, 32);
             this.textBoxMSname.TabIndex = 32;
             // 
             // cbbEdu
@@ -900,7 +900,7 @@
             this.cbbEdu.Location = new System.Drawing.Point(131, 44);
             this.cbbEdu.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbbEdu.Name = "cbbEdu";
-            this.cbbEdu.Size = new System.Drawing.Size(110, 28);
+            this.cbbEdu.Size = new System.Drawing.Size(110, 33);
             this.cbbEdu.TabIndex = 27;
             // 
             // label5
@@ -910,7 +910,7 @@
             this.label5.Location = new System.Drawing.Point(6, 24);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 20);
+            this.label5.Size = new System.Drawing.Size(80, 25);
             this.label5.TabIndex = 19;
             this.label5.Text = "บ้านเลขที่";
             // 
@@ -921,7 +921,7 @@
             this.label6.Location = new System.Drawing.Point(80, 24);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 20);
+            this.label6.Size = new System.Drawing.Size(34, 25);
             this.label6.TabIndex = 20;
             this.label6.Text = "หมู่";
             // 
@@ -932,7 +932,7 @@
             this.label7.Location = new System.Drawing.Point(125, 24);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 20);
+            this.label7.Size = new System.Drawing.Size(44, 25);
             this.label7.TabIndex = 21;
             this.label7.Text = "ซอย";
             // 
@@ -943,7 +943,7 @@
             this.label8.Location = new System.Drawing.Point(242, 24);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 20);
+            this.label8.Size = new System.Drawing.Size(45, 25);
             this.label8.TabIndex = 22;
             this.label8.Text = "ถนน";
             // 
@@ -954,7 +954,7 @@
             this.label9.Location = new System.Drawing.Point(6, 71);
             this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 20);
+            this.label9.Size = new System.Drawing.Size(60, 25);
             this.label9.TabIndex = 23;
             this.label9.Text = "จังหวัด";
             // 
@@ -965,7 +965,7 @@
             this.labelFaname.Location = new System.Drawing.Point(7, 76);
             this.labelFaname.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelFaname.Name = "labelFaname";
-            this.labelFaname.Size = new System.Drawing.Size(51, 20);
+            this.labelFaname.Size = new System.Drawing.Size(64, 25);
             this.labelFaname.TabIndex = 24;
             this.labelFaname.Text = "ชื่อบิดา";
             // 
@@ -976,7 +976,7 @@
             this.labelManame.Location = new System.Drawing.Point(250, 76);
             this.labelManame.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelManame.Name = "labelManame";
-            this.labelManame.Size = new System.Drawing.Size(63, 20);
+            this.labelManame.Size = new System.Drawing.Size(81, 25);
             this.labelManame.TabIndex = 25;
             this.labelManame.Text = "ชื่อมารดา";
             // 
@@ -987,7 +987,7 @@
             this.label12.Location = new System.Drawing.Point(125, 71);
             this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 20);
+            this.label12.Size = new System.Drawing.Size(57, 25);
             this.label12.TabIndex = 26;
             this.label12.Text = "อำเภอ";
             // 
@@ -998,7 +998,7 @@
             this.label13.Location = new System.Drawing.Point(242, 71);
             this.label13.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 20);
+            this.label13.Size = new System.Drawing.Size(53, 25);
             this.label13.TabIndex = 27;
             this.label13.Text = "ตำบล";
             // 
@@ -1009,7 +1009,7 @@
             this.cbbProvince.Location = new System.Drawing.Point(10, 94);
             this.cbbProvince.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbbProvince.Name = "cbbProvince";
-            this.cbbProvince.Size = new System.Drawing.Size(110, 28);
+            this.cbbProvince.Size = new System.Drawing.Size(110, 33);
             this.cbbProvince.TabIndex = 13;
             this.cbbProvince.SelectedIndexChanged += new System.EventHandler(this.cbbArmtown_SelectedIndexChanged);
             // 
@@ -1019,7 +1019,7 @@
             this.cbbCity.Location = new System.Drawing.Point(128, 94);
             this.cbbCity.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbbCity.Name = "cbbCity";
-            this.cbbCity.Size = new System.Drawing.Size(110, 28);
+            this.cbbCity.Size = new System.Drawing.Size(110, 33);
             this.cbbCity.TabIndex = 14;
             this.cbbCity.SelectedIndexChanged += new System.EventHandler(this.cbbCity_SelectedIndexChanged);
             // 
@@ -1030,7 +1030,7 @@
             this.cbbTumbon.Location = new System.Drawing.Point(245, 94);
             this.cbbTumbon.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbbTumbon.Name = "cbbTumbon";
-            this.cbbTumbon.Size = new System.Drawing.Size(110, 28);
+            this.cbbTumbon.Size = new System.Drawing.Size(110, 33);
             this.cbbTumbon.TabIndex = 15;
             // 
             // textBoxChessOut
@@ -1039,7 +1039,7 @@
             this.textBoxChessOut.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxChessOut.MaxLength = 3;
             this.textBoxChessOut.Name = "textBoxChessOut";
-            this.textBoxChessOut.Size = new System.Drawing.Size(44, 27);
+            this.textBoxChessOut.Size = new System.Drawing.Size(44, 32);
             this.textBoxChessOut.TabIndex = 36;
             // 
             // label34
@@ -1049,7 +1049,7 @@
             this.label34.Location = new System.Drawing.Point(127, 129);
             this.label34.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(49, 20);
+            this.label34.Size = new System.Drawing.Size(62, 25);
             this.label34.TabIndex = 49;
             this.label34.Text = "รอบอก";
             // 
@@ -1059,7 +1059,7 @@
             this.textBoxChessIn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxChessIn.MaxLength = 3;
             this.textBoxChessIn.Name = "textBoxChessIn";
-            this.textBoxChessIn.Size = new System.Drawing.Size(44, 27);
+            this.textBoxChessIn.Size = new System.Drawing.Size(44, 32);
             this.textBoxChessIn.TabIndex = 35;
             // 
             // label35
@@ -1069,7 +1069,7 @@
             this.label35.Location = new System.Drawing.Point(179, 156);
             this.label35.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(15, 20);
+            this.label35.Size = new System.Drawing.Size(19, 25);
             this.label35.TabIndex = 51;
             this.label35.Text = "/";
             // 
@@ -1080,7 +1080,7 @@
             this.label33.Location = new System.Drawing.Point(127, 76);
             this.label33.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(59, 20);
+            this.label33.Size = new System.Drawing.Size(74, 25);
             this.label33.TabIndex = 671;
             this.label33.Text = "สกุลบิดา";
             // 
@@ -1091,7 +1091,7 @@
             this.label36.Location = new System.Drawing.Point(367, 76);
             this.label36.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(59, 20);
+            this.label36.Size = new System.Drawing.Size(74, 25);
             this.label36.TabIndex = 672;
             this.label36.Text = "สกุลบิดา";
             // 
@@ -1102,7 +1102,7 @@
             this.label37.Location = new System.Drawing.Point(165, 242);
             this.label37.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(117, 20);
+            this.label37.Size = new System.Drawing.Size(148, 25);
             this.label37.TabIndex = 673;
             this.label37.Text = "ผลตรวจสารเสพติด";
             // 
@@ -1173,7 +1173,7 @@
             this.textBoxMark.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxMark.MaxLength = 50;
             this.textBoxMark.Name = "textBoxMark";
-            this.textBoxMark.Size = new System.Drawing.Size(110, 27);
+            this.textBoxMark.Size = new System.Drawing.Size(110, 32);
             this.textBoxMark.TabIndex = 26;
             // 
             // label17
@@ -1183,7 +1183,7 @@
             this.label17.Location = new System.Drawing.Point(7, 22);
             this.label17.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(89, 20);
+            this.label17.Size = new System.Drawing.Size(111, 25);
             this.label17.TabIndex = 677;
             this.label17.Text = "ตำหนิแผลเป็น";
             // 
@@ -1222,6 +1222,21 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(860, 36);
             this.panel3.TabIndex = 51;
+            // 
+            // print_slip
+            // 
+            this.print_slip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(201)))));
+            this.print_slip.Dock = System.Windows.Forms.DockStyle.Right;
+            this.print_slip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.print_slip.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.print_slip.Location = new System.Drawing.Point(380, 0);
+            this.print_slip.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.print_slip.Name = "print_slip";
+            this.print_slip.Size = new System.Drawing.Size(160, 36);
+            this.print_slip.TabIndex = 24;
+            this.print_slip.Text = "พิมพ์สลีฟ";
+            this.print_slip.UseVisualStyleBackColor = false;
+            this.print_slip.Click += new System.EventHandler(this.print_slip_Click);
             // 
             // groupBox3
             // 
@@ -1266,7 +1281,7 @@
             this.label38.Location = new System.Drawing.Point(165, 294);
             this.label38.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(60, 20);
+            this.label38.Size = new System.Drawing.Size(76, 25);
             this.label38.TabIndex = 677;
             this.label38.Text = "เลขบัญชี";
             // 
@@ -1275,7 +1290,7 @@
             this.textBoxAccountNum.Location = new System.Drawing.Point(167, 313);
             this.textBoxAccountNum.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxAccountNum.Name = "textBoxAccountNum";
-            this.textBoxAccountNum.Size = new System.Drawing.Size(150, 27);
+            this.textBoxAccountNum.Size = new System.Drawing.Size(150, 32);
             this.textBoxAccountNum.TabIndex = 50;
             // 
             // label25
@@ -1285,7 +1300,7 @@
             this.label25.Location = new System.Drawing.Point(8, 291);
             this.label25.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(72, 20);
+            this.label25.Size = new System.Drawing.Size(91, 25);
             this.label25.TabIndex = 674;
             this.label25.Text = "ชื่อธนาคาร";
             // 
@@ -1295,7 +1310,7 @@
             this.cbbBankID.Location = new System.Drawing.Point(8, 312);
             this.cbbBankID.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbbBankID.Name = "cbbBankID";
-            this.cbbBankID.Size = new System.Drawing.Size(150, 28);
+            this.cbbBankID.Size = new System.Drawing.Size(150, 33);
             this.cbbBankID.TabIndex = 49;
             // 
             // textBoxPTelephone
@@ -1305,7 +1320,7 @@
             this.textBoxPTelephone.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxPTelephone.MaxLength = 10;
             this.textBoxPTelephone.Name = "textBoxPTelephone";
-            this.textBoxPTelephone.Size = new System.Drawing.Size(95, 27);
+            this.textBoxPTelephone.Size = new System.Drawing.Size(95, 32);
             this.textBoxPTelephone.TabIndex = 42;
             // 
             // textBoxMTelephone
@@ -1315,7 +1330,7 @@
             this.textBoxMTelephone.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxMTelephone.MaxLength = 10;
             this.textBoxMTelephone.Name = "textBoxMTelephone";
-            this.textBoxMTelephone.Size = new System.Drawing.Size(93, 27);
+            this.textBoxMTelephone.Size = new System.Drawing.Size(93, 32);
             this.textBoxMTelephone.TabIndex = 41;
             // 
             // textBoxFTelephone
@@ -1325,7 +1340,7 @@
             this.textBoxFTelephone.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxFTelephone.MaxLength = 10;
             this.textBoxFTelephone.Name = "textBoxFTelephone";
-            this.textBoxFTelephone.Size = new System.Drawing.Size(95, 27);
+            this.textBoxFTelephone.Size = new System.Drawing.Size(95, 32);
             this.textBoxFTelephone.TabIndex = 40;
             // 
             // labelFTelephone
@@ -1335,7 +1350,7 @@
             this.labelFTelephone.Location = new System.Drawing.Point(6, 82);
             this.labelFTelephone.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelFTelephone.Name = "labelFTelephone";
-            this.labelFTelephone.Size = new System.Drawing.Size(82, 20);
+            this.labelFTelephone.Size = new System.Drawing.Size(104, 25);
             this.labelFTelephone.TabIndex = 114;
             this.labelFTelephone.Text = "เบอร์โทรบิดา";
             // 
@@ -1346,7 +1361,7 @@
             this.labelMTelephone.Location = new System.Drawing.Point(114, 82);
             this.labelMTelephone.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelMTelephone.Name = "labelMTelephone";
-            this.labelMTelephone.Size = new System.Drawing.Size(94, 20);
+            this.labelMTelephone.Size = new System.Drawing.Size(121, 25);
             this.labelMTelephone.TabIndex = 115;
             this.labelMTelephone.Text = "เบอร์โทรมารดา";
             // 
@@ -1357,7 +1372,7 @@
             this.labelPTelephone.Location = new System.Drawing.Point(215, 82);
             this.labelPTelephone.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelPTelephone.Name = "labelPTelephone";
-            this.labelPTelephone.Size = new System.Drawing.Size(113, 20);
+            this.labelPTelephone.Size = new System.Drawing.Size(142, 25);
             this.labelPTelephone.TabIndex = 116;
             this.labelPTelephone.Text = "เบอร์โทรผู้ปกครอง";
             // 
@@ -1417,21 +1432,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "สังกัด";
             // 
-            // print_slip
-            // 
-            this.print_slip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(201)))));
-            this.print_slip.Dock = System.Windows.Forms.DockStyle.Right;
-            this.print_slip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.print_slip.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.print_slip.Location = new System.Drawing.Point(380, 0);
-            this.print_slip.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.print_slip.Name = "print_slip";
-            this.print_slip.Size = new System.Drawing.Size(160, 36);
-            this.print_slip.TabIndex = 24;
-            this.print_slip.Text = "พิมพ์สลีฟ";
-            this.print_slip.UseVisualStyleBackColor = false;
-            this.print_slip.Click += new System.EventHandler(this.print_slip_Click);
-            // 
             // btn_chechruncode
             // 
             this.btn_chechruncode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(222)))), ((int)(((byte)(39)))));
@@ -1453,7 +1453,7 @@
             this.textBoxPseq.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxPseq.MaxLength = 6;
             this.textBoxPseq.Name = "textBoxPseq";
-            this.textBoxPseq.Size = new System.Drawing.Size(50, 27);
+            this.textBoxPseq.Size = new System.Drawing.Size(50, 32);
             this.textBoxPseq.TabIndex = 23;
             this.textBoxPseq.Visible = false;
             // 
@@ -1464,7 +1464,7 @@
             this.lblpseq.Location = new System.Drawing.Point(419, 22);
             this.lblpseq.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblpseq.Name = "lblpseq";
-            this.lblpseq.Size = new System.Drawing.Size(42, 20);
+            this.lblpseq.Size = new System.Drawing.Size(53, 25);
             this.lblpseq.TabIndex = 37;
             this.lblpseq.Text = "ลำดับ";
             this.lblpseq.Visible = false;
@@ -1475,7 +1475,7 @@
             this.textBoxPlatoon.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxPlatoon.MaxLength = 6;
             this.textBoxPlatoon.Name = "textBoxPlatoon";
-            this.textBoxPlatoon.Size = new System.Drawing.Size(50, 27);
+            this.textBoxPlatoon.Size = new System.Drawing.Size(50, 32);
             this.textBoxPlatoon.TabIndex = 22;
             this.textBoxPlatoon.Visible = false;
             // 
@@ -1486,7 +1486,7 @@
             this.lblplatoon.Location = new System.Drawing.Point(361, 22);
             this.lblplatoon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblplatoon.Name = "lblplatoon";
-            this.lblplatoon.Size = new System.Drawing.Size(42, 20);
+            this.lblplatoon.Size = new System.Drawing.Size(54, 25);
             this.lblplatoon.TabIndex = 35;
             this.lblplatoon.Text = "หมวด";
             this.lblplatoon.Visible = false;
@@ -1497,7 +1497,7 @@
             this.textBoxCompany.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxCompany.MaxLength = 6;
             this.textBoxCompany.Name = "textBoxCompany";
-            this.textBoxCompany.Size = new System.Drawing.Size(50, 27);
+            this.textBoxCompany.Size = new System.Drawing.Size(50, 32);
             this.textBoxCompany.TabIndex = 21;
             this.textBoxCompany.Visible = false;
             // 
@@ -1508,7 +1508,7 @@
             this.lblcompany.Location = new System.Drawing.Point(303, 22);
             this.lblcompany.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblcompany.Name = "lblcompany";
-            this.lblcompany.Size = new System.Drawing.Size(54, 20);
+            this.lblcompany.Size = new System.Drawing.Size(68, 25);
             this.lblcompany.TabIndex = 33;
             this.lblcompany.Text = "กองร้อย";
             this.lblcompany.Visible = false;
@@ -1519,7 +1519,7 @@
             this.textBoxBatt.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxBatt.MaxLength = 6;
             this.textBoxBatt.Name = "textBoxBatt";
-            this.textBoxBatt.Size = new System.Drawing.Size(50, 27);
+            this.textBoxBatt.Size = new System.Drawing.Size(50, 32);
             this.textBoxBatt.TabIndex = 20;
             this.textBoxBatt.Visible = false;
             // 
@@ -1530,7 +1530,7 @@
             this.lblbatt.Location = new System.Drawing.Point(245, 22);
             this.lblbatt.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblbatt.Name = "lblbatt";
-            this.lblbatt.Size = new System.Drawing.Size(51, 20);
+            this.lblbatt.Size = new System.Drawing.Size(64, 25);
             this.lblbatt.TabIndex = 31;
             this.lblbatt.Text = "กองพัน";
             this.lblbatt.Visible = false;
@@ -1549,7 +1549,7 @@
             // 
             // AddNewPersonForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(860, 454);
@@ -1563,7 +1563,7 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AddNewPersonForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "งานเพิ่มทหารใหม่";

@@ -66,6 +66,7 @@
             this.dateFormatSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ScancardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CheckRuncodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +85,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1312, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(1087, 38);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,20 +95,20 @@
             this.searchPersonAllToolStripMenuItem,
             this.searchPersonToolStripMenuItem});
             this.ssToolStripMenuItem.Name = "ssToolStripMenuItem";
-            this.ssToolStripMenuItem.Size = new System.Drawing.Size(57, 25);
+            this.ssToolStripMenuItem.Size = new System.Drawing.Size(69, 32);
             this.ssToolStripMenuItem.Text = "ค้นหา";
             // 
             // searchPersonAllToolStripMenuItem
             // 
             this.searchPersonAllToolStripMenuItem.Name = "searchPersonAllToolStripMenuItem";
-            this.searchPersonAllToolStripMenuItem.Size = new System.Drawing.Size(289, 26);
+            this.searchPersonAllToolStripMenuItem.Size = new System.Drawing.Size(356, 32);
             this.searchPersonAllToolStripMenuItem.Text = "ค้นหาข้อมูล นรด.";
             this.searchPersonAllToolStripMenuItem.Click += new System.EventHandler(this.searchPersonAllToolStripMenuItem_Click);
             // 
             // searchPersonToolStripMenuItem
             // 
             this.searchPersonToolStripMenuItem.Name = "searchPersonToolStripMenuItem";
-            this.searchPersonToolStripMenuItem.Size = new System.Drawing.Size(289, 26);
+            this.searchPersonToolStripMenuItem.Size = new System.Drawing.Size(356, 32);
             this.searchPersonToolStripMenuItem.Text = "ค้นหาข้อมูล ทหารพลกองประจำการ";
             this.searchPersonToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
@@ -128,73 +129,73 @@
             this.AddTeplephonNUmberToolStripMenuItem});
             this.toolSubUnit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.toolSubUnit.Name = "toolSubUnit";
-            this.toolSubUnit.Size = new System.Drawing.Size(82, 25);
+            this.toolSubUnit.Size = new System.Drawing.Size(98, 32);
             this.toolSubUnit.Text = "เพิ่มข้อมูล";
             this.toolSubUnit.Click += new System.EventHandler(this.toolSubUnit_Click);
             // 
             // testPersonCardToolStripMenuItem
             // 
             this.testPersonCardToolStripMenuItem.Name = "testPersonCardToolStripMenuItem";
-            this.testPersonCardToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.testPersonCardToolStripMenuItem.Size = new System.Drawing.Size(396, 32);
             this.testPersonCardToolStripMenuItem.Text = "ทดสอบตรวจจับภาพบัตร";
             this.testPersonCardToolStripMenuItem.Click += new System.EventHandler(this.testPersonCardToolStripMenuItem_Click);
             // 
             // processCardToolStripMenuItem
             // 
             this.processCardToolStripMenuItem.Name = "processCardToolStripMenuItem";
-            this.processCardToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.processCardToolStripMenuItem.Size = new System.Drawing.Size(396, 32);
             this.processCardToolStripMenuItem.Text = "ตรวจสอบบัตรประจำตัวประชาชน";
             this.processCardToolStripMenuItem.Click += new System.EventHandler(this.processCardToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(318, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(393, 6);
             // 
             // newPersonToolStripMenuItem
             // 
             this.newPersonToolStripMenuItem.Name = "newPersonToolStripMenuItem";
-            this.newPersonToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.newPersonToolStripMenuItem.Size = new System.Drawing.Size(396, 32);
             this.newPersonToolStripMenuItem.Text = "งานรับทหารใหม่";
             this.newPersonToolStripMenuItem.Click += new System.EventHandler(this.newPersonToolStripMenuItem_Click);
             // 
             // AddNewPersonScanCardMode
             // 
             this.AddNewPersonScanCardMode.Name = "AddNewPersonScanCardMode";
-            this.AddNewPersonScanCardMode.Size = new System.Drawing.Size(321, 26);
+            this.AddNewPersonScanCardMode.Size = new System.Drawing.Size(396, 32);
             this.AddNewPersonScanCardMode.Text = "งานรับทหารใหม่(โหมดสแกนบัตร)";
             this.AddNewPersonScanCardMode.Click += new System.EventHandler(this.AddNewPersonScanCardMode_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(318, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(393, 6);
             // 
             // PersonRequestToolStripMenuItem
             // 
             this.PersonRequestToolStripMenuItem.Name = "PersonRequestToolStripMenuItem";
-            this.PersonRequestToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.PersonRequestToolStripMenuItem.Size = new System.Drawing.Size(396, 32);
             this.PersonRequestToolStripMenuItem.Text = "ร้องขอย้ายหน่วย";
             this.PersonRequestToolStripMenuItem.Click += new System.EventHandler(this.PersonRequestToolStripMenuItem_Click);
             // 
             // personTransferToolStripMenuItem
             // 
             this.personTransferToolStripMenuItem.Name = "personTransferToolStripMenuItem";
-            this.personTransferToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.personTransferToolStripMenuItem.Size = new System.Drawing.Size(396, 32);
             this.personTransferToolStripMenuItem.Text = "ย้ายข้อมูลทหารเก่าไปฐานข้อมูลทหารใหม่";
             this.personTransferToolStripMenuItem.Click += new System.EventHandler(this.personTransferToolStripMenuItem_Click);
             // 
             // addNLabelToolStripMenuItem
             // 
             this.addNLabelToolStripMenuItem.Name = "addNLabelToolStripMenuItem";
-            this.addNLabelToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.addNLabelToolStripMenuItem.Size = new System.Drawing.Size(396, 32);
             this.addNLabelToolStripMenuItem.Text = "กำหนดหมายเลขทหารย้ายหน่วย";
             this.addNLabelToolStripMenuItem.Click += new System.EventHandler(this.addNLabelToolStripMenuItem_Click);
             // 
             // addsubuint
             // 
             this.addsubuint.Name = "addsubuint";
-            this.addsubuint.Size = new System.Drawing.Size(321, 26);
+            this.addsubuint.Size = new System.Drawing.Size(396, 32);
             this.addsubuint.Text = "เพิ่มหน่วยย่อย";
             this.addsubuint.Visible = false;
             this.addsubuint.Click += new System.EventHandler(this.toolSubUnit_Click);
@@ -202,14 +203,14 @@
             // Indictment_ToolStripMenuItem
             // 
             this.Indictment_ToolStripMenuItem.Name = "Indictment_ToolStripMenuItem";
-            this.Indictment_ToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.Indictment_ToolStripMenuItem.Size = new System.Drawing.Size(396, 32);
             this.Indictment_ToolStripMenuItem.Text = "งานเพิ่มข้อหาทหาร";
             this.Indictment_ToolStripMenuItem.Click += new System.EventHandler(this.Indictment_ToolStripMenuItem_Click);
             // 
             // AddTeplephonNUmberToolStripMenuItem
             // 
             this.AddTeplephonNUmberToolStripMenuItem.Name = "AddTeplephonNUmberToolStripMenuItem";
-            this.AddTeplephonNUmberToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.AddTeplephonNUmberToolStripMenuItem.Size = new System.Drawing.Size(396, 32);
             this.AddTeplephonNUmberToolStripMenuItem.Text = "งานเพิ่มเบอร์โทรศัพท์ทหาร";
             this.AddTeplephonNUmberToolStripMenuItem.Click += new System.EventHandler(this.AddTeplephonNUmberToolStripMenuItem_Click);
             // 
@@ -225,60 +226,60 @@
             this.รายงานสรปยอดทะเบยนบานToolStripMenuItem,
             this.ReportEducateAndOccup});
             this.รายงานToolStripMenuItem.Name = "รายงานToolStripMenuItem";
-            this.รายงานToolStripMenuItem.Size = new System.Drawing.Size(67, 25);
+            this.รายงานToolStripMenuItem.Size = new System.Drawing.Size(81, 32);
             this.รายงานToolStripMenuItem.Text = "รายงาน";
             // 
             // reportPersonToolStripMenuItem
             // 
             this.reportPersonToolStripMenuItem.Name = "reportPersonToolStripMenuItem";
-            this.reportPersonToolStripMenuItem.Size = new System.Drawing.Size(354, 26);
+            this.reportPersonToolStripMenuItem.Size = new System.Drawing.Size(440, 32);
             this.reportPersonToolStripMenuItem.Text = "รายงาน ตรวจรายชื่อทหารใหม่";
             this.reportPersonToolStripMenuItem.Click += new System.EventHandler(this.reportPersonToolStripMenuItem_Click);
             // 
             // summaryNewPersonToolStripMenuItem
             // 
             this.summaryNewPersonToolStripMenuItem.Name = "summaryNewPersonToolStripMenuItem";
-            this.summaryNewPersonToolStripMenuItem.Size = new System.Drawing.Size(354, 26);
+            this.summaryNewPersonToolStripMenuItem.Size = new System.Drawing.Size(440, 32);
             this.summaryNewPersonToolStripMenuItem.Text = "รายงาน สรุปยอดรับทหารใหม่";
             this.summaryNewPersonToolStripMenuItem.Click += new System.EventHandler(this.summaryNewPersonToolStripMenuItem_Click);
             // 
             // DevideUnitToolStripMenuItem
             // 
             this.DevideUnitToolStripMenuItem.Name = "DevideUnitToolStripMenuItem";
-            this.DevideUnitToolStripMenuItem.Size = new System.Drawing.Size(354, 26);
+            this.DevideUnitToolStripMenuItem.Size = new System.Drawing.Size(440, 32);
             this.DevideUnitToolStripMenuItem.Text = "รายงาน แบ่งทหารประจำหน่วย";
             this.DevideUnitToolStripMenuItem.Click += new System.EventHandler(this.DevideUnitToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(351, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(437, 6);
             // 
             // HistoryBooktoolStripMenuItem
             // 
             this.HistoryBooktoolStripMenuItem.Name = "HistoryBooktoolStripMenuItem";
-            this.HistoryBooktoolStripMenuItem.Size = new System.Drawing.Size(354, 26);
+            this.HistoryBooktoolStripMenuItem.Size = new System.Drawing.Size(440, 32);
             this.HistoryBooktoolStripMenuItem.Text = "พิมพ์สมุดประวัติ";
             this.HistoryBooktoolStripMenuItem.Click += new System.EventHandler(this.HistoryBooktoolStripMenuItem_Click);
             // 
             // AddressMore
             // 
             this.AddressMore.Name = "AddressMore";
-            this.AddressMore.Size = new System.Drawing.Size(354, 26);
+            this.AddressMore.Size = new System.Drawing.Size(440, 32);
             this.AddressMore.Text = "รายงานทหารกองประจำการจัดแบ่งให้หน่วย";
             this.AddressMore.Click += new System.EventHandler(this.AddressMore_Click);
             // 
             // รายงานสรปยอดทะเบยนบานToolStripMenuItem
             // 
             this.รายงานสรปยอดทะเบยนบานToolStripMenuItem.Name = "รายงานสรปยอดทะเบยนบานToolStripMenuItem";
-            this.รายงานสรปยอดทะเบยนบานToolStripMenuItem.Size = new System.Drawing.Size(354, 26);
+            this.รายงานสรปยอดทะเบยนบานToolStripMenuItem.Size = new System.Drawing.Size(440, 32);
             this.รายงานสรปยอดทะเบยนบานToolStripMenuItem.Text = "รายงานสรุปยอดทะเบียนบ้าน";
             this.รายงานสรปยอดทะเบยนบานToolStripMenuItem.Click += new System.EventHandler(this.Sclick);
             // 
             // ReportEducateAndOccup
             // 
             this.ReportEducateAndOccup.Name = "ReportEducateAndOccup";
-            this.ReportEducateAndOccup.Size = new System.Drawing.Size(354, 26);
+            this.ReportEducateAndOccup.Size = new System.Drawing.Size(440, 32);
             this.ReportEducateAndOccup.Text = "รายงานการศึกษาและอาชีพทหารกองประจำการ";
             this.ReportEducateAndOccup.Click += new System.EventHandler(this.ReportEducateAndOccup_Click);
             // 
@@ -289,27 +290,27 @@
             this.ยายเขาToolStripMenuItem,
             this.tspreaddressmore});
             this.DeadToolStripMenuItem.Name = "DeadToolStripMenuItem";
-            this.DeadToolStripMenuItem.Size = new System.Drawing.Size(93, 25);
+            this.DeadToolStripMenuItem.Size = new System.Drawing.Size(113, 32);
             this.DeadToolStripMenuItem.Text = "ทะเบียนบ้าน";
             // 
             // SearchToolStripMenuItem
             // 
             this.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem";
-            this.SearchToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.SearchToolStripMenuItem.Size = new System.Drawing.Size(223, 32);
             this.SearchToolStripMenuItem.Text = "ค้นหาข้อมูล";
             this.SearchToolStripMenuItem.Click += new System.EventHandler(this.SearchToolStripMenuItem_Click_1);
             // 
             // ยายเขาToolStripMenuItem
             // 
             this.ยายเขาToolStripMenuItem.Name = "ยายเขาToolStripMenuItem";
-            this.ยายเขาToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.ยายเขาToolStripMenuItem.Size = new System.Drawing.Size(223, 32);
             this.ยายเขาToolStripMenuItem.Text = "ย้ายทะเบียนบ้าน";
             this.ยายเขาToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // tspreaddressmore
             // 
             this.tspreaddressmore.Name = "tspreaddressmore";
-            this.tspreaddressmore.Size = new System.Drawing.Size(185, 26);
+            this.tspreaddressmore.Size = new System.Drawing.Size(223, 32);
             this.tspreaddressmore.Text = "เตรียมการแจ้งย้าย";
             this.tspreaddressmore.Click += new System.EventHandler(this.tspreaddressmore_Click);
             // 
@@ -317,22 +318,23 @@
             // 
             this.เครองมอToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createFolderToolStripMenuItem,
-            this.เปลยนชอรปToolStripMenuItem});
+            this.เปลยนชอรปToolStripMenuItem,
+            this.CheckRuncodeToolStripMenuItem});
             this.เครองมอToolStripMenuItem.Name = "เครองมอToolStripMenuItem";
-            this.เครองมอToolStripMenuItem.Size = new System.Drawing.Size(73, 25);
+            this.เครองมอToolStripMenuItem.Size = new System.Drawing.Size(91, 32);
             this.เครองมอToolStripMenuItem.Text = "เครื่องมือ";
             // 
             // createFolderToolStripMenuItem
             // 
             this.createFolderToolStripMenuItem.Name = "createFolderToolStripMenuItem";
-            this.createFolderToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.createFolderToolStripMenuItem.Size = new System.Drawing.Size(244, 32);
             this.createFolderToolStripMenuItem.Text = "สร้างโฟลเดอร์จังหวัด";
             this.createFolderToolStripMenuItem.Click += new System.EventHandler(this.createFolderToolStripMenuItem_Click);
             // 
             // เปลยนชอรปToolStripMenuItem
             // 
             this.เปลยนชอรปToolStripMenuItem.Name = "เปลยนชอรปToolStripMenuItem";
-            this.เปลยนชอรปToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.เปลยนชอรปToolStripMenuItem.Size = new System.Drawing.Size(244, 32);
             this.เปลยนชอรปToolStripMenuItem.Text = "เปลี่ยนชื่อรูป";
             this.เปลยนชอรปToolStripMenuItem.Visible = false;
             this.เปลยนชอรปToolStripMenuItem.Click += new System.EventHandler(this.ChangeFileName);
@@ -344,43 +346,50 @@
             this.dateFormatSettingToolStripMenuItem,
             this.ScancardToolStripMenuItem});
             this.ตงคาToolStripMenuItem.Name = "ตงคาToolStripMenuItem";
-            this.ตงคาToolStripMenuItem.Size = new System.Drawing.Size(53, 25);
+            this.ตงคาToolStripMenuItem.Size = new System.Drawing.Size(65, 32);
             this.ตงคาToolStripMenuItem.Text = "ตั้งค่า";
             // 
             // settingDBToolStripMenuItem
             // 
             this.settingDBToolStripMenuItem.Name = "settingDBToolStripMenuItem";
-            this.settingDBToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.settingDBToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
             this.settingDBToolStripMenuItem.Text = "ตั้งค่าฐานข้อมูล";
             this.settingDBToolStripMenuItem.Click += new System.EventHandler(this.settingDBToolStripMenuItem_Click);
             // 
             // dateFormatSettingToolStripMenuItem
             // 
             this.dateFormatSettingToolStripMenuItem.Name = "dateFormatSettingToolStripMenuItem";
-            this.dateFormatSettingToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.dateFormatSettingToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
             this.dateFormatSettingToolStripMenuItem.Text = "ตั้งค่ารูปแบบวันที่";
             this.dateFormatSettingToolStripMenuItem.Click += new System.EventHandler(this.dateFormatSettingToolStripMenuItem_Click);
             // 
             // ScancardToolStripMenuItem
             // 
             this.ScancardToolStripMenuItem.Name = "ScancardToolStripMenuItem";
-            this.ScancardToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.ScancardToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
             this.ScancardToolStripMenuItem.Text = "ตั้งค่าสแกนบัตร";
             this.ScancardToolStripMenuItem.Click += new System.EventHandler(this.ScancardToolStripMenuItem_Click);
             // 
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(68, 25);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(81, 32);
             this.AboutToolStripMenuItem.Text = "เกี่ยวกับ";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
+            // CheckRuncodeToolStripMenuItem
+            // 
+            this.CheckRuncodeToolStripMenuItem.Name = "CheckRuncodeToolStripMenuItem";
+            this.CheckRuncodeToolStripMenuItem.Size = new System.Drawing.Size(244, 32);
+            this.CheckRuncodeToolStripMenuItem.Text = "เช็ครันโค้ด";
+            this.CheckRuncodeToolStripMenuItem.Click += new System.EventHandler(this.CheckRuncodeToolStripMenuItem_Click);
+            // 
             // MainWindowForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(1312, 845);
+            this.ClientSize = new System.Drawing.Size(1087, 569);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.IsMdiContainer = true;
@@ -437,5 +446,6 @@
         private System.Windows.Forms.ToolStripMenuItem AddTeplephonNUmberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ScancardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AddNewPersonScanCardMode;
+        private System.Windows.Forms.ToolStripMenuItem CheckRuncodeToolStripMenuItem;
     }
 }

@@ -50,7 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbbProvince = new System.Windows.Forms.ComboBox();
             this.checkBoxSearchNivyAll = new System.Windows.Forms.CheckBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label7 = new System.Windows.Forms.Label();
             this.labelCountSearchRecord = new System.Windows.Forms.Label();
@@ -61,20 +60,17 @@
             this.labelPaging = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gvResult)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gvResult
@@ -84,6 +80,7 @@
             this.gvResult.AllowUserToOrderColumns = true;
             this.gvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvResult.Location = new System.Drawing.Point(8, 15);
+            this.gvResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvResult.Margin = new System.Windows.Forms.Padding(4);
             this.gvResult.MultiSelect = false;
             this.gvResult.Name = "gvResult";
@@ -121,12 +118,13 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cbbProvince);
             this.groupBox1.Controls.Add(this.checkBoxSearchNivyAll);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 15);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(801, 119);
+            this.groupBox1.Size = new System.Drawing.Size(837, 119);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ฟอร์มค้นหา";
@@ -137,7 +135,7 @@
             this.cbbBatt.FormattingEnabled = true;
             this.cbbBatt.Location = new System.Drawing.Point(747, 51);
             this.cbbBatt.Name = "cbbBatt";
-            this.cbbBatt.Size = new System.Drawing.Size(47, 24);
+            this.cbbBatt.Size = new System.Drawing.Size(47, 28);
             this.cbbBatt.TabIndex = 8;
             // 
             // cbbCompany
@@ -146,7 +144,7 @@
             this.cbbCompany.FormattingEnabled = true;
             this.cbbCompany.Location = new System.Drawing.Point(628, 51);
             this.cbbCompany.Name = "cbbCompany";
-            this.cbbCompany.Size = new System.Drawing.Size(47, 24);
+            this.cbbCompany.Size = new System.Drawing.Size(47, 28);
             this.cbbCompany.TabIndex = 7;
             // 
             // labelBatt
@@ -155,7 +153,7 @@
             this.labelBatt.Location = new System.Drawing.Point(691, 54);
             this.labelBatt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBatt.Name = "labelBatt";
-            this.labelBatt.Size = new System.Drawing.Size(49, 16);
+            this.labelBatt.Size = new System.Drawing.Size(67, 20);
             this.labelBatt.TabIndex = 31;
             this.labelBatt.Text = "กองพันที่";
             // 
@@ -165,7 +163,7 @@
             this.labelCompany.Location = new System.Drawing.Point(569, 54);
             this.labelCompany.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCompany.Name = "labelCompany";
-            this.labelCompany.Size = new System.Drawing.Size(52, 16);
+            this.labelCompany.Size = new System.Drawing.Size(73, 20);
             this.labelCompany.TabIndex = 29;
             this.labelCompany.Text = "กองร้อยที่";
             // 
@@ -175,7 +173,7 @@
             this.label9.Location = new System.Drawing.Point(267, 23);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(112, 16);
+            this.label9.Size = new System.Drawing.Size(159, 20);
             this.label9.TabIndex = 28;
             this.label9.Text = "เลขประจำตัวประชาชน";
             // 
@@ -184,7 +182,7 @@
             this.textBoxID13.Location = new System.Drawing.Point(400, 19);
             this.textBoxID13.MaxLength = 13;
             this.textBoxID13.Name = "textBoxID13";
-            this.textBoxID13.Size = new System.Drawing.Size(186, 22);
+            this.textBoxID13.Size = new System.Drawing.Size(186, 26);
             this.textBoxID13.TabIndex = 4;
             // 
             // label6
@@ -193,7 +191,7 @@
             this.label6.Location = new System.Drawing.Point(620, 23);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 16);
+            this.label6.Size = new System.Drawing.Size(78, 20);
             this.label6.TabIndex = 26;
             this.label6.Text = "RunCode";
             // 
@@ -202,7 +200,7 @@
             this.textBoxRunNum.Location = new System.Drawing.Point(694, 20);
             this.textBoxRunNum.MaxLength = 10;
             this.textBoxRunNum.Name = "textBoxRunNum";
-            this.textBoxRunNum.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRunNum.Size = new System.Drawing.Size(100, 26);
             this.textBoxRunNum.TabIndex = 5;
             this.textBoxRunNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRunNum_KeyPress);
             // 
@@ -225,7 +223,7 @@
             this.mTextBoxID8.Location = new System.Drawing.Point(166, 19);
             this.mTextBoxID8.Mask = "a.a.0000";
             this.mTextBoxID8.Name = "mTextBoxID8";
-            this.mTextBoxID8.Size = new System.Drawing.Size(65, 22);
+            this.mTextBoxID8.Size = new System.Drawing.Size(65, 26);
             this.mTextBoxID8.TabIndex = 1;
             // 
             // label4
@@ -234,7 +232,7 @@
             this.label4.Location = new System.Drawing.Point(112, 22);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 16);
+            this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 24;
             this.label4.Text = "ทะเบียน";
             // 
@@ -244,7 +242,7 @@
             this.label2.Location = new System.Drawing.Point(8, 22);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 16);
+            this.label2.Size = new System.Drawing.Size(38, 20);
             this.label2.TabIndex = 23;
             this.label2.Text = "ผลัด";
             // 
@@ -254,7 +252,7 @@
             this.mtxtYearin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtxtYearin.Mask = "0/00";
             this.mtxtYearin.Name = "mtxtYearin";
-            this.mtxtYearin.Size = new System.Drawing.Size(43, 22);
+            this.mtxtYearin.Size = new System.Drawing.Size(43, 26);
             this.mtxtYearin.TabIndex = 0;
             // 
             // label3
@@ -263,7 +261,7 @@
             this.label3.Location = new System.Drawing.Point(181, 54);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 16);
+            this.label3.Size = new System.Drawing.Size(66, 20);
             this.label3.TabIndex = 22;
             this.label3.Text = "นามสกุล";
             // 
@@ -273,7 +271,7 @@
             this.label5.Location = new System.Drawing.Point(11, 54);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 16);
+            this.label5.Size = new System.Drawing.Size(28, 20);
             this.label5.TabIndex = 21;
             this.label5.Text = "ชื่อ";
             // 
@@ -283,7 +281,7 @@
             this.textBoxSname.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSname.MaxLength = 50;
             this.textBoxSname.Name = "textBoxSname";
-            this.textBoxSname.Size = new System.Drawing.Size(132, 22);
+            this.textBoxSname.Size = new System.Drawing.Size(132, 26);
             this.textBoxSname.TabIndex = 3;
             // 
             // textBoxName
@@ -292,7 +290,7 @@
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.MaxLength = 50;
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(132, 22);
+            this.textBoxName.Size = new System.Drawing.Size(132, 26);
             this.textBoxName.TabIndex = 2;
             // 
             // label1
@@ -300,7 +298,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(376, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.Size = new System.Drawing.Size(54, 20);
             this.label1.TabIndex = 15;
             this.label1.Text = "จังหวัด";
             // 
@@ -310,7 +308,7 @@
             this.cbbProvince.FormattingEnabled = true;
             this.cbbProvince.Location = new System.Drawing.Point(426, 51);
             this.cbbProvince.Name = "cbbProvince";
-            this.cbbProvince.Size = new System.Drawing.Size(121, 24);
+            this.cbbProvince.Size = new System.Drawing.Size(121, 28);
             this.cbbProvince.TabIndex = 6;
             // 
             // checkBoxSearchNivyAll
@@ -318,27 +316,15 @@
             this.checkBoxSearchNivyAll.AutoSize = true;
             this.checkBoxSearchNivyAll.Location = new System.Drawing.Point(11, 86);
             this.checkBoxSearchNivyAll.Name = "checkBoxSearchNivyAll";
-            this.checkBoxSearchNivyAll.Size = new System.Drawing.Size(126, 20);
+            this.checkBoxSearchNivyAll.Size = new System.Drawing.Size(178, 24);
             this.checkBoxSearchNivyAll.TabIndex = 10;
             this.checkBoxSearchNivyAll.Text = "แสดงข้อมูลทุกคอลัมน์";
             this.checkBoxSearchNivyAll.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.splitContainer1);
-            this.groupBox3.Controls.Add(this.gvResult);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.groupBox3.Location = new System.Drawing.Point(7, 4);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(762, 443);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(8, 404);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 352);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -352,8 +338,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label8);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(744, 27);
-            this.splitContainer1.SplitterDistance = 186;
+            this.splitContainer1.Size = new System.Drawing.Size(831, 27);
+            this.splitContainer1.SplitterDistance = 207;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 4;
             // 
@@ -362,7 +348,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(143, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 16);
+            this.label7.Size = new System.Drawing.Size(58, 20);
             this.label7.TabIndex = 7;
             this.label7.Text = "ใช้เวลา";
             // 
@@ -370,10 +356,10 @@
             // 
             this.labelCountSearchRecord.AutoSize = true;
             this.labelCountSearchRecord.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelCountSearchRecord.Location = new System.Drawing.Point(0, 11);
+            this.labelCountSearchRecord.Location = new System.Drawing.Point(0, 7);
             this.labelCountSearchRecord.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCountSearchRecord.Name = "labelCountSearchRecord";
-            this.labelCountSearchRecord.Size = new System.Drawing.Size(77, 16);
+            this.labelCountSearchRecord.Size = new System.Drawing.Size(97, 20);
             this.labelCountSearchRecord.TabIndex = 0;
             this.labelCountSearchRecord.Text = "x Record(s)";
             // 
@@ -382,7 +368,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 11);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 16);
+            this.label8.Size = new System.Drawing.Size(53, 20);
             this.label8.TabIndex = 3;
             this.label8.Text = "label8";
             // 
@@ -433,18 +419,19 @@
             this.labelPaging.Location = new System.Drawing.Point(75, 3);
             this.labelPaging.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPaging.Name = "labelPaging";
-            this.labelPaging.Size = new System.Drawing.Size(28, 16);
+            this.labelPaging.Size = new System.Drawing.Size(37, 20);
             this.labelPaging.TabIndex = 3;
             this.labelPaging.Text = "หน้า";
             // 
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.Pink;
+            this.btnSubmit.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Location = new System.Drawing.Point(706, 646);
+            this.btnSubmit.Location = new System.Drawing.Point(737, 0);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(100, 28);
+            this.btnSubmit.Size = new System.Drawing.Size(100, 40);
             this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "แก้ไขข้อมูล";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -453,55 +440,46 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Pink;
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Location = new System.Drawing.Point(24, 647);
+            this.btnDelete.Location = new System.Drawing.Point(0, 0);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 28);
+            this.btnDelete.Size = new System.Drawing.Size(100, 40);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "ลบ";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(11, 21);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(783, 480);
-            this.tabControl1.TabIndex = 6;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(775, 451);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "ทั้งหมด";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.tabControl1);
-            this.groupBox2.Location = new System.Drawing.Point(16, 138);
+            this.groupBox2.Controls.Add(this.splitContainer1);
+            this.groupBox2.Controls.Add(this.gvResult);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(0, 119);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(801, 504);
+            this.groupBox2.Size = new System.Drawing.Size(837, 382);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ผลการค้นหา";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnSubmit);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 509);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(837, 40);
+            this.panel2.TabIndex = 8;
+            // 
             // SearchPersonForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 681);
+            this.ClientSize = new System.Drawing.Size(837, 549);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -510,7 +488,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvResult)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -519,9 +496,8 @@
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -530,7 +506,6 @@
 
         private System.Windows.Forms.DataGridView gvResult;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelCountSearchRecord;
         private System.Windows.Forms.SplitContainer splitContainer1;
@@ -551,8 +526,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxSname;
         private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxRunNum;
         private System.Windows.Forms.Label label7;
@@ -564,5 +537,6 @@
         private System.Windows.Forms.ComboBox cbbCompany;
         private System.Windows.Forms.Label labelBatt;
         private System.Windows.Forms.Label labelCompany;
+        private System.Windows.Forms.Panel panel2;
     }
 }

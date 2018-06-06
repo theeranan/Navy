@@ -57,7 +57,7 @@ namespace Navy.Forms
             btnNextPage.Enabled = false;
             btnPrevPage.Enabled = false;
             GVsSetAutoSizeColumns();
-
+            pgroup = PersonGroups.Prepare;
             DataControls.LoadComboBoxData(cbbProvince, DataDefinition.GetArmtownTab(), "ARMNAME", "ARMID");
         }
 
@@ -348,7 +348,7 @@ namespace Navy.Forms
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 1)
+            /*if (tabControl1.SelectedIndex == 1)
             {
                 pgroup = PersonGroups.Prepare;
             }
@@ -379,7 +379,7 @@ namespace Navy.Forms
             else
             {
                 pgroup = PersonGroups.All;
-            }
+            }*/
         }
 
         //input number only

@@ -63,7 +63,7 @@ namespace Navy.Forms
             }
             else
             {
-
+                print_slip.Visible = true;
                 this.Size = new Size(1202, 493);
             }
         }
@@ -713,7 +713,18 @@ namespace Navy.Forms
         {
             if (textBoxID13.Text.Trim() == "")
             {
-                return "เลขบัตรประชาชน";
+                DialogResult dialogResult = MessageBox.Show("เลขบัตรประชาชนเป็นค่าว่าง", "Message", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //do something
+                    return "";
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                    return "เลขบัตรประชาชน";
+                }
+                
             }
 
             if (textBoxName.Text.Trim() == "")
@@ -1267,7 +1278,6 @@ namespace Navy.Forms
             {
                 string runcode = dcore.RequestRuncode(param, textBoxBatt.Text, textBoxCompany.Text,textBoxPlatoon.Text,textBoxPseq.Text, DataControls.GetSelectedValueComboBoxToString(cbbType));
                 textBoxRunNum.Invoke(new MethodInvoker(delegate { textBoxRunNum.Text = runcode; }));
-                textBoxRunNum.Focus();
             }
             catch (Exception ex)
             {
@@ -1346,12 +1356,12 @@ namespace Navy.Forms
                     if (dcore.InsertPerson(param))
                     {
                         dcoreUpdateUsedPerson.UpdatePersonUsed(param.id13);
-
-                        MessageBox.Show("บันทึกเรียบร้อย");
-                        if (modecard != "")
+if (modecard != "")
                         {
                             print_dialog();
                         }
+                        MessageBox.Show("บันทึกเรียบร้อย");
+                        
                         ClearValueForNewPerson();
                         SetInitialPerson(param.yearin, param.armid, param.regDate, param.repDate, param.origincode);
                         SetControlSelectAll();
@@ -1378,8 +1388,9 @@ namespace Navy.Forms
         {
            try
             {
-                string path = @"\Slip.txt";
-                string myText = File.ReadAllText(@"\Slip_Plant.txt", Encoding.UTF8);
+                var systemPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+                var path = Path.Combine(systemPath, "Slip.txt");
+                string myText = File.ReadAllText(Path.Combine(systemPath, "Slip_Plant.txt"), Encoding.UTF8);
                 if (File.Exists(path))
                 {
                     File.Delete(path);
@@ -1446,25 +1457,32 @@ namespace Navy.Forms
                     }
                     string id8 = textBoxID8_1.Text + tempid8;
                     myText = myText.Replace("@id8", id8);
-                    MessageBox.Show(myText);
                     sw.Write(myText);
                 }
-                streamToPrint = new StreamReader(path, Encoding.UTF8,true);
+                DialogResult dialogResult = MessageBox.Show(myText, "Message", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    try
+                    streamToPrint = new StreamReader(path, Encoding.UTF8, true);
                     {
-                        
-                        PrintDocument pd = new PrintDocument();
-                        pd.DefaultPageSettings.PaperSize = new PaperSize("custom",Int32.Parse(ConfigurationManager.AppSettings["PaperSizeW"]), Int32.Parse(ConfigurationManager.AppSettings["PaperSizeH"]));
-                        pd.PrinterSettings.PrinterName = ConfigurationManager.AppSettings["Printer"];
-                        pd.PrintPage += new PrintPageEventHandler(this.pd_PrintPage);
-                        pd.Print();
-                    }
-                    finally
-                    {
-                        streamToPrint.Close();
+                        try
+                        {
+
+                            PrintDocument pd = new PrintDocument();
+                            pd.DefaultPageSettings.PaperSize = new PaperSize("custom", Int32.Parse(ConfigurationManager.AppSettings["PaperSizeW"]), Int32.Parse(ConfigurationManager.AppSettings["PaperSizeH"]));
+                            pd.PrinterSettings.PrinterName = ConfigurationManager.AppSettings["Printer"];
+                            pd.PrintPage += new PrintPageEventHandler(this.pd_PrintPage);
+                            pd.Print();
+                        }
+                        finally
+                        {
+                            streamToPrint.Close();
+                        }
                     }
                 }
+                else if (dialogResult == DialogResult.No)
+                {
+                }
+                
             }
             catch (Exception ex)
             {
@@ -1614,7 +1632,6 @@ namespace Navy.Forms
             {
                 CardInserted(personal);
                 readfromIDCard = "1";
-                textBoxName.Focus();
             }
             else {
                 MessageBox.Show("ไม่สามารถดึงข้อมูลจากบัตรประชาชนได้");
