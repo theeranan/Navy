@@ -82,14 +82,12 @@
             this.gvResult.AllowUserToAddRows = false;
             this.gvResult.AllowUserToDeleteRows = false;
             this.gvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvResult.Location = new System.Drawing.Point(8, 16);
             this.gvResult.Location = new System.Drawing.Point(8, 15);
             this.gvResult.Margin = new System.Windows.Forms.Padding(4);
             this.gvResult.MultiSelect = false;
             this.gvResult.Name = "gvResult";
             this.gvResult.ReadOnly = true;
             this.gvResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvResult.Size = new System.Drawing.Size(744, 382);
             this.gvResult.Size = new System.Drawing.Size(744, 383);
             this.gvResult.TabIndex = 1;
             this.gvResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResult_CellContentClick);
@@ -209,14 +207,10 @@
             // 
             // btnSearch
             // 
-<<<<<<< HEAD
-            this.btnSearch.Location = new System.Drawing.Point(689, 86);
-=======
             this.btnSearch.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSearch.Location = new System.Drawing.Point(700, 81);
->>>>>>> origin/Stamp
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(95, 29);
             this.btnSearch.TabIndex = 9;
