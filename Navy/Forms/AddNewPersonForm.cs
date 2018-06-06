@@ -63,7 +63,7 @@ namespace Navy.Forms
             }
             else
             {
-
+                print_slip.Visible = true;
                 this.Size = new Size(1202, 493);
             }
         }
@@ -1632,7 +1632,6 @@ if (modecard != "")
             {
                 CardInserted(personal);
                 readfromIDCard = "1";
-                textBoxName.Focus();
             }
             else {
                 MessageBox.Show("ไม่สามารถดึงข้อมูลจากบัตรประชาชนได้");
