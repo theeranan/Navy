@@ -18,6 +18,7 @@ using Navy.View;
 using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.Drawing.Printing;
+using System.Threading;
 
 namespace Navy.Forms
 {
@@ -79,7 +80,7 @@ namespace Navy.Forms
         {
 
             //RTCMember.View.RTCDetailView
-            if (panelDetail.Controls[0].ToString() == "Navy.View.RTCDetailView")
+            if (panelDetail.Controls[0].ToString() != "Navy.View.RTCTransactionView")
             {
                 panelDetail.Controls.Clear();
                 panelDetail.Controls.Add(rtcTransactionView);
@@ -115,49 +116,61 @@ namespace Navy.Forms
 
 
             panelDetail.Controls.Add(rtcDetailView);
+            panelDetail.Controls.Add(rtcTransactionView);
 
         }
 
         #endregion
-
-        private void linkStatus_LinkClicked(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //rcore.ShowReportViewProfile(navyid);
             Graphics g1 = this.CreateGraphics();
-
-            Image MyImage = new Bitmap(this.ClientRectangle.Width, this.ClientRectangle.Height, g1);
-
-            Graphics g2 = Graphics.FromImage(MyImage);
-
+            Image MyImage1 = new Bitmap(this.ClientRectangle.Width, this.ClientRectangle.Height, g1);
+            Graphics g2 = Graphics.FromImage(MyImage1);
             IntPtr dc1 = g1.GetHdc();
-
             IntPtr dc2 = g2.GetHdc();
-
             BitBlt(dc2, 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height, dc1, 0, 0, 13369376);
-
             g1.ReleaseHdc(dc1);
-
             g2.ReleaseHdc(dc2);
+            //linkStatus_LinkClicked(sender, e);
+            
+            Graphics g3 = this.CreateGraphics();
+            Image MyImage2 = new Bitmap(this.ClientRectangle.Width, this.ClientRectangle.Height, g3);
+            Graphics g4 = Graphics.FromImage(MyImage2);
+            IntPtr dc3 = g3.GetHdc();
+            IntPtr dc4 = g4.GetHdc();
+            BitBlt(dc4, 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height, dc3, 0, 0, 13369376);
+            g3.ReleaseHdc(dc3);
+            g4.ReleaseHdc(dc4);
+            int width = Math.Max(MyImage1.Width, MyImage2.Width);
+            int height = MyImage1.Height + MyImage2.Height;
+            
+            Bitmap MyImage3 = new Bitmap(width, height);
+            Graphics g = Graphics.FromImage(MyImage3);
 
-            MyImage.Save(@"\PrintPage.jpg", ImageFormat.Jpeg);
-
-            FileStream fileStream = new FileStream(@"\PrintPage.jpg", FileMode.Open, FileAccess.Read);
-
-            StartPrint(fileStream, "Image");
-
-            fileStream.Close();
-
-            if (System.IO.File.Exists(@"\PrintPage.jpg"))
-
+            g.Clear(Color.Black);
+            g.DrawImage(MyImage1, new Point(0, 0));
+            g.DrawImage(MyImage2, new Point(0, MyImage1.Height));
+            g.Dispose();
+            /*if(linkStatus.Text != "[ปกติ]")
             {
-
-                System.IO.File.Delete(@"\PrintPage.jpg");
-
+                MyImage3.Save(@"\PrintPage.jpg", ImageFormat.Jpeg);
+            }
+            else*/
+            {
+                MyImage1.Save(@"\PrintPage.jpg", ImageFormat.Jpeg);
+            }
+            MyImage1.Dispose();
+            MyImage2.Dispose();
+            MyImage3.Dispose();
+            FileStream fileStream = new FileStream(@"\PrintPage.jpg", FileMode.Open, FileAccess.Read);
+            StartPrint(fileStream, "Image");
+            fileStream.Close();
+            if (File.Exists(@"\PrintPage.jpg"))
+            {
+                File.Delete(@"\PrintPage.jpg");
             }
         }
 
@@ -165,7 +178,7 @@ namespace Navy.Forms
 
         {
 
-            System.Drawing.Image image = Image.FromStream(streamToPrint);
+            Image image = Image.FromStream(streamToPrint);
             int x = e.MarginBounds.X;
             int y = e.MarginBounds.Y;
             int width = image.Width;
@@ -180,35 +193,30 @@ namespace Navy.Forms
                 height = e.MarginBounds.Height;
                 width = image.Width * e.MarginBounds.Height / image.Height;
             }
-            System.Drawing.Rectangle destRect = new System.Drawing.Rectangle(x, y, width, height);
-            e.Graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, System.Drawing.GraphicsUnit.Pixel);
+            Rectangle destRect = new Rectangle(x, y, width, height);
+            e.Graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel);
+
         }
         public void StartPrint(Stream streamToPrint, string streamType)
 
         {
             PrintDocument printDoc = new PrintDocument();
             printDoc.PrintPage += new PrintPageEventHandler(printDoc_PrintPage);
-            PrintDialog PrintDialog1 = new PrintDialog();
+
+            PrintDialog printdlg = new PrintDialog();
+            PrintPreviewDialog printPrvDlg = new PrintPreviewDialog();
             this.streamToPrint = streamToPrint;
+            
+            // preview the assigned document or you can create a different previewButton for it
+            printPrvDlg.Document = printDoc;
+            printPrvDlg.ShowDialog(); // this shows the preview and then show the Printer Dlg below
 
-    this.streamType = streamType;
-            PrintDialog1.AllowSomePages = true;
+            //printdlg.Document = printDoc;
 
-            PrintDialog1.ShowHelp = true;
-
-            PrintDialog1.Document = printDoc;
-
-            DialogResult result = PrintDialog1.ShowDialog();
-
-            if (result == DialogResult.OK)
-
-            {
-
-                printDoc.Print();
-
-                //docToPrint.Print();
-
-            }
+            //if (printdlg.ShowDialog() == DialogResult.OK)
+            //{
+            //    printDoc.Print();
+            //}
         }
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

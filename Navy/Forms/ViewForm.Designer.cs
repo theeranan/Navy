@@ -108,7 +108,6 @@
             this.linkStatus.Text = "[Status]";
             this.linkStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.linkStatus.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkStatus_LinkClicked);
-            this.linkStatus.Click += new System.EventHandler(this.linkStatus_LinkClicked);
             // 
             // groupBox1
             // 
