@@ -58,13 +58,13 @@
             this.gvResult.AllowUserToAddRows = false;
             this.gvResult.AllowUserToDeleteRows = false;
             this.gvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvResult.Location = new System.Drawing.Point(8, 26);
-            this.gvResult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gvResult.Location = new System.Drawing.Point(8, 23);
+            this.gvResult.Margin = new System.Windows.Forms.Padding(4);
             this.gvResult.MultiSelect = false;
             this.gvResult.Name = "gvResult";
             this.gvResult.ReadOnly = true;
             this.gvResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvResult.Size = new System.Drawing.Size(744, 477);
+            this.gvResult.Size = new System.Drawing.Size(744, 415);
             this.gvResult.TabIndex = 1;
             this.gvResult.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResult_RowEnter);
             this.gvResult.SelectionChanged += new System.EventHandler(this.gvResult_SelectionChanged);
@@ -75,11 +75,11 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.checkBoxSearchNivyAll);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 17);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(16, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(760, 128);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(760, 111);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ฟอร์มค้นหา";
@@ -87,9 +87,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(648, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(648, 22);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 94);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 82);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -97,9 +97,9 @@
             // checkBoxSearchNivyAll
             // 
             this.checkBoxSearchNivyAll.AutoSize = true;
-            this.checkBoxSearchNivyAll.Location = new System.Drawing.Point(8, 100);
+            this.checkBoxSearchNivyAll.Location = new System.Drawing.Point(8, 87);
             this.checkBoxSearchNivyAll.Name = "checkBoxSearchNivyAll";
-            this.checkBoxSearchNivyAll.Size = new System.Drawing.Size(193, 28);
+            this.checkBoxSearchNivyAll.Size = new System.Drawing.Size(193, 24);
             this.checkBoxSearchNivyAll.TabIndex = 0;
             this.checkBoxSearchNivyAll.Text = "ค้นหาจากฐานข้อมูลใหญ่";
             this.checkBoxSearchNivyAll.UseVisualStyleBackColor = true;
@@ -109,19 +109,19 @@
             this.groupBox2.Controls.Add(this.splitContainer1);
             this.groupBox2.Controls.Add(this.gvResult);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.groupBox2.Location = new System.Drawing.Point(16, 153);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Location = new System.Drawing.Point(16, 133);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(760, 549);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(760, 477);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ผลการค้นหา";
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(8, 513);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.splitContainer1.Location = new System.Drawing.Point(8, 446);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -131,7 +131,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(744, 31);
+            this.splitContainer1.Size = new System.Drawing.Size(744, 27);
             this.splitContainer1.SplitterDistance = 186;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 4;
@@ -140,7 +140,7 @@
             // 
             this.labelCountSearchRecord.AutoSize = true;
             this.labelCountSearchRecord.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelCountSearchRecord.Location = new System.Drawing.Point(0, 8);
+            this.labelCountSearchRecord.Location = new System.Drawing.Point(0, 7);
             this.labelCountSearchRecord.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCountSearchRecord.Name = "labelCountSearchRecord";
             this.labelCountSearchRecord.Size = new System.Drawing.Size(97, 20);
@@ -152,19 +152,19 @@
             this.panel1.Controls.Add(this.btnPrevPage);
             this.panel1.Controls.Add(this.btnNextPage);
             this.panel1.Controls.Add(this.labelPaging);
-            this.panel1.Location = new System.Drawing.Point(361, 5);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(361, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 25);
+            this.panel1.Size = new System.Drawing.Size(188, 22);
             this.panel1.TabIndex = 2;
             // 
             // btnPrevPage
             // 
             this.btnPrevPage.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnPrevPage.Location = new System.Drawing.Point(0, 0);
-            this.btnPrevPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPrevPage.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrevPage.Name = "btnPrevPage";
-            this.btnPrevPage.Size = new System.Drawing.Size(67, 25);
+            this.btnPrevPage.Size = new System.Drawing.Size(67, 22);
             this.btnPrevPage.TabIndex = 1;
             this.btnPrevPage.Text = "< ย้อนกลับ";
             this.btnPrevPage.UseVisualStyleBackColor = true;
@@ -174,9 +174,9 @@
             // 
             this.btnNextPage.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnNextPage.Location = new System.Drawing.Point(133, 0);
-            this.btnNextPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNextPage.Margin = new System.Windows.Forms.Padding(4);
             this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(55, 25);
+            this.btnNextPage.Size = new System.Drawing.Size(55, 22);
             this.btnNextPage.TabIndex = 2;
             this.btnNextPage.Text = "ต่อไป >";
             this.btnNextPage.UseVisualStyleBackColor = true;
@@ -201,10 +201,10 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(668, 713);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSubmit.Location = new System.Drawing.Point(668, 620);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(100, 32);
+            this.btnSubmit.Size = new System.Drawing.Size(100, 28);
             this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "ใช้ข้อมูล";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -212,14 +212,14 @@
             // 
             // SearchNivyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 760);
+            this.ClientSize = new System.Drawing.Size(784, 661);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SearchNivyForm";
             this.Text = "ค้นหาข้อมูล";
             ((System.ComponentModel.ISupportInitialize)(this.gvResult)).EndInit();

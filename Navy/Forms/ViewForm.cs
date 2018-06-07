@@ -17,6 +17,7 @@ using System.Globalization;
 using Navy.View;
 using System.Drawing.Imaging;
 using System.Diagnostics;
+using System.Drawing.Printing;
 
 namespace Navy.Forms
 {
@@ -31,7 +32,21 @@ namespace Navy.Forms
         private List<RTCTransaction> _rtcTransaction;
         private List<RTCPunishment> _rtcPunishment;
         private string navyid;
-
+        private System.IO.Stream streamToPrint;
+        string streamType;
+        [System.Runtime.InteropServices.DllImportAttribute("gdi32.dll")]
+        private static extern bool BitBlt
+(
+    IntPtr hdcDest, // handle to destination DC
+    int nXDest, // x-coord of destination upper-left corner
+    int nYDest, // y-coord of destination upper-left corner
+    int nWidth, // width of destination rectangle
+    int nHeight, // height of destination rectangle
+    IntPtr hdcSrc, // handle to source DC
+    int nXSrc, // x-coordinate of source upper-left corner
+    int nYSrc, // y-coordinate of source upper-left corner
+    System.Int32 dwRop // raster operation code
+);
         public ViewForm()
         {
             InitializeComponent();
@@ -112,10 +127,89 @@ namespace Navy.Forms
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            rcore.ShowReportViewProfile(navyid);
-           
+            //rcore.ShowReportViewProfile(navyid);
+            Graphics g1 = this.CreateGraphics();
+
+            Image MyImage = new Bitmap(this.ClientRectangle.Width, this.ClientRectangle.Height, g1);
+
+            Graphics g2 = Graphics.FromImage(MyImage);
+
+            IntPtr dc1 = g1.GetHdc();
+
+            IntPtr dc2 = g2.GetHdc();
+
+            BitBlt(dc2, 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height, dc1, 0, 0, 13369376);
+
+            g1.ReleaseHdc(dc1);
+
+            g2.ReleaseHdc(dc2);
+
+            MyImage.Save(@"\PrintPage.jpg", ImageFormat.Jpeg);
+
+            FileStream fileStream = new FileStream(@"\PrintPage.jpg", FileMode.Open, FileAccess.Read);
+
+            StartPrint(fileStream, "Image");
+
+            fileStream.Close();
+
+            if (System.IO.File.Exists(@"\PrintPage.jpg"))
+
+            {
+
+                System.IO.File.Delete(@"\PrintPage.jpg");
+
+            }
         }
 
+        private void printDoc_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+
+        {
+
+            System.Drawing.Image image = Image.FromStream(streamToPrint);
+            int x = e.MarginBounds.X;
+            int y = e.MarginBounds.Y;
+            int width = image.Width;
+            int height = image.Height;
+            if ((width / e.MarginBounds.Width) > (height / e.MarginBounds.Height))
+            {
+                width = e.MarginBounds.Width;
+                height = image.Height * e.MarginBounds.Width / image.Width;
+            }
+            else
+            {
+                height = e.MarginBounds.Height;
+                width = image.Width * e.MarginBounds.Height / image.Height;
+            }
+            System.Drawing.Rectangle destRect = new System.Drawing.Rectangle(x, y, width, height);
+            e.Graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, System.Drawing.GraphicsUnit.Pixel);
+        }
+        public void StartPrint(Stream streamToPrint, string streamType)
+
+        {
+            PrintDocument printDoc = new PrintDocument();
+            printDoc.PrintPage += new PrintPageEventHandler(printDoc_PrintPage);
+            PrintDialog PrintDialog1 = new PrintDialog();
+            this.streamToPrint = streamToPrint;
+
+    this.streamType = streamType;
+            PrintDialog1.AllowSomePages = true;
+
+            PrintDialog1.ShowHelp = true;
+
+            PrintDialog1.Document = printDoc;
+
+            DialogResult result = PrintDialog1.ShowDialog();
+
+            if (result == DialogResult.OK)
+
+            {
+
+                printDoc.Print();
+
+                //docToPrint.Print();
+
+            }
+        }
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string yearin = rtcDetails.yearin.Replace("/", ".");
