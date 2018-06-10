@@ -13,7 +13,7 @@ namespace Navy.Core
         {
             public string banktab()
             {
-                return "SELECT * FROM bankingtab ORDER BY BankID";
+                return "SELECT * FROM bankingtab ORDER BY BankCode";
             }
             public string armtown()
             {
@@ -1305,12 +1305,12 @@ GROUP BY UNIT3
                 sql += "INSERT INTO person (" +
                     "YEARIN,origincode,REGDATE,REPDATE,ID13,`NAME`,SNAME,BIRTHDATE,ADDRESS,ADDRESS_MU,ADDRESS_SOIL,ADDRESS_ROAD,TOWNCODE,ARMID \n" +
                     ",FATHER,FSNAME,MOTHER,MSNAME,PERTYPE,RUNCODE,ID8,ID,MARK,EDUCODE0,EDUCODE1,EDUCODE2,REGCODE,OCCCODE,HEIGHT,WIDTH,IS_REQUEST,BATT,COMPANY,PLATOON,PSEQ \n" +
-                    ",RECORDDATE,RECORDBY,SKILLCODE,Telephone,FTelephone,MTelephone,PTelephone,Addictive,FlagReadfrom_IDCard,BankID,AccountNum \n" +
+                    ",RECORDDATE,RECORDBY,SKILLCODE,Telephone,FTelephone,MTelephone,PTelephone,Addictive,FlagReadfrom_IDCard,BankCode,AccountNum \n" +
                     ") \n";
                 sql += "VALUES \n" +
                        "(@YEARIN,@origincode,@REGDATE,@REPDATE,@ID13,@NAME_,@SNAME,@BIRTHDATE,@ADDRESS,@ADDRESS_MU,@ADDRESS_SOIL,@ADDRESS_ROAD,@TOWNCODE,@ARMID \n" +
                        ",@FATHER,@FSNAME,@MOTHER,@MSNAME,@PERTYPE,@RUNCODE,@ID8,@ID,@MARK,@EDUCODE0,@EDUCODE1,@EDUCODE2,@REGCODE,@OCCCODE,@HEIGHT,@WIDTH,@IS_REQUEST, @BATT, @COMPANY, @PLATOON, @PSEQ \n" +
-                       ",CONCAT(CURDATE(),' ',CURTIME()),@RECORDBY,@SKILLCODE,@Telephone,@FTelephone,@MTelephone,@PTelephone,@addictive_status,@flagreadfrom_IDCard,@BankID,@AccountNum )";
+                       ",CONCAT(CURDATE(),' ',CURTIME()),@RECORDBY,@SKILLCODE,@Telephone,@FTelephone,@MTelephone,@PTelephone,@addictive_status,@flagreadfrom_IDCard,@BankCode,@AccountNum )";
                 return sql;
             }
 
@@ -1445,7 +1445,7 @@ GROUP BY UNIT3
                     ",BATT=@BATT,COMPANY=@COMPANY,PLATOON=@PLATOON,PSEQ=@PSEQ \n" +
                     ",RECORDDATE=CONCAT(CURDATE(),' ',CURTIME()),RECORDBY=@RECORDBY" +
                     ",kpt=@kpt,PERCENT=@percent,SKILLCODE=@SKILLCODE,Telephone=@Telephone" +
-                    ",FTelephone=@FTelephone,MTelephone=@MTelephone,PTelephone=@PTelephone,Addictive=@addictive_status,FlagReadfrom_IDCard = @flagreadfrom_IDCard,BankID = @BankID,AccountNum = @AccountNum \n" +
+                    ",FTelephone=@FTelephone,MTelephone=@MTelephone,PTelephone=@PTelephone,Addictive=@addictive_status,FlagReadfrom_IDCard = @flagreadfrom_IDCard,BankCode = @BankCode,AccountNum = @AccountNum \n" +
                     " \n";
                 sql += "WHERE NAVYID = '" + navyid + "'";
                 return sql;
