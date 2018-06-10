@@ -29,3 +29,12 @@ D:\Navy2017\NavyOrange\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.csproj.Co
 D:\Navy2017\NavyOrange\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.csproj.CopyComplete
 D:\Navy2017\NavyOrange\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.dll
 D:\Navy2017\NavyOrange\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.pdb
+D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\bin\Debug\ThaiNationalIDCard.dll
+D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\bin\Debug\ThaiNationalIDCard.pdb
+D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\bin\Debug\PCSC.dll
+D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\bin\Debug\PCSC.Iso7816.dll
+D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\bin\Debug\PCSC.xml
+D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\bin\Debug\PCSC.Iso7816.xml
+D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.csprojResolveAssemblyReference.cache
+D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.dll
+D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.pdb
