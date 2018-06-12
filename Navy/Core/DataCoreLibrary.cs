@@ -2238,5 +2238,49 @@ namespace Navy.Core
             }
             return dt;
         }
+
+        public DataTable GetReportCheclLostInformation_ID13(string yearin)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = base.getDataTablePrototype(search.GetReportLostInformation_ID13(yearin));
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+            }
+
+            return dt;
+        }
+
+        public DataTable GetReportCheclLostInformation_Educate(string yearin)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = base.getDataTablePrototype(search.GetReportLostInformation_Educate(yearin));
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+            }
+
+            return dt;
+        }
+        public DataTable GetReportCheclLostInformation_AccountNum(string yearin)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = base.getDataTablePrototype(search.GetReportLostInformation_AccountNum(yearin));
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+            }
+
+            return dt;
+        }
     }
 }

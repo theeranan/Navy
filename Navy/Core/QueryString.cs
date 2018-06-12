@@ -688,6 +688,58 @@ LEFT JOIN unittab u on u.REFNUM = ps.UNIT3
                 return sqlWhere;
             }
 
+            //เพิ่ม Function Select ข้อมูลเลขบัตรประขำตัวประชาชนที่ยังไม่มีในระบบ
+            public string GetReportLostInformation_ID13(string yearin)
+            {
+                string sql = @"SELECT BATT,COMPANY,CONCAT(PLATOON,IF(LENGTH(PSEQ) = 1,'0',''),PSEQ) as 'Number',ID8,`NAME`,SNAME,ID13
+                                    from person
+                                    where (ID13 is null or ID13 = '' or (LENGTH(ID13)<13)) 
+                                           and batt < 6 and yearin = '" + yearin + @"'
+                                    ORDER BY BATT,COMPANY,PLATOON,PSEQ"
+                                    ;
+                // Console.WriteLine("SQL Check ID13 is " + sql);
+                return sql;
+            }
+
+            //เพิ่ม Function Select ข้อมูลพลหทารที่ไม่มีวุมฒิการศึกษา หรือ ปวช"ขึ้นไป"แต่ไม่มีสาขา
+            public string GetReportLostInformation_Educate(string yearin)
+            {
+                string sql = @"SELECT  p.BATT
+                                      ,p.COMPANY
+                                      ,CONCAT(p.PLATOON,IF(LENGTH(p.PSEQ) = 1,'0',''),p.PSEQ) as 'Number'
+                                      ,p.ID8
+                                      ,p.`NAME`
+                                      ,p.SNAME
+                                      ,educ.EDUCNAME as educate
+                            from person p LEFT JOIN eductab educ on p.EDUCODE1 = educ.ECODE1 and p.EDUCODE2= educ.ECODE2
+                            where (p.EDUCODE1 is null or p.EDUCODE1 = '' or ((p.EDUCODE1 BETWEEN 4 and 8) and p.EDUCODE2 = '001')) 
+                                   and batt < 6 and yearin = '" + yearin + @"'
+                            ORDER BY p.BATT,p.COMPANY,p.PLATOON,p.PSEQ"
+                                ;
+                //Console.WriteLine("SQL Check Educate is " + sql);
+                return sql;
+            }
+
+            //เพิ่ม Function Select ข้อมูลเลขบัญชีธนาคาร หรือ ที่ยังไม่มีสังกัดธนาคารในระบบ
+            public string GetReportLostInformation_AccountNum(string yearin)
+            {
+                string sql = @"SELECT p.BATT
+                                     ,p.COMPANY
+                                     ,CONCAT(p.PLATOON,IF(LENGTH(p.PSEQ) = 1,'0',''),p.PSEQ) as 'Number'
+                                     ,p.ID8
+                                     ,p.`NAME`
+                                     ,p.SNAME
+                                     ,p.AccountNum
+                                     ,bank.EngShortName
+                                from person p LEFT JOIN bankingtab bank on p.BankCode = bank.BankCode
+                                where (p.AccountNum is null or p.AccountNum = '' or p.BankCode is null or p.BankCode = '') 
+                                       and batt < 6 and yearin = '" + yearin + @"'
+                                ORDER BY p.BATT,p.COMPANY,p.PLATOON,p.PSEQ"
+                                ;
+                //Console.WriteLine("SQL Check Account is " + sql);
+                return sql;
+            }
+
             public string searchPeople(string navyid)
             {
 
