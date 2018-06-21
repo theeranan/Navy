@@ -186,7 +186,7 @@
             this.lbl_IDCard.AutoSize = true;
             this.lbl_IDCard.BackColor = System.Drawing.SystemColors.MenuBar;
             this.lbl_IDCard.Font = new System.Drawing.Font("TH SarabunPSK", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lbl_IDCard.Location = new System.Drawing.Point(137, 0);
+            this.lbl_IDCard.Location = new System.Drawing.Point(153, 0);
             this.lbl_IDCard.Name = "lbl_IDCard";
             this.lbl_IDCard.Size = new System.Drawing.Size(84, 33);
             this.lbl_IDCard.TabIndex = 681;
