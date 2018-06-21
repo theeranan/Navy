@@ -155,9 +155,9 @@ namespace Navy.Core
 ,pst.POSTNAME
 ,p.PERCENT
 ,ad.addname as addictname
-,ind.cause,bankingtab.BankName,p.AccountNum
+,ind.cause,bankingtab.EngShortName,p.AccountNum
                  FROM person p
-                 LEFT OUTER JOIN bankingtab on bankingtab.bankid = p.bankid
+                 LEFT OUTER JOIN bankingtab on bankingtab.bankcode = p.bankcode
 				 LEFT OUTER JOIN member m ON (m.id = p.navyid)
                  LEFT OUTER JOIN membercode mc ON (m.membercode = mc.membercode)
                  LEFT OUTER JOIN membercode mcp ON (mc.membercode_parentid = mcp.membercode)
