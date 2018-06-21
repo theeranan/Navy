@@ -516,20 +516,5 @@ namespace Navy.Forms
         {
 
         }
-
-        private void btn_viewperson_Click(object sender, EventArgs e)
-        {
-            if (gvResult.SelectedRows.Count > 0)
-            {
-                ViewForm f = new ViewForm(gvResult.SelectedRows[0].Cells["navyid"].Value.ToString());
-                f.StartPosition = FormStartPosition.CenterParent;
-                f.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("เลือกข้อมูลก่อน");
-            }
-        }
-        
     }
 }
