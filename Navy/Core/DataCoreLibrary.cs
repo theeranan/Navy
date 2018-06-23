@@ -419,10 +419,10 @@ namespace Navy.Core
             return p;
         }
 
-        public DataTable GetSearchTelephone(string batt, string company, out int countAllRecord)
+        public DataTable GetSearchTelephone(string batt, string company,string name,string sname,string id8, out int countAllRecord)
         {
-            string queryStr = search.searchTelephone(batt, company);
-            string queryStrCount = search.searchTelephoneCountRecord(batt, company);
+            string queryStr = search.searchTelephone(batt, company,name,sname,id8);
+            string queryStrCount = search.searchTelephoneCountRecord(batt, company, name, sname, id8);
 
             DataTable dt = new DataTable();
             //List<TelephoneSearch> p = new List<TelephoneSearch>();
