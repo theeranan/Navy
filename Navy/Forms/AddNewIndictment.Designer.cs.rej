@@ -1,0 +1,40 @@
+diff a/Navy/Forms/AddNewIndictment.Designer.cs b/Navy/Forms/AddNewIndictment.Designer.cs	(rejected hunks)
+@@ -42,10 +42,11 @@
+             // 
+             this.txtDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
+             this.txtDetails.Font = new System.Drawing.Font("Angsana New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+-            this.txtDetails.Location = new System.Drawing.Point(6, 6);
++            this.txtDetails.Location = new System.Drawing.Point(9, 10);
++            this.txtDetails.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+             this.txtDetails.Name = "txtDetails";
+             this.txtDetails.ReadOnly = true;
+-            this.txtDetails.Size = new System.Drawing.Size(525, 97);
++            this.txtDetails.Size = new System.Drawing.Size(788, 171);
+             this.txtDetails.TabIndex = 4;
+             this.txtDetails.Text = ";#พลทหาร  ;@firstname \t\t;#นามสกุล ;@sname\n;#ผลัด ;@oldyearin\t\t\t;#เครื่องหมาย ;@si" +
+     "gn\t;@id8\n;#หมายเลขประจำตัว ;@id10\t;#เลขบัตรประจำตัวประชาชน ;@id13";
+@@ -53,18 +54,20 @@
+             // txtBox_Indictment
+             // 
+             this.txtBox_Indictment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+-            this.txtBox_Indictment.Location = new System.Drawing.Point(6, 17);
++            this.txtBox_Indictment.Location = new System.Drawing.Point(9, 30);
++            this.txtBox_Indictment.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+             this.txtBox_Indictment.Multiline = true;
+             this.txtBox_Indictment.Name = "txtBox_Indictment";
+             this.txtBox_Indictment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+-            this.txtBox_Indictment.Size = new System.Drawing.Size(519, 85);
++            this.txtBox_Indictment.Size = new System.Drawing.Size(777, 148);
+             this.txtBox_Indictment.TabIndex = 2;
+             // 
+             // Btn_saveIndictment
+             // 
+-            this.Btn_saveIndictment.Location = new System.Drawing.Point(456, 213);
++            this.Btn_saveIndictment.Location = new System.Drawing.Point(684, 377);
++            this.Btn_saveIndictment.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+             this.Btn_saveIndictment.Name = "Btn_saveIndictment";
+-            this.Btn_saveIndictment.Size = new System.Drawing.Size(75, 23);
++            this.Btn_saveIndictment.Size = new System.Drawing.Size(112, 40);
+             this.Btn_saveIndictment.TabIndex = 4;
+             this.Btn_saveIndictment.Text = "บันทึก";
+             this.Btn_saveIndictment.UseVisualStyleBackColor = true;

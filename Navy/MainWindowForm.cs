@@ -300,5 +300,12 @@ namespace Navy
             l.StartPosition = FormStartPosition.CenterParent;
             l.Show();
         }
+
+        private void AddkptclassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Addkptclass l = new Addkptclass();
+            l.StartPosition = FormStartPosition.CenterParent;
+            l.Show();
+        }
     }
 }
