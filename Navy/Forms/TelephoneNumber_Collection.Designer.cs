@@ -131,7 +131,7 @@
             this.Btn_Save.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Save.Name = "Btn_Save";
             this.Btn_Save.Size = new System.Drawing.Size(139, 48);
-            this.Btn_Save.TabIndex = 6;
+            this.Btn_Save.TabIndex = 8;
             this.Btn_Save.Text = "บันทึก";
             this.Btn_Save.UseVisualStyleBackColor = true;
             this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
@@ -165,7 +165,7 @@
             this.Btn_Search.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Search.Name = "Btn_Search";
             this.Btn_Search.Size = new System.Drawing.Size(100, 31);
-            this.Btn_Search.TabIndex = 4;
+            this.Btn_Search.TabIndex = 7;
             this.Btn_Search.Text = "ค้นหา";
             this.Btn_Search.UseVisualStyleBackColor = true;
             this.Btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
@@ -227,7 +227,7 @@
             this.txtname.Location = new System.Drawing.Point(446, 14);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(100, 30);
-            this.txtname.TabIndex = 13;
+            this.txtname.TabIndex = 4;
             // 
             // txtsname
             // 
@@ -235,7 +235,7 @@
             this.txtsname.Location = new System.Drawing.Point(603, 14);
             this.txtsname.Name = "txtsname";
             this.txtsname.Size = new System.Drawing.Size(100, 30);
-            this.txtsname.TabIndex = 15;
+            this.txtsname.TabIndex = 5;
             // 
             // label7
             // 
@@ -263,10 +263,10 @@
             // 
             this.mtxtid8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtid8.Location = new System.Drawing.Point(790, 14);
-            this.mtxtid8.Mask = "0.0.0000";
+            this.mtxtid8.Mask = "?.?.0000";
             this.mtxtid8.Name = "mtxtid8";
             this.mtxtid8.Size = new System.Drawing.Size(92, 30);
-            this.mtxtid8.TabIndex = 17;
+            this.mtxtid8.TabIndex = 6;
             // 
             // TelephoneNumber_Collection
             // 
