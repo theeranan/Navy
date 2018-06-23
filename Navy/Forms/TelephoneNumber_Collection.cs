@@ -37,14 +37,39 @@ namespace Navy.Forms
             loaddatatelephone();
             Cmb_Company.SelectAll();
             Cmb_Batt.SelectAll();
-        }
+            /*string searchValue = searchtextBox.Text;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                bool valueResult = false;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    for (int i = 0; i < row.Cells.Count; i++)
+                    {
+                        if (row.Cells[i].Value != null && row.Cells[i].Value.ToString().Equals(searchValue))
+                        {
+                            int rowIndex = row.Index;
+                            dataGridView1.Rows[rowIndex].Selected = true;
+                            valueResult = true;
+                            break;
+                        }
+                    }
+
+                }
+                if (!valueResult)
+                {
+                    MessageBox.Show("Unable to find " + searchtextBox.Text, "Not Found");
+                    return;
+                }*/
+            }
         private void loaddatatelephone()
         {
-            dtUpdate = dcore.GetSearchTelephone(Cmb_Batt.Text, Cmb_Company.Text, out count);
+            dtUpdate = dcore.GetSearchTelephone(Cmb_Batt.Text, Cmb_Company.Text,txtname.Text,txtsname.Text,mtxtid8.Text, out count);
             //dtUpdate = ConvertListToDataTable(PersonTel);
             Set_dtColumnName(dtUpdate);
             label_Count.Text = count.ToString() + " Record";
             gvResultPhonNumber.DataSource = dtUpdate;
+            
         }
 
 
@@ -166,6 +191,8 @@ namespace Navy.Forms
         }
 
         private void Set_dtColumnName(DataTable dtUpdate) {
+            dtUpdate.Columns["NAME"].ReadOnly = true;
+            dtUpdate.Columns["SNAME"].ReadOnly = true;
             dtUpdate.Columns["NAME"].ColumnName = "ชื่อ";
             dtUpdate.Columns["SNAME"].ColumnName = "นามสกุล";
             dtUpdate.Columns["Telephone"].ColumnName = "เบอร์โทรศัพท์";
@@ -173,5 +200,6 @@ namespace Navy.Forms
             dtUpdate.Columns["MTelephone"].ColumnName = "เบอร์โทรศัพท์มารดา";
             dtUpdate.Columns["PTelephone"].ColumnName = "เบอร์โทรศัพท์ผู้ปกครอง";
         }
+        
     }
 }
