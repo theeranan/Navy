@@ -369,7 +369,29 @@ namespace Navy.Core
                 sql = sqlSelect + sqlWhere;
                 return sql;
             }
+            public string searchPersonkpt(string name, string sname, string id8)
+            {
+                string sql = "";
+                string sqlSelect = "select navyid,`NAME`,SNAME,ID8,kptclass from person left join kptclass on kptcode = kpt\n";
+                string sqlWhere = "";
+                
+                sqlWhere = whereLikeNameSName(sqlWhere, "`NAME`", "SNAME", name, sname);
+                sqlWhere = whereLikeID8(sqlWhere, "ID8", id8);
 
+                sql = sqlSelect + sqlWhere;
+                return sql;
+            }
+            public string search_kptclass(string kptclass)
+            {
+                string sql = "";
+                string sqlSelect = "select navyid,`NAME`,SNAME,ID8 from person \n";
+                string sqlWhere = "";
+
+                sqlWhere = whereEqualsClause(sqlWhere, "kpt", kptclass);
+
+                sql = sqlSelect + sqlWhere;
+                return sql;
+            }
             public string searchPerson_OnlyIndictment(string id13, string name, string sname, string yearin, string id8)
             {
                 string sql = "";
