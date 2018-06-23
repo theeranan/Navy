@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NavDBDataSet_CheckLostInformation" targetNamespace="http://tempuri.org/NavDBDataSet_CheckLostInformation.xsd" xmlns:mstns="http://tempuri.org/NavDBDataSet_CheckLostInformation.xsd" xmlns="http://tempuri.org/NavDBDataSet_CheckLostInformation.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NavDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NavDBConnectionString (Settings)" PropertyReference="ApplicationSettings.Navy.Properties.Settings.GlobalReference.Default.NavDBConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NavDBDataSet_CheckLostInformation" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="NavDBDataSet_CheckLostInformation" msprop:Generator_UserDSName="NavDBDataSet_CheckLostInformation">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTablecheck_ID13" msprop:Generator_TableClassName="DataTablecheck_ID13DataTable" msprop:Generator_TableVarName="tableDataTablecheck_ID13" msprop:Generator_TablePropName="DataTablecheck_ID13" msprop:Generator_RowDeletingName="DataTablecheck_ID13RowDeleting" msprop:Generator_RowChangingName="DataTablecheck_ID13RowChanging" msprop:Generator_RowEvHandlerName="DataTablecheck_ID13RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTablecheck_ID13RowDeleted" msprop:Generator_UserTableName="DataTablecheck_ID13" msprop:Generator_RowChangedName="DataTablecheck_ID13RowChanged" msprop:Generator_RowEvArgName="DataTablecheck_ID13RowChangeEvent" msprop:Generator_RowClassName="DataTablecheck_ID13Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Batt" msprop:Generator_ColumnVarNameInTable="columnBatt" msprop:Generator_ColumnPropNameInRow="Batt" msprop:Generator_ColumnPropNameInTable="BattColumn" msprop:Generator_UserColumnName="Batt" type="xs:string" minOccurs="0" />
+              <xs:element name="Company" msprop:Generator_ColumnVarNameInTable="columnCompany" msprop:Generator_ColumnPropNameInRow="Company" msprop:Generator_ColumnPropNameInTable="CompanyColumn" msprop:Generator_UserColumnName="Company" type="xs:string" minOccurs="0" />
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:string" minOccurs="0" />
+              <xs:element name="ID8" msprop:Generator_ColumnVarNameInTable="columnID8" msprop:Generator_ColumnPropNameInRow="ID8" msprop:Generator_ColumnPropNameInTable="ID8Column" msprop:Generator_UserColumnName="ID8" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="SName" msprop:Generator_ColumnVarNameInTable="columnSName" msprop:Generator_ColumnPropNameInRow="SName" msprop:Generator_ColumnPropNameInTable="SNameColumn" msprop:Generator_UserColumnName="SName" type="xs:string" minOccurs="0" />
+              <xs:element name="ID13" msprop:Generator_ColumnVarNameInTable="columnID13" msprop:Generator_ColumnPropNameInRow="ID13" msprop:Generator_ColumnPropNameInTable="ID13Column" msprop:Generator_UserColumnName="ID13" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTablecheck_Educate" msprop:Generator_TableClassName="DataTablecheck_EducateDataTable" msprop:Generator_TableVarName="tableDataTablecheck_Educate" msprop:Generator_TablePropName="DataTablecheck_Educate" msprop:Generator_RowDeletingName="DataTablecheck_EducateRowDeleting" msprop:Generator_RowChangingName="DataTablecheck_EducateRowChanging" msprop:Generator_RowEvHandlerName="DataTablecheck_EducateRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTablecheck_EducateRowDeleted" msprop:Generator_UserTableName="DataTablecheck_Educate" msprop:Generator_RowChangedName="DataTablecheck_EducateRowChanged" msprop:Generator_RowEvArgName="DataTablecheck_EducateRowChangeEvent" msprop:Generator_RowClassName="DataTablecheck_EducateRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Batt" msprop:Generator_ColumnVarNameInTable="columnBatt" msprop:Generator_ColumnPropNameInRow="Batt" msprop:Generator_ColumnPropNameInTable="BattColumn" msprop:Generator_UserColumnName="Batt" type="xs:string" minOccurs="0" />
+              <xs:element name="Company" msprop:Generator_ColumnVarNameInTable="columnCompany" msprop:Generator_ColumnPropNameInRow="Company" msprop:Generator_ColumnPropNameInTable="CompanyColumn" msprop:Generator_UserColumnName="Company" type="xs:string" minOccurs="0" />
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:string" minOccurs="0" />
+              <xs:element name="ID8" msprop:Generator_ColumnVarNameInTable="columnID8" msprop:Generator_ColumnPropNameInRow="ID8" msprop:Generator_ColumnPropNameInTable="ID8Column" msprop:Generator_UserColumnName="ID8" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="SName" msprop:Generator_ColumnVarNameInTable="columnSName" msprop:Generator_ColumnPropNameInRow="SName" msprop:Generator_ColumnPropNameInTable="SNameColumn" msprop:Generator_UserColumnName="SName" type="xs:string" minOccurs="0" />
+              <xs:element name="Educate" msdata:Caption="ID13" msprop:Generator_ColumnVarNameInTable="columnEducate" msprop:Generator_ColumnPropNameInRow="Educate" msprop:Generator_ColumnPropNameInTable="EducateColumn" msprop:Generator_UserColumnName="Educate" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTablecheck_AccountNum" msprop:Generator_TableClassName="DataTablecheck_AccountNumDataTable" msprop:Generator_TableVarName="tableDataTablecheck_AccountNum" msprop:Generator_TablePropName="DataTablecheck_AccountNum" msprop:Generator_RowDeletingName="DataTablecheck_AccountNumRowDeleting" msprop:Generator_RowChangingName="DataTablecheck_AccountNumRowChanging" msprop:Generator_RowEvHandlerName="DataTablecheck_AccountNumRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTablecheck_AccountNumRowDeleted" msprop:Generator_UserTableName="DataTablecheck_AccountNum" msprop:Generator_RowChangedName="DataTablecheck_AccountNumRowChanged" msprop:Generator_RowEvArgName="DataTablecheck_AccountNumRowChangeEvent" msprop:Generator_RowClassName="DataTablecheck_AccountNumRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Batt" msprop:Generator_ColumnVarNameInTable="columnBatt" msprop:Generator_ColumnPropNameInRow="Batt" msprop:Generator_ColumnPropNameInTable="BattColumn" msprop:Generator_UserColumnName="Batt" type="xs:string" minOccurs="0" />
+              <xs:element name="Company" msprop:Generator_ColumnVarNameInTable="columnCompany" msprop:Generator_ColumnPropNameInRow="Company" msprop:Generator_ColumnPropNameInTable="CompanyColumn" msprop:Generator_UserColumnName="Company" type="xs:string" minOccurs="0" />
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:string" minOccurs="0" />
+              <xs:element name="ID8" msprop:Generator_ColumnVarNameInTable="columnID8" msprop:Generator_ColumnPropNameInRow="ID8" msprop:Generator_ColumnPropNameInTable="ID8Column" msprop:Generator_UserColumnName="ID8" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="SName" msprop:Generator_ColumnVarNameInTable="columnSName" msprop:Generator_ColumnPropNameInRow="SName" msprop:Generator_ColumnPropNameInTable="SNameColumn" msprop:Generator_UserColumnName="SName" type="xs:string" minOccurs="0" />
+              <xs:element name="AccountNum" msdata:Caption="ID13" msprop:Generator_ColumnVarNameInTable="columnAccountNum" msprop:Generator_ColumnPropNameInRow="AccountNum" msprop:Generator_ColumnPropNameInTable="AccountNumColumn" msprop:Generator_UserColumnName="AccountNum" type="xs:string" minOccurs="0" />
+              <xs:element name="EngShortName" msprop:Generator_ColumnVarNameInTable="columnEngShortName" msprop:Generator_ColumnPropNameInRow="EngShortName" msprop:Generator_ColumnPropNameInTable="EngShortNameColumn" msprop:Generator_UserColumnName="EngShortName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

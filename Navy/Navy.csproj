@@ -304,6 +304,12 @@
     <Compile Include="Forms\IndictmentForm.Designer.cs">
       <DependentUpon>IndictmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LostInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LostInformation.Designer.cs">
+      <DependentUpon>LostInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OCRForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -468,6 +474,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NavDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NavDBDataSet_CheckLostInformation.cs">
+      <DependentUpon>NavDBDataSet_CheckLostInformation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NavDBDataSet_CheckLostInformation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NavDBDataSet_CheckLostInformation.xsd</DependentUpon>
     </Compile>
     <Compile Include="NavDBDataSet_Occ.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -744,6 +758,9 @@
     <EmbeddedResource Include="Forms\IndictmentForm.resx">
       <DependentUpon>IndictmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LostInformation.resx">
+      <DependentUpon>LostInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\RuncodeCheckForm.resx">
       <DependentUpon>RuncodeCheckForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -896,6 +913,9 @@
     <EmbeddedResource Include="Reports\ReportDisplay.resx">
       <DependentUpon>ReportDisplay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportLostInformation_AccountNum.rdlc" />
+    <EmbeddedResource Include="Reports\ReportLostInformation_Educate.rdlc" />
+    <EmbeddedResource Include="Reports\ReportLostInformation_ID13.rdlc" />
     <EmbeddedResource Include="Reports\ReportPersonRequestForm.resx">
       <DependentUpon>ReportPersonRequestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1064,6 +1084,17 @@
     </None>
     <None Include="NavDBDataSet2.xss">
       <DependentUpon>NavDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="NavDBDataSet_CheckLostInformation.xsc">
+      <DependentUpon>NavDBDataSet_CheckLostInformation.xsd</DependentUpon>
+    </None>
+    <None Include="NavDBDataSet_CheckLostInformation.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NavDBDataSet_CheckLostInformation.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NavDBDataSet_CheckLostInformation.xss">
+      <DependentUpon>NavDBDataSet_CheckLostInformation.xsd</DependentUpon>
     </None>
     <None Include="NavDBDataSet_Occ.xsc">
       <DependentUpon>NavDBDataSet_Occ.xsd</DependentUpon>

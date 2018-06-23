@@ -323,7 +323,7 @@ namespace Navy.Forms
                 DataControls.LoadComboBoxData(cbbType, DataDefinition.GetPerTypeTab(), "name", "id", paramFormPersonTable.pertype);
                 DataControls.LoadComboBoxData(cmbskill, DataDefinition.GetSkillTab(), "SKILL", "SKILLCODE", paramFormPersonTable.skill);
                 DataControls.LoadComboBoxData(cmBoxkpt, DataDefinition.Getkptclass(), "kptclass", "kptcode", paramFormPersonTable.cmBoxkpt);
-                DataControls.LoadComboBoxData(cbbBankID, DataDefinition.GetBanktab(), "BankName", "BankID", paramFormPersonTable.BankID);
+                DataControls.LoadComboBoxData(cbbBankID, DataDefinition.GetBanktab(), "EngShortName", "BankCode", paramFormPersonTable.BankCode);
                 //DataControls.LoadComboBoxData(cmbPatient_status, DataDefinition.GetPatient_Status(), "TITLE", "STATUSCODE", paramFormPersonTable.cmbPatient_status);
                 DataControls.LoadComboBoxData(cmb_Addictive_Status, DataDefinition.GetAddictive_Status(), "addname", "addcode", paramFormPersonTable.cmbAddictive_status);
 
@@ -890,11 +890,11 @@ namespace Navy.Forms
             }
             if (cbbBankID.Text.Trim() != "")
             {
-                param.BankID = DataControls.GetSelectedValueComboBoxToString(cbbBankID);
+                param.BankCode = DataControls.GetSelectedValueComboBoxToString(cbbBankID);
             }
             else
             {
-                param.BankID = null;
+                param.BankCode = null;
             }
             //if (cmbPatient_status.Text.Trim() != "")
             //{

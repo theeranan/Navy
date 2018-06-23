@@ -721,7 +721,7 @@ namespace Navy.Core
                         //cmd.Parameters.AddWithValue("@patient_status", (param.cmbPatient_status));
                         cmd.Parameters.AddWithValue("@addictive_status", (param.cmbAddictive_status));
                         cmd.Parameters.AddWithValue("@flagreadfrom_IDCard", (param.flagreadfrom_IDCard));
-                        cmd.Parameters.AddWithValue("@BankID", (param.BankID));
+                        cmd.Parameters.AddWithValue("@BankCode", (param.BankCode));
                         cmd.Parameters.AddWithValue("@AccountNum", (param.AccountNum));
                         cmd.ExecuteNonQuery();
                     }
@@ -980,7 +980,7 @@ namespace Navy.Core
                         //cmd.Parameters.AddWithValue("@patient_status", (param.cmbPatient_status));
                         cmd.Parameters.AddWithValue("@addictive_status", (param.cmbAddictive_status));
                         cmd.Parameters.AddWithValue("@flagreadfrom_IDCard", (param.flagreadfrom_IDCard));
-                        cmd.Parameters.AddWithValue("@BankID", (param.BankID));
+                        cmd.Parameters.AddWithValue("@BankCode", (param.BankCode));
                         cmd.Parameters.AddWithValue("@AccountNum", (param.AccountNum));
                         cmd.ExecuteNonQuery();
                     }
@@ -2236,6 +2236,50 @@ namespace Navy.Core
             {
                 dt = null;
             }
+            return dt;
+        }
+
+        public DataTable GetReportCheclLostInformation_ID13(string yearin)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = base.getDataTablePrototype(search.GetReportLostInformation_ID13(yearin));
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+            }
+
+            return dt;
+        }
+
+        public DataTable GetReportCheclLostInformation_Educate(string yearin)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = base.getDataTablePrototype(search.GetReportLostInformation_Educate(yearin));
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+            }
+
+            return dt;
+        }
+        public DataTable GetReportCheclLostInformation_AccountNum(string yearin)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = base.getDataTablePrototype(search.GetReportLostInformation_AccountNum(yearin));
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+            }
+
             return dt;
         }
     }

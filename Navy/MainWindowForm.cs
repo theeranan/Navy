@@ -293,5 +293,12 @@ namespace Navy
             r.StartPosition = FormStartPosition.CenterParent;                
             r.Show();
         }
+
+        private void LostInformation_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LostInformation l = new LostInformation();
+            l.StartPosition = FormStartPosition.CenterParent;
+            l.Show();
+        }
     }
 }

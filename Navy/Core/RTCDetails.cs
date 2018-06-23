@@ -193,7 +193,7 @@ namespace Navy.Core
             ptelephone = reader["PTelephone"].ToString();
             addictname = reader["addictname"].ToString();
             Indiction = reader["cause"].ToString();
-            BankName = reader["BankName"].ToString();
+            BankName = reader["EngShortName"].ToString();
             AccountNum = reader["AccountNum"].ToString();
         }
         

@@ -22,7 +22,7 @@ namespace Navy.Forms
         DataTable dtTransDetail;
         DataTable dtPunishmentDetail;
         DataTable dtDataOldYearin;
-       // DataTable dtIndicment;
+        DataTable dtIndicment;
 
         DataCoreLibrary dcoreNav;
         DataCoreLibrary dcoreNavAll;
@@ -40,7 +40,7 @@ namespace Navy.Forms
             dtTransDetail = new DataTable();
             dtPunishmentDetail = new DataTable();
             dtDataOldYearin = new DataTable();
-            //dtIndicment = new DataTable();
+            dtIndicment = new DataTable();
 
             dcoreNav = new DataCoreLibrary();
             dcoreNav.ChangeDB("navdb");
@@ -118,13 +118,13 @@ namespace Navy.Forms
                                 dtTransDetail = new DataTable();
                                 dtPunishmentDetail = new DataTable();
                                 dtDataOldYearin = new DataTable();
-                                //dtIndicment = new DataTable();
+                                dtIndicment = new DataTable();
 
                                 dtPerson.Load((new MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM person WHERE NAVYID = '" + navyid + "';", con)).ExecuteReader());
                                 dtTransDetail.Load((new MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM trans_detail WHERE NAVYID = '" + navyid + "';", con)).ExecuteReader());
                                 dtPunishmentDetail.Load((new MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM punishment_details WHERE NAVYID = '" + navyid + "';", con)).ExecuteReader());
                                 dtDataOldYearin.Load((new MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM dataoldyearin WHERE NAVYID = '" + navyid + "';", con)).ExecuteReader());
-                                //dtIndicment.Load((new MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM indictmenttab WHERE NavyID = '" + navyid + "';", con)).ExecuteReader());
+                                dtIndicment.Load((new MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM indictmenttab WHERE NavyID = '" + navyid + "';", con)).ExecuteReader());
 
                                 dcoreNavAll.closeConnection();
                             }
@@ -265,41 +265,38 @@ namespace Navy.Forms
                                 }
 
                                 //====== Move Indictment ======
-                                //string sqlIndictmentDetail = "";
-                                //foreach (DataRow dr in dtIndicment.Rows)
-                                //{
-                                //    //sqlPunishmentDetail += "INSERT INTO `punishment_details` (`Punish_No`, `NavyID`, `Trans_Type`, `Code1`, `Batt`, `Company`, `Yearin`, `Membercode`, `Membercode5`, `Link`, `Fine`, `Other`, `Cedit1`, `Cedit2`, `Ref_No`, `Red_No`, `Black_No`, `Doc_Date`, `Trans_No`, `Trans_Note`, `Start_Date`, `End_Date`, `Law_Date`, `Out_Date`, `InYear`, `InMonth`, `InDay`, `InHour`, `Place`, `NamePPost1`, `ShortPpos`, `LeaName1`, `Level`, `NamePPost`, `LeaName`, `Flag`, `Num`, `UpdBy`, `UpdDate`, `ShortName`) " +
-                                //    //    "VALUES (17, '54703860', 'K', 'A', '', '', '1/47', 'A534JB', '', '', 0, '', 'คำสั่งลงทัณฑ์ทางวินัย', 'A534JBA', 'กห. 0534.8.2/231', '', '', '2005-09-13', 4263, 'ขาดราชการ ครั้งที่ 1 ในเวลาปกติ (กลับเอง)', '2005-09-12', '2005-09-14', '', '', 0, 0, 3, 2, '', 'ผบ. กนร.ศฝท.ยศ.ทร.', 'ผบ.กนร.', 'น.อ.ณัฏฐนันท์  วิเศษสมวงศ์', '4', '', '', '1', '4', 'chy', '2005-12-13 13:06:15', NULL);";
+                                string sqlIndictmentDetail = "";
+                                foreach (DataRow dr in dtIndicment.Rows)
+                                {
+                                    sqlIndictmentDetail = "INSERT INTO `indictmenttab` (";
 
-                                //    sqlIndictmentDetail = "INSERT INTO `indictmenttab` (";
+                                    // get column
+                                    string[] columnNames = (from dc in dtIndicment.Columns.Cast<DataColumn>() select dc.ColumnName).ToArray();
 
-                                //    // get column
-                                //    string[] columnNames = (from dc in dtIndicment.Columns.Cast<DataColumn>() select dc.ColumnName).ToArray();
+                                    // generate column to insert 
+                                    foreach (string cname in columnNames)
+                                    {
+                                        sqlIndictmentDetail += "`" + cname + "`,";
+                                    }
+                                    sqlIndictmentDetail = sqlIndictmentDetail.Remove(sqlIndictmentDetail.Length - 1, 1);
+                                    sqlIndictmentDetail += ") \n VALUES \n(";
 
-                                //    // generate column to insert 
-                                //    foreach (string cname in columnNames)
-                                //    {
-                                //        sqlIndictmentDetail += "`" + cname + "`,";
-                                //    }
-                                //    sqlIndictmentDetail = sqlIndictmentDetail.Remove(sqlIndictmentDetail.Length - 1, 1);
-                                //    sqlIndictmentDetail += ") \n VALUES \n(";
+                                    // generate values to insert 
+                                    foreach (string cname in columnNames)
+                                    {
+                                        sqlIndictmentDetail += "@" + cname + ",";
+                                    }
+                                    sqlIndictmentDetail = sqlIndictmentDetail.Remove(sqlIndictmentDetail.Length - 1, 1);
+                                    sqlIndictmentDetail += ");\n";
 
-                                //    // generate values to insert 
-                                //    foreach (string cname in columnNames)
-                                //    {
-                                //        sqlIndictmentDetail += "@" + cname + ",";
-                                //    }
-                                //    sqlIndictmentDetail = sqlIndictmentDetail.Remove(sqlIndictmentDetail.Length - 1, 1);
-                                //    sqlIndictmentDetail += ");\n";
+                                    MySqlCommand cmd = new MySqlCommand(sqlIndictmentDetail, con);
+                                    foreach (string cname in columnNames)
+                                    {
+                                        cmd.Parameters.AddWithValue("@" + cname, dr[cname] == null ? null : dr[cname]);
+                                    }
 
-                                //    MySqlCommand cmd = new MySqlCommand(sqlIndictmentDetail, con);
-                                //    foreach (string cname in columnNames)
-                                //    {
-                                //        cmd.Parameters.AddWithValue("@" + cname, dr[cname] == null ? null : dr[cname]);
-                                //    }
-
-                                //    rowsAffect += cmd.ExecuteNonQuery();
-                                //}
+                                    rowsAffect += cmd.ExecuteNonQuery();
+                                }
 
                                 dcoreNav.closeConnection();
                             }
@@ -336,7 +333,7 @@ namespace Navy.Forms
                             sqlDelete += "DELETE FROM trans_detail WHERE NAVYID = '" + navyid + "';\n";
                             sqlDelete += "DELETE FROM punishment_details WHERE NAVYID = '" + navyid + "';\n";
                             sqlDelete += "DELETE FROM dataoldyearin WHERE NAVYID = '" + navyid + "';\n";
-                           // sqlDelete += "DELETE FROM indictmenttab WHERE NavyID = '" + navyid + "';\n";
+                            sqlDelete += "DELETE FROM indictmenttab WHERE NavyID = '" + navyid + "';\n";
                             string result1 = "";
                             dcoreNav.closeConnection();
                             DBConnection.runCmdTransaction(sqlDelete, dcoreNav.getConnection(), out result1);
@@ -551,13 +548,13 @@ namespace Navy.Forms
                                 dtTransDetail = new DataTable();
                                 dtPunishmentDetail = new DataTable();
                                 dtDataOldYearin = new DataTable();
-                               // dtIndicment = new DataTable();
+                                dtIndicment = new DataTable();
 
                                 dtPerson.Load((new MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM person WHERE NAVYID = '" + navyid + "';", con)).ExecuteReader());
                                 dtTransDetail.Load((new MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM trans_detail WHERE NAVYID = '" + navyid + "';", con)).ExecuteReader());
                                 dtPunishmentDetail.Load((new MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM punishment_details WHERE NAVYID = '" + navyid + "';", con)).ExecuteReader());
                                 dtDataOldYearin.Load((new MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM dataoldyearin WHERE NAVYID = '" + navyid + "';", con)).ExecuteReader());
-                               // dtIndicment.Load((new MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM indictmenttab WHERE NavyID = '" + navyid + "';", con)).ExecuteReader());
+                                dtIndicment.Load((new MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM indictmenttab WHERE NavyID = '" + navyid + "';", con)).ExecuteReader());
 
                                 dcoreNavAll.closeConnection();
                             }
@@ -698,41 +695,41 @@ namespace Navy.Forms
                                 }
 
                                 //====== Move Indictment ======
-                                //string sqlIndictmentDetail = "";
-                                //foreach (DataRow dr in dtIndicment.Rows)
-                                //{
-                                //    //sqlPunishmentDetail += "INSERT INTO `punishment_details` (`Punish_No`, `NavyID`, `Trans_Type`, `Code1`, `Batt`, `Company`, `Yearin`, `Membercode`, `Membercode5`, `Link`, `Fine`, `Other`, `Cedit1`, `Cedit2`, `Ref_No`, `Red_No`, `Black_No`, `Doc_Date`, `Trans_No`, `Trans_Note`, `Start_Date`, `End_Date`, `Law_Date`, `Out_Date`, `InYear`, `InMonth`, `InDay`, `InHour`, `Place`, `NamePPost1`, `ShortPpos`, `LeaName1`, `Level`, `NamePPost`, `LeaName`, `Flag`, `Num`, `UpdBy`, `UpdDate`, `ShortName`) " +
-                                //    //    "VALUES (17, '54703860', 'K', 'A', '', '', '1/47', 'A534JB', '', '', 0, '', 'คำสั่งลงทัณฑ์ทางวินัย', 'A534JBA', 'กห. 0534.8.2/231', '', '', '2005-09-13', 4263, 'ขาดราชการ ครั้งที่ 1 ในเวลาปกติ (กลับเอง)', '2005-09-12', '2005-09-14', '', '', 0, 0, 3, 2, '', 'ผบ. กนร.ศฝท.ยศ.ทร.', 'ผบ.กนร.', 'น.อ.ณัฏฐนันท์  วิเศษสมวงศ์', '4', '', '', '1', '4', 'chy', '2005-12-13 13:06:15', NULL);";
+                                string sqlIndictmentDetail = "";
+                                foreach (DataRow dr in dtIndicment.Rows)
+                                {
+                                    //sqlPunishmentDetail += "INSERT INTO `punishment_details` (`Punish_No`, `NavyID`, `Trans_Type`, `Code1`, `Batt`, `Company`, `Yearin`, `Membercode`, `Membercode5`, `Link`, `Fine`, `Other`, `Cedit1`, `Cedit2`, `Ref_No`, `Red_No`, `Black_No`, `Doc_Date`, `Trans_No`, `Trans_Note`, `Start_Date`, `End_Date`, `Law_Date`, `Out_Date`, `InYear`, `InMonth`, `InDay`, `InHour`, `Place`, `NamePPost1`, `ShortPpos`, `LeaName1`, `Level`, `NamePPost`, `LeaName`, `Flag`, `Num`, `UpdBy`, `UpdDate`, `ShortName`) " +
+                                    //    "VALUES (17, '54703860', 'K', 'A', '', '', '1/47', 'A534JB', '', '', 0, '', 'คำสั่งลงทัณฑ์ทางวินัย', 'A534JBA', 'กห. 0534.8.2/231', '', '', '2005-09-13', 4263, 'ขาดราชการ ครั้งที่ 1 ในเวลาปกติ (กลับเอง)', '2005-09-12', '2005-09-14', '', '', 0, 0, 3, 2, '', 'ผบ. กนร.ศฝท.ยศ.ทร.', 'ผบ.กนร.', 'น.อ.ณัฏฐนันท์  วิเศษสมวงศ์', '4', '', '', '1', '4', 'chy', '2005-12-13 13:06:15', NULL);";
 
-                                //    sqlIndictmentDetail = "INSERT INTO `indictmenttab` (";
+                                    sqlIndictmentDetail = "INSERT INTO `indictmenttab` (";
 
-                                //    // get column
-                                //    string[] columnNames = (from dc in dtIndicment.Columns.Cast<DataColumn>() select dc.ColumnName).ToArray();
+                                    // get column
+                                    string[] columnNames = (from dc in dtIndicment.Columns.Cast<DataColumn>() select dc.ColumnName).ToArray();
 
-                                //    // generate column to insert 
-                                //    foreach (string cname in columnNames)
-                                //    {
-                                //        sqlIndictmentDetail += "`" + cname + "`,";
-                                //    }
-                                //    sqlIndictmentDetail = sqlIndictmentDetail.Remove(sqlIndictmentDetail.Length - 1, 1);
-                                //    sqlIndictmentDetail += ") \n VALUES \n(";
+                                    // generate column to insert 
+                                    foreach (string cname in columnNames)
+                                    {
+                                        sqlIndictmentDetail += "`" + cname + "`,";
+                                    }
+                                    sqlIndictmentDetail = sqlIndictmentDetail.Remove(sqlIndictmentDetail.Length - 1, 1);
+                                    sqlIndictmentDetail += ") \n VALUES \n(";
 
-                                //    // generate values to insert 
-                                //    foreach (string cname in columnNames)
-                                //    {
-                                //        sqlIndictmentDetail += "@" + cname + ",";
-                                //    }
-                                //    sqlIndictmentDetail = sqlIndictmentDetail.Remove(sqlIndictmentDetail.Length - 1, 1);
-                                //    sqlIndictmentDetail += ");\n";
+                                    // generate values to insert 
+                                    foreach (string cname in columnNames)
+                                    {
+                                        sqlIndictmentDetail += "@" + cname + ",";
+                                    }
+                                    sqlIndictmentDetail = sqlIndictmentDetail.Remove(sqlIndictmentDetail.Length - 1, 1);
+                                    sqlIndictmentDetail += ");\n";
 
-                                //    MySqlCommand cmd = new MySqlCommand(sqlIndictmentDetail, con);
-                                //    foreach (string cname in columnNames)
-                                //    {
-                                //        cmd.Parameters.AddWithValue("@" + cname, dr[cname] == null ? null : dr[cname]);
-                                //    }
+                                    MySqlCommand cmd = new MySqlCommand(sqlIndictmentDetail, con);
+                                    foreach (string cname in columnNames)
+                                    {
+                                        cmd.Parameters.AddWithValue("@" + cname, dr[cname] == null ? null : dr[cname]);
+                                    }
 
-                                //    rowsAffect += cmd.ExecuteNonQuery();
-                                //}
+                                    rowsAffect += cmd.ExecuteNonQuery();
+                                }
 
                                 dcoreNav.closeConnection();
                             }
@@ -745,7 +742,7 @@ namespace Navy.Forms
                             sqlDelete += "DELETE FROM trans_detail WHERE NAVYID = '" + navyid + "';\n";
                             sqlDelete += "DELETE FROM punishment_details WHERE NAVYID = '" + navyid + "';\n";
                             sqlDelete += "DELETE FROM dataoldyearin WHERE NAVYID = '" + navyid + "';\n";
-                            //sqlDelete += "DELETE FROM indictmenttab WHERE NavyID = '" + navyid + "';\n";
+                            sqlDelete += "DELETE FROM indictmenttab WHERE NavyID = '" + navyid + "';\n";
 
                             string result1 = "";
                             DBConnection.runCmdTransaction(sqlDelete, dcoreNavAll.getConnection(), out result1);
@@ -770,7 +767,7 @@ namespace Navy.Forms
                             sqlDelete += "DELETE FROM trans_detail WHERE NAVYID = '" + navyid + "';\n";
                             sqlDelete += "DELETE FROM punishment_details WHERE NAVYID = '" + navyid + "';\n";
                             sqlDelete += "DELETE FROM dataoldyearin WHERE NAVYID = '" + navyid + "';\n";
-                            //sqlDelete += "DELETE FROM indictmenttab WHERE NavyID = '" + navyid + "';\n";
+                            sqlDelete += "DELETE FROM indictmenttab WHERE NavyID = '" + navyid + "';\n";
 
                             string result1 = "";
                             dcoreNav.closeConnection();

@@ -307,7 +307,7 @@ namespace Navy.Data.DataTemplate
         public string flagreadfrom_IDCard { get; set; }
         public string runcodefrom { get; set; }
         public string runcodeto { get; set; }
-        public string BankID { get; set; }
+        public string BankCode { get; set; }
         public string AccountNum { get; set; }
         public ParamPerson()
         {
@@ -363,7 +363,7 @@ namespace Navy.Data.DataTemplate
             //cmbPatient_status = reader["patient_status"].ToString();
             cmbAddictive_status = reader["Addictive"].ToString();
             flagreadfrom_IDCard = reader["FlagReadfrom_IDCard"].ToString();
-            BankID = reader["BankID"].ToString();
+            BankCode = reader["BankCode"].ToString();
             AccountNum = reader["AccountNum"].ToString();
         }
     }
