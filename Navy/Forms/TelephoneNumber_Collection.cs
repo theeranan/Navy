@@ -26,7 +26,7 @@ namespace Navy.Forms
             Cmb_Company.SelectAll();
             Cmb_Batt.SelectAll();
             setCmbItem();
-           // dtUpdate = setDataTable();
+            // dtUpdate = setDataTable();
         }
 
         private void Btn_Search_Click(object sender, EventArgs e)
@@ -145,7 +145,10 @@ namespace Navy.Forms
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            txtname.Text = "";
+            txtsname.Text = "";
+            mtxtid8.Text = "";
+            txtname.Focus();
         }
 
 
@@ -177,8 +180,12 @@ namespace Navy.Forms
         {
             Cmb_Company.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             Cmb_Batt.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            txtname.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            txtsname.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            mtxtid8.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             Btn_Search.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             Btn_Save.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            
         }
         private void EventEnterKeyForNextControl(object sender, KeyEventArgs e)
         {
