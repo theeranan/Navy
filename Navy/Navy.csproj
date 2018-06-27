@@ -280,11 +280,11 @@
     <Compile Include="FormCreateFolder.Designer.cs">
       <DependentUpon>FormCreateFolder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Addkptclass.cs">
+    <Compile Include="Forms\AddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Addkptclass.Designer.cs">
-      <DependentUpon>Addkptclass.cs</DependentUpon>
+    <Compile Include="Forms\AddForm.Designer.cs">
+      <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddNewIndictment.cs">
       <SubType>Form</SubType>
@@ -752,8 +752,8 @@
     <EmbeddedResource Include="FormCreateFolder.resx">
       <DependentUpon>FormCreateFolder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Addkptclass.resx">
-      <DependentUpon>Addkptclass.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddForm.resx">
+      <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddNewIndictment.resx">
       <DependentUpon>AddNewIndictment.cs</DependentUpon>

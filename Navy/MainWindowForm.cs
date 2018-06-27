@@ -303,7 +303,14 @@ namespace Navy
 
         private void AddkptclassToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Addkptclass l = new Addkptclass();
+            AddForm l = new AddForm();
+            l.StartPosition = FormStartPosition.CenterParent;
+            l.Show();
+        }
+
+        private void AddictiveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddForm l = new AddForm("addictive");
             l.StartPosition = FormStartPosition.CenterParent;
             l.Show();
         }

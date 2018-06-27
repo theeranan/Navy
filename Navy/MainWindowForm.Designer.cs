@@ -45,6 +45,7 @@
             this.addsubuint = new System.Windows.Forms.ToolStripMenuItem();
             this.Indictment_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddTeplephonNUmberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddkptclassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.รายงานToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.summaryNewPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +69,7 @@
             this.dateFormatSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ScancardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddkptclassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddictiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,7 +130,8 @@
             this.addsubuint,
             this.Indictment_ToolStripMenuItem,
             this.AddTeplephonNUmberToolStripMenuItem,
-            this.AddkptclassToolStripMenuItem});
+            this.AddkptclassToolStripMenuItem,
+            this.AddictiveToolStripMenuItem});
             this.toolSubUnit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.toolSubUnit.Name = "toolSubUnit";
             this.toolSubUnit.Size = new System.Drawing.Size(86, 27);
@@ -216,6 +218,13 @@
             this.AddTeplephonNUmberToolStripMenuItem.Size = new System.Drawing.Size(348, 28);
             this.AddTeplephonNUmberToolStripMenuItem.Text = "งานเพิ่มเบอร์โทรศัพท์ทหาร";
             this.AddTeplephonNUmberToolStripMenuItem.Click += new System.EventHandler(this.AddTeplephonNUmberToolStripMenuItem_Click);
+            // 
+            // AddkptclassToolStripMenuItem
+            // 
+            this.AddkptclassToolStripMenuItem.Name = "AddkptclassToolStripMenuItem";
+            this.AddkptclassToolStripMenuItem.Size = new System.Drawing.Size(348, 28);
+            this.AddkptclassToolStripMenuItem.Text = "งานเพิ่มคพท";
+            this.AddkptclassToolStripMenuItem.Click += new System.EventHandler(this.AddkptclassToolStripMenuItem_Click);
             // 
             // รายงานToolStripMenuItem
             // 
@@ -395,12 +404,12 @@
             this.AboutToolStripMenuItem.Text = "เกี่ยวกับ";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
-            // AddkptclassToolStripMenuItem
+            // AddictiveToolStripMenuItem
             // 
-            this.AddkptclassToolStripMenuItem.Name = "AddkptclassToolStripMenuItem";
-            this.AddkptclassToolStripMenuItem.Size = new System.Drawing.Size(348, 28);
-            this.AddkptclassToolStripMenuItem.Text = "งานเพิ่มคพท";
-            this.AddkptclassToolStripMenuItem.Click += new System.EventHandler(this.AddkptclassToolStripMenuItem_Click);
+            this.AddictiveToolStripMenuItem.Name = "AddictiveToolStripMenuItem";
+            this.AddictiveToolStripMenuItem.Size = new System.Drawing.Size(348, 28);
+            this.AddictiveToolStripMenuItem.Text = "งานเพื่มผลตรวจสารเสพติด";
+            this.AddictiveToolStripMenuItem.Click += new System.EventHandler(this.AddictiveToolStripMenuItem_Click);
             // 
             // MainWindowForm
             // 
@@ -467,5 +476,6 @@
         private System.Windows.Forms.ToolStripMenuItem CheckRuncodeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LostInformation_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AddkptclassToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AddictiveToolStripMenuItem;
     }
 }

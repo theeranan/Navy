@@ -89,7 +89,7 @@ namespace Navy.Forms
 
         private void Btn_Save_Click(object sender, EventArgs e)
         {
-            string name = "", sname = "", TelNumber = "", FTelNumber = "", MTelNumber = "", PTelNumber = "";
+            string navyid = "",name = "", sname = "", TelNumber = "", FTelNumber = "", MTelNumber = "", PTelNumber = "";
             try
             {
                 foreach (DataRow datarow in dtUpdate.Rows)
@@ -103,40 +103,46 @@ namespace Navy.Forms
                     PTelNumber = "";
                     foreach (var cell in datarow.ItemArray)
                     {
-                        if (count == 0)
-                        { //Name
-                            name = cell.ToString();
-                           // Console.Write("Name = "+ cell);
-                        }
-                        else if (count == 1) //SName
+                        switch (count)
                         {
-                            sname = cell.ToString();
-                           // Console.Write(" SName = " + cell);
-                        }
-                        else if (count == 2) //Telephone
-                        {
-                            TelNumber = cell.ToString();
-                            //Console.Write(" Tel = " + cell);
-                        }
-                        else if (count == 3) //FTelephone
-                        {
-                            FTelNumber = cell.ToString();
-                            //Console.Write(" FTel = " + cell);
-                        }
-                        else if (count == 4) //MTelephone
-                        {
-                            MTelNumber = cell.ToString();
-                            //Console.Write(" MTel = " + cell);
-
-                        }
-                        else if (count == 5) //PTelephone
-                        {
-                            PTelNumber = cell.ToString();
-                           // Console.Write(" PTel = " + cell);
+                            case 0:
+                                {
+                                    navyid = cell.ToString();
+                                }break;
+                            case 1:
+                                {
+                                    name = cell.ToString();
+                                }
+                                break;
+                            case 2:
+                                {
+                                    sname = cell.ToString();
+                                }
+                                break;
+                            case 3:
+                                {
+                                    TelNumber = cell.ToString();
+                                }
+                                break;
+                            case 4:
+                                {
+                                    FTelNumber = cell.ToString();
+                                }
+                                break;
+                            case 5:
+                                {
+                                    MTelNumber = cell.ToString();
+                                }
+                                break;
+                            case 6:
+                                {
+                                    PTelNumber = cell.ToString();
+                                }
+                                break;
                         }
                         count++;
                     }
-                    dcore.UpdateTelephone(name,sname,TelNumber,FTelNumber, MTelNumber, PTelNumber);
+                    dcore.UpdateTelephone(navyid,name,sname,TelNumber,FTelNumber, MTelNumber, PTelNumber);
                 }
                 Console.WriteLine("==============================");
                 MessageBox.Show("อัพเดตเสร็จสิ้น");

@@ -358,7 +358,7 @@ namespace Navy.Core
             public string searchTelephone(string batt, string company,string name,string sname,string id8)
             {
                 string sql = "";
-                string sqlSelect = "select `NAME`,SNAME,Telephone,FTelephone,MTelephone,PTelephone from person \n";
+                string sqlSelect = "select navyid,`NAME`,SNAME,Telephone,FTelephone,MTelephone,PTelephone from person \n";
                 string sqlWhere = "";
 
                 sqlWhere = whereEqualsClause(sqlWhere, "BATT", batt);
@@ -369,14 +369,36 @@ namespace Navy.Core
                 sql = sqlSelect + sqlWhere;
                 return sql;
             }
-            public string searchPersonkpt(string name, string sname, string id8)
+            public string searchPersonAddDoc(string name, string sname, string id8,string mode)
             {
                 string sql = "";
-                string sqlSelect = "select navyid,`NAME`,SNAME,ID8,kptclass from person left join kptclass on kptcode = kpt\n";
+                string sqlSelect = "select navyid,`NAME`,SNAME,ID8, \n";
+                switch (mode)
+                {
+                    case "addictive":
+                        {
+                            sqlSelect += "addname from person left join addictivetab on addcode = addictive";
+                        }break;
+                    default: {
+                            sqlSelect += "kptclass from person left join kptclass on kptcode = kpt";
+                        } break;
+                }
+                 sqlSelect += "\n";
                 string sqlWhere = "";
                 
                 sqlWhere = whereLikeNameSName(sqlWhere, "`NAME`", "SNAME", name, sname);
                 sqlWhere = whereLikeID8(sqlWhere, "ID8", id8);
+
+                sql = sqlSelect + sqlWhere;
+                return sql;
+            }
+            public string search_addictive(string addcode)
+            {
+                string sql = "";
+                string sqlSelect = "select navyid,`NAME`,SNAME,ID8 from person \n";
+                string sqlWhere = "";
+
+                sqlWhere = whereEqualsClause(sqlWhere, "addictive", addcode);
 
                 sql = sqlSelect + sqlWhere;
                 return sql;
