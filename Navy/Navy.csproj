@@ -394,6 +394,12 @@
     <Compile Include="Forms\selectlabel_test.Designer.cs">
       <DependentUpon>selectlabel_test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ScorePerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScorePerson.Designer.cs">
+      <DependentUpon>ScorePerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TelephoneNumber_Collection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -775,6 +781,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Scancardsetting.resx">
       <DependentUpon>Scancardsetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScorePerson.resx">
+      <DependentUpon>ScorePerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TelephoneNumber_Collection.resx">
       <DependentUpon>TelephoneNumber_Collection.cs</DependentUpon>

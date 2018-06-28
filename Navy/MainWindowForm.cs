@@ -243,12 +243,20 @@ namespace Navy
             f.Show();
         }
 
-        private void AddTeplephonNUmberToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TelephoneNumberToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TelephoneNumber_Collection f = new TelephoneNumber_Collection();
             f.StartPosition = FormStartPosition.CenterParent;
             f.ShowDialog();
         }
+
+        private void AddscoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ScorePerson f = new ScorePerson();
+            f.StartPosition = FormStartPosition.CenterParent;
+            f.ShowDialog();
+        }
+
 
         private void ScancardToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -314,5 +322,6 @@ namespace Navy
             l.StartPosition = FormStartPosition.CenterParent;
             l.Show();
         }
+
     }
 }
