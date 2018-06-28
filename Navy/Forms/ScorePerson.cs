@@ -70,7 +70,12 @@ namespace Navy.Forms
             Set_dtColumnName(dtUpdate);
             label_Count.Text = count.ToString() + " Record";
             gvResultPhonNumber.DataSource = dtUpdate;
-            
+            for (int i = 0; i <= gvResultPhonNumber.Columns.Count - 1; i++)
+            {
+                int colw = gvResultPhonNumber.Columns[i].Width;
+                gvResultPhonNumber.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+
         }
 
 
@@ -105,7 +110,7 @@ namespace Navy.Forms
                             navyid = cell.ToString();
                             // Console.Write("navyid = "+ cell);
                         }
-                        else if (count == 3) //Telephone
+                        else if (count == 7) //Telephone
                         {
                             Percent = cell.ToString();
                             //Console.Write(" Tel = " + cell);
@@ -176,8 +181,16 @@ namespace Navy.Forms
 
         private void Set_dtColumnName(DataTable dtUpdate) {
             dtUpdate.Columns["NAVYID"].ColumnName = "navyid";
+            dtUpdate.Columns["BATT"].ReadOnly = true;
+            dtUpdate.Columns["COMPANY"].ReadOnly = true;
+            dtUpdate.Columns["PLATOON"].ReadOnly = true;
+            dtUpdate.Columns["PSEQ"].ReadOnly = true;
             dtUpdate.Columns["NAME"].ReadOnly = true;
             dtUpdate.Columns["SNAME"].ReadOnly = true;
+            dtUpdate.Columns["BATT"].ColumnName = "พัน";
+            dtUpdate.Columns["COMPANY"].ColumnName = "ร้อย";
+            dtUpdate.Columns["PLATOON"].ColumnName = "มว.";
+            dtUpdate.Columns["PSEQ"].ColumnName = "ลำดับ";
             dtUpdate.Columns["NAME"].ColumnName = "ชื่อ";
             dtUpdate.Columns["SNAME"].ColumnName = "นามสกุล";
             dtUpdate.Columns["Percent"].ColumnName = "คะแนนสอบ";
