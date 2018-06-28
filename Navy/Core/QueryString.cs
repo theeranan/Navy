@@ -355,10 +355,23 @@ namespace Navy.Core
                 return sql;
             }
 
-            public string searchTelephone(string batt, string company,string name,string sname,string id8)
+            public string searchCollection(string batt, string company,string name,string sname,string id8,string mode)
             {
                 string sql = "";
-                string sqlSelect = "select navyid,`NAME`,SNAME,Telephone,FTelephone,MTelephone,PTelephone from person\n";
+                string sqlSelect = "select navyid,BATT,COMPANY,PLATOON,PSEQ,`NAME`,SNAME,\n";
+                switch (mode)
+                {
+                    case "": {
+                            sqlSelect += "Telephone,FTelephone,MTelephone,PTelephone\n";
+                        } break;
+                    case "Percent": {
+                            sqlSelect += "Percent\n";
+                        } break;
+                    default: {
+                            return "";
+                        } break;
+                }
+                sqlSelect += "from person\n";
                 string sqlWhere = "";
                 string sqlOrder = " order by batt,company,platoon,pseq";
 
@@ -368,20 +381,6 @@ namespace Navy.Core
                 sqlWhere = whereLikeID8(sqlWhere, "ID8", id8);
 
                 sql = sqlSelect + sqlWhere + sqlOrder; ;
-                return sql;
-            }
-            public string searchScore(string batt, string company, string name, string sname, string id8)
-            {
-                string sql = "";
-                string sqlSelect = "select NAVYID,BATT,COMPANY,PLATOON,PSEQ,`NAME`,SNAME,PERCENT from person \n";
-                string sqlWhere = "";
-                string sqlOrder = " order by batt,company,platoon,pseq";
-
-                sqlWhere = whereEqualsClause(sqlWhere, "BATT", batt);
-                sqlWhere = whereEqualsClause(sqlWhere, "COMPANY", company);
-                sqlWhere = whereLikeNameSName(sqlWhere, "`NAME`", "SNAME", name, sname);
-                sqlWhere = whereLikeID8(sqlWhere, "ID8", id8);
-                sql = sqlSelect + sqlWhere + sqlOrder;
                 return sql;
             }
             public string searchPersonAddDoc(string name, string sname, string id8,string mode)
@@ -489,17 +488,7 @@ namespace Navy.Core
             {
                 return CountRecord(searchPerson(navyid, id13, name, sname, yearBD, armid, yearin, id8, runcode, 0, 0, false, batt, company));
             }
-
-            public string searchTelephoneCountRecord(string batt, string company, string name, string sname, string id8)
-            {
-                return CountRecord(searchTelephone(batt, company,name,sname,id8));
-            }
-
-            public string searchscorecount(string batt, string company, string name, string sname, string id8)
-            {
-                return CountRecord(searchScore(batt, company, name, sname, id8));
-            }
-
+            
             //new
             public string tumbonsInCity(string towncodeLV2)
             {

@@ -394,17 +394,11 @@
     <Compile Include="Forms\selectlabel_test.Designer.cs">
       <DependentUpon>selectlabel_test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ScorePerson.cs">
+    <Compile Include="Forms\AddData_Collection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ScorePerson.Designer.cs">
-      <DependentUpon>ScorePerson.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TelephoneNumber_Collection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TelephoneNumber_Collection.Designer.cs">
-      <DependentUpon>TelephoneNumber_Collection.cs</DependentUpon>
+    <Compile Include="Forms\AddData_Collection.Designer.cs">
+      <DependentUpon>AddData_Collection.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ViewForm.cs">
       <SubType>Form</SubType>
@@ -782,11 +776,8 @@
     <EmbeddedResource Include="Forms\Scancardsetting.resx">
       <DependentUpon>Scancardsetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScorePerson.resx">
-      <DependentUpon>ScorePerson.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TelephoneNumber_Collection.resx">
-      <DependentUpon>TelephoneNumber_Collection.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddData_Collection.resx">
+      <DependentUpon>AddData_Collection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewForm.resx">
       <DependentUpon>ViewForm.cs</DependentUpon>

@@ -245,14 +245,15 @@ namespace Navy
 
         private void TelephoneNumberToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TelephoneNumber_Collection f = new TelephoneNumber_Collection();
+            AddData_Collection f = new AddData_Collection();
             f.StartPosition = FormStartPosition.CenterParent;
             f.ShowDialog();
         }
 
         private void AddscoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ScorePerson f = new ScorePerson();
+            AddData_Collection f = new AddData_Collection("Percent");
+            f.Text = "คะแนนสอบ";
             f.StartPosition = FormStartPosition.CenterParent;
             f.ShowDialog();
         }

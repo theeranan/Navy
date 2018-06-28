@@ -1,6 +1,6 @@
 ﻿namespace Navy.Forms
 {
-    partial class TelephoneNumber_Collection
+    partial class AddData_Collection
     {
         /// <summary>
         /// Required designer variable.
@@ -33,8 +33,7 @@
             this.Label_Company = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.gvResultPhonNumber = new System.Windows.Forms.DataGridView();
-            this.Btn_Save = new System.Windows.Forms.Button();
+            this.gvResult = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Btn_Search = new System.Windows.Forms.Button();
@@ -49,7 +48,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.mtxtid8 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvResultPhonNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvResult)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -114,27 +113,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "กองร้อยที่";
             // 
-            // gvResultPhonNumber
+            // gvResult
             // 
-            this.gvResultPhonNumber.AllowUserToOrderColumns = true;
-            this.gvResultPhonNumber.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvResultPhonNumber.Location = new System.Drawing.Point(16, 112);
-            this.gvResultPhonNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.gvResultPhonNumber.Name = "gvResultPhonNumber";
-            this.gvResultPhonNumber.Size = new System.Drawing.Size(1031, 575);
-            this.gvResultPhonNumber.TabIndex = 1;
-            // 
-            // Btn_Save
-            // 
-            this.Btn_Save.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Save.Location = new System.Drawing.Point(908, 697);
-            this.Btn_Save.Margin = new System.Windows.Forms.Padding(4);
-            this.Btn_Save.Name = "Btn_Save";
-            this.Btn_Save.Size = new System.Drawing.Size(139, 48);
-            this.Btn_Save.TabIndex = 8;
-            this.Btn_Save.Text = "บันทึก";
-            this.Btn_Save.UseVisualStyleBackColor = true;
-            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
+            this.gvResult.AllowUserToOrderColumns = true;
+            this.gvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvResult.Location = new System.Drawing.Point(16, 112);
+            this.gvResult.Margin = new System.Windows.Forms.Padding(4);
+            this.gvResult.Name = "gvResult";
+            this.gvResult.Size = new System.Drawing.Size(1031, 575);
+            this.gvResult.TabIndex = 1;
+            this.gvResult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResult_CellClick);
+            this.gvResult.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResult_CellValueChanged);
             // 
             // label3
             // 
@@ -268,7 +257,7 @@
             this.mtxtid8.Size = new System.Drawing.Size(92, 30);
             this.mtxtid8.TabIndex = 6;
             // 
-            // TelephoneNumber_Collection
+            // AddData_Collection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -286,15 +275,14 @@
             this.Controls.Add(this.Btn_Search);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.Btn_Save);
-            this.Controls.Add(this.gvResultPhonNumber);
+            this.Controls.Add(this.gvResult);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "TelephoneNumber_Collection";
+            this.Name = "AddData_Collection";
             this.Text = "ฟอร์มกรอกเบอร์โทรศัพท์";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvResultPhonNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvResult)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,8 +295,7 @@
         private System.Windows.Forms.Label Label_Company;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView gvResultPhonNumber;
-        private System.Windows.Forms.Button Btn_Save;
+        private System.Windows.Forms.DataGridView gvResult;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Btn_Search;
