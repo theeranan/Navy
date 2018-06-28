@@ -355,19 +355,65 @@ namespace Navy.Core
                 return sql;
             }
 
-            public string searchTelephone(string batt, string company)
+            public string searchTelephone(string batt, string company,string name,string sname,string id8)
             {
                 string sql = "";
-                string sqlSelect = "select `NAME`,SNAME,Telephone,FTelephone,MTelephone,PTelephone from person \n";
+                string sqlSelect = "select navyid,`NAME`,SNAME,Telephone,FTelephone,MTelephone,PTelephone from person \n";
                 string sqlWhere = "";
 
                 sqlWhere = whereEqualsClause(sqlWhere, "BATT", batt);
                 sqlWhere = whereEqualsClause(sqlWhere, "COMPANY", company);
+                sqlWhere = whereLikeNameSName(sqlWhere, "`NAME`", "SNAME", name, sname);
+                sqlWhere = whereLikeID8(sqlWhere, "ID8", id8);
 
                 sql = sqlSelect + sqlWhere;
                 return sql;
             }
+            public string searchPersonAddDoc(string name, string sname, string id8,string mode)
+            {
+                string sql = "";
+                string sqlSelect = "select navyid,`NAME`,SNAME,ID8, \n";
+                switch (mode)
+                {
+                    case "addictive":
+                        {
+                            sqlSelect += "addname from person left join addictivetab on addcode = addictive";
+                        }break;
+                    default: {
+                            sqlSelect += "kptclass from person left join kptclass on kptcode = kpt";
+                        } break;
+                }
+                 sqlSelect += "\n";
+                string sqlWhere = "";
+                
+                sqlWhere = whereLikeNameSName(sqlWhere, "`NAME`", "SNAME", name, sname);
+                sqlWhere = whereLikeID8(sqlWhere, "ID8", id8);
 
+                sql = sqlSelect + sqlWhere;
+                return sql;
+            }
+            public string search_addictive(string addcode)
+            {
+                string sql = "";
+                string sqlSelect = "select navyid,`NAME`,SNAME,ID8 from person \n";
+                string sqlWhere = "";
+
+                sqlWhere = whereEqualsClause(sqlWhere, "addictive", addcode);
+
+                sql = sqlSelect + sqlWhere;
+                return sql;
+            }
+            public string search_kptclass(string kptclass)
+            {
+                string sql = "";
+                string sqlSelect = "select navyid,`NAME`,SNAME,ID8 from person \n";
+                string sqlWhere = "";
+
+                sqlWhere = whereEqualsClause(sqlWhere, "kpt", kptclass);
+
+                sql = sqlSelect + sqlWhere;
+                return sql;
+            }
             public string searchPerson_OnlyIndictment(string id13, string name, string sname, string yearin, string id8)
             {
                 string sql = "";
@@ -429,9 +475,9 @@ namespace Navy.Core
                 return CountRecord(searchPerson(navyid, id13, name, sname, yearBD, armid, yearin, id8, runcode, 0, 0, false, batt, company));
             }
 
-            public string searchTelephoneCountRecord(string batt, string company)
+            public string searchTelephoneCountRecord(string batt, string company, string name, string sname, string id8)
             {
-                return CountRecord(searchTelephone(batt, company));
+                return CountRecord(searchTelephone(batt, company,name,sname,id8));
             }
 
             //new

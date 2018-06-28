@@ -26,7 +26,7 @@ namespace Navy.Forms
             Cmb_Company.SelectAll();
             Cmb_Batt.SelectAll();
             setCmbItem();
-           // dtUpdate = setDataTable();
+            // dtUpdate = setDataTable();
         }
 
         private void Btn_Search_Click(object sender, EventArgs e)
@@ -37,14 +37,39 @@ namespace Navy.Forms
             loaddatatelephone();
             Cmb_Company.SelectAll();
             Cmb_Batt.SelectAll();
-        }
+            /*string searchValue = searchtextBox.Text;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                bool valueResult = false;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    for (int i = 0; i < row.Cells.Count; i++)
+                    {
+                        if (row.Cells[i].Value != null && row.Cells[i].Value.ToString().Equals(searchValue))
+                        {
+                            int rowIndex = row.Index;
+                            dataGridView1.Rows[rowIndex].Selected = true;
+                            valueResult = true;
+                            break;
+                        }
+                    }
+
+                }
+                if (!valueResult)
+                {
+                    MessageBox.Show("Unable to find " + searchtextBox.Text, "Not Found");
+                    return;
+                }*/
+            }
         private void loaddatatelephone()
         {
-            dtUpdate = dcore.GetSearchTelephone(Cmb_Batt.Text, Cmb_Company.Text, out count);
+            dtUpdate = dcore.GetSearchTelephone(Cmb_Batt.Text, Cmb_Company.Text,txtname.Text,txtsname.Text,mtxtid8.Text, out count);
             //dtUpdate = ConvertListToDataTable(PersonTel);
             Set_dtColumnName(dtUpdate);
             label_Count.Text = count.ToString() + " Record";
             gvResultPhonNumber.DataSource = dtUpdate;
+            
         }
 
 
@@ -64,7 +89,7 @@ namespace Navy.Forms
 
         private void Btn_Save_Click(object sender, EventArgs e)
         {
-            string name = "", sname = "", TelNumber = "", FTelNumber = "", MTelNumber = "", PTelNumber = "";
+            string navyid = "",name = "", sname = "", TelNumber = "", FTelNumber = "", MTelNumber = "", PTelNumber = "";
             try
             {
                 foreach (DataRow datarow in dtUpdate.Rows)
@@ -78,40 +103,46 @@ namespace Navy.Forms
                     PTelNumber = "";
                     foreach (var cell in datarow.ItemArray)
                     {
-                        if (count == 0)
-                        { //Name
-                            name = cell.ToString();
-                           // Console.Write("Name = "+ cell);
-                        }
-                        else if (count == 1) //SName
+                        switch (count)
                         {
-                            sname = cell.ToString();
-                           // Console.Write(" SName = " + cell);
-                        }
-                        else if (count == 2) //Telephone
-                        {
-                            TelNumber = cell.ToString();
-                            //Console.Write(" Tel = " + cell);
-                        }
-                        else if (count == 3) //FTelephone
-                        {
-                            FTelNumber = cell.ToString();
-                            //Console.Write(" FTel = " + cell);
-                        }
-                        else if (count == 4) //MTelephone
-                        {
-                            MTelNumber = cell.ToString();
-                            //Console.Write(" MTel = " + cell);
-
-                        }
-                        else if (count == 5) //PTelephone
-                        {
-                            PTelNumber = cell.ToString();
-                           // Console.Write(" PTel = " + cell);
+                            case 0:
+                                {
+                                    navyid = cell.ToString();
+                                }break;
+                            case 1:
+                                {
+                                    name = cell.ToString();
+                                }
+                                break;
+                            case 2:
+                                {
+                                    sname = cell.ToString();
+                                }
+                                break;
+                            case 3:
+                                {
+                                    TelNumber = cell.ToString();
+                                }
+                                break;
+                            case 4:
+                                {
+                                    FTelNumber = cell.ToString();
+                                }
+                                break;
+                            case 5:
+                                {
+                                    MTelNumber = cell.ToString();
+                                }
+                                break;
+                            case 6:
+                                {
+                                    PTelNumber = cell.ToString();
+                                }
+                                break;
                         }
                         count++;
                     }
-                    dcore.UpdateTelephone(name,sname,TelNumber,FTelNumber, MTelNumber, PTelNumber);
+                    dcore.UpdateTelephone(navyid,name,sname,TelNumber,FTelNumber, MTelNumber, PTelNumber);
                 }
                 Console.WriteLine("==============================");
                 MessageBox.Show("อัพเดตเสร็จสิ้น");
@@ -120,7 +151,10 @@ namespace Navy.Forms
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            txtname.Text = "";
+            txtsname.Text = "";
+            mtxtid8.Text = "";
+            txtname.Focus();
         }
 
 
@@ -152,8 +186,12 @@ namespace Navy.Forms
         {
             Cmb_Company.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             Cmb_Batt.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            txtname.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            txtsname.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            mtxtid8.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             Btn_Search.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
             Btn_Save.KeyDown += new KeyEventHandler(EventEnterKeyForNextControl);
+            
         }
         private void EventEnterKeyForNextControl(object sender, KeyEventArgs e)
         {
@@ -166,6 +204,8 @@ namespace Navy.Forms
         }
 
         private void Set_dtColumnName(DataTable dtUpdate) {
+            dtUpdate.Columns["NAME"].ReadOnly = true;
+            dtUpdate.Columns["SNAME"].ReadOnly = true;
             dtUpdate.Columns["NAME"].ColumnName = "ชื่อ";
             dtUpdate.Columns["SNAME"].ColumnName = "นามสกุล";
             dtUpdate.Columns["Telephone"].ColumnName = "เบอร์โทรศัพท์";
@@ -173,5 +213,6 @@ namespace Navy.Forms
             dtUpdate.Columns["MTelephone"].ColumnName = "เบอร์โทรศัพท์มารดา";
             dtUpdate.Columns["PTelephone"].ColumnName = "เบอร์โทรศัพท์ผู้ปกครอง";
         }
+        
     }
 }

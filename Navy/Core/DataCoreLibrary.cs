@@ -418,11 +418,203 @@ namespace Navy.Core
             }
             return p;
         }
-
-        public DataTable GetSearchTelephone(string batt, string company, out int countAllRecord)
+        public DataTable getaddictive(string addcode, out int countAllRecord)
         {
-            string queryStr = search.searchTelephone(batt, company);
-            string queryStrCount = search.searchTelephoneCountRecord(batt, company);
+            string queryStr = search.search_addictive(addcode);
+            string queryStrCount = search.CountRecord(queryStr);
+
+            DataTable dt = new DataTable();
+            //List<TelephoneSearch> p = new List<TelephoneSearch>();
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+                MySqlCommand cmd2 = new MySqlCommand(queryStrCount, conn);
+                dt.Load(cmd.ExecuteReader());
+                countAllRecord = Convert.ToInt32(cmd2.ExecuteScalar());
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        public DataTable getkptclass(string kptclass,out int countAllRecord)
+        {
+            string queryStr = search.search_kptclass(kptclass);
+            string queryStrCount = search.CountRecord(queryStr);
+
+            DataTable dt = new DataTable();
+            //List<TelephoneSearch> p = new List<TelephoneSearch>();
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+                MySqlCommand cmd2 = new MySqlCommand(queryStrCount, conn);
+                dt.Load(cmd.ExecuteReader());
+                countAllRecord = Convert.ToInt32(cmd2.ExecuteScalar());
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        public bool UpdateAddictive(string navyid,string addcode)
+        {
+            string sql = "UPDATE person set addictive = " + addcode + " where navyid = " + navyid;
+            DataTable dt = new DataTable();
+            if (openConnection())
+            {
+                using (MySqlTransaction trans = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        trans.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        string e = ex.InnerException.Message;
+                        trans.Rollback();
+                        throw;
+                    }
+                    finally
+                    {
+                        closeConnection();
+                    }
+                }
+            }
+            return true;
+        }
+        public bool UpdateKptclass(string navyid ,string kptclass)
+        {
+            string sql = "UPDATE person set kpt = "+ kptclass + " where navyid = "+navyid;
+            DataTable dt = new DataTable();
+            if (openConnection())
+            {
+                using (MySqlTransaction trans = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        trans.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        string e = ex.InnerException.Message;
+                        trans.Rollback();
+                        throw;
+                    }
+                    finally
+                    {
+                        closeConnection();
+                    }
+                }
+            }
+            return true;
+        }
+        public bool DeleteAddictive(string navyid)
+        {
+            string sql = "UPDATE person set Addictive = null where navyid = " + navyid;
+            DataTable dt = new DataTable();
+            if (openConnection())
+            {
+                using (MySqlTransaction trans = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        trans.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        string e = ex.InnerException.Message;
+                        trans.Rollback();
+                        throw;
+                    }
+                    finally
+                    {
+                        closeConnection();
+                    }
+                }
+            }
+            return true;
+        }
+        public bool DeleteKptclass(string navyid)
+        {
+            string sql = "UPDATE person set kpt = null where navyid = " + navyid;
+            DataTable dt = new DataTable();
+            if (openConnection())
+            {
+                using (MySqlTransaction trans = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        trans.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        string e = ex.InnerException.Message;
+                        trans.Rollback();
+                        throw;
+                    }
+                    finally
+                    {
+                        closeConnection();
+                    }
+                }
+            }
+            return true;
+        }
+        public DataTable getsearchpersonAddDoc(string name, string sname, string id8,string mode, out int countAllRecord)
+        {
+            string queryStr = search.searchPersonAddDoc(name, sname, id8,mode);
+            string queryStrCount = search.CountRecord(queryStr);
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+                MySqlCommand cmd2 = new MySqlCommand(queryStrCount, conn);
+                dt.Load(cmd.ExecuteReader());
+                countAllRecord = Convert.ToInt32(cmd2.ExecuteScalar());
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        public DataTable GetSearchTelephone(string batt, string company,string name,string sname,string id8, out int countAllRecord)
+        {
+            string queryStr = search.searchTelephone(batt, company,name,sname,id8);
+            string queryStrCount = search.CountRecord(queryStr);
 
             DataTable dt = new DataTable();
             //List<TelephoneSearch> p = new List<TelephoneSearch>();
@@ -445,7 +637,7 @@ namespace Navy.Core
             return dt;
         }
 
-        public bool UpdateTelephone(string name,string sname,string TelNumber, string FTelNumber,string MTelNumber,string PTelNumber)
+        public bool UpdateTelephone(string navyid,string name,string sname,string TelNumber, string FTelNumber,string MTelNumber,string PTelNumber)
         {
             if (openConnection())
             {
@@ -455,7 +647,7 @@ namespace Navy.Core
                         {
                             string sql = "UPDATE person ";
                             sql += "SET Telephone = '" + TelNumber.Trim() + "',FTelephone = '"+ FTelNumber.Trim() + "',MTelephone = '" + MTelNumber.Trim() + "',PTelephone  = '"+ PTelNumber.Trim() + "'";
-                            sql += " WHERE NAME = '" + name + "' and SNAME = '"+ sname + "'";
+                            sql += " WHERE navyid = "+navyid;
 
                             using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                             {
