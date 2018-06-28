@@ -369,6 +369,19 @@ namespace Navy.Core
                 sql = sqlSelect + sqlWhere;
                 return sql;
             }
+            public string searchScore(string batt, string company, string name, string sname, string id8)
+            {
+                string sql = "";
+                string sqlSelect = "select NAVYID,`NAME`,SNAME,PERCENT from person \n";
+                string sqlWhere = "";
+
+                sqlWhere = whereEqualsClause(sqlWhere, "BATT", batt);
+                sqlWhere = whereEqualsClause(sqlWhere, "COMPANY", company);
+                sqlWhere = whereLikeNameSName(sqlWhere, "`NAME`", "SNAME", name, sname);
+                sqlWhere = whereLikeID8(sqlWhere, "ID8", id8);
+                sql = sqlSelect + sqlWhere;
+                return sql;
+            }
             public string searchPersonkpt(string name, string sname, string id8)
             {
                 string sql = "";
@@ -456,6 +469,11 @@ namespace Navy.Core
             public string searchTelephoneCountRecord(string batt, string company, string name, string sname, string id8)
             {
                 return CountRecord(searchTelephone(batt, company,name,sname,id8));
+            }
+
+            public string searchscorecount(string batt, string company, string name, string sname, string id8)
+            {
+                return CountRecord(searchScore(batt, company, name, sname, id8));
             }
 
             //new

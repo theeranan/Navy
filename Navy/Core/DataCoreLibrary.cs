@@ -553,6 +553,32 @@ namespace Navy.Core
             }
             return dt;
         }
+        public DataTable GetSearchScore(string batt, string company, string name, string sname, string id8, out int countAllRecord)
+        {
+            string queryStr = search.searchScore(batt, company, name, sname, id8);
+            string queryStrCount = search.searchscorecount(batt, company, name, sname, id8);
+
+            DataTable dt = new DataTable();
+            //List<TelephoneSearch> p = new List<TelephoneSearch>();
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+                MySqlCommand cmd2 = new MySqlCommand(queryStrCount, conn);
+                dt.Load(cmd.ExecuteReader());
+                countAllRecord = Convert.ToInt32(cmd2.ExecuteScalar());
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
 
         public bool UpdateTelephone(string name,string sname,string TelNumber, string FTelNumber,string MTelNumber,string PTelNumber)
         {
@@ -584,6 +610,40 @@ namespace Navy.Core
                         }
                     }
                 closeConnection();             
+            }
+            return true;
+        }
+
+        public bool UpdateScore(string navyid, string Percent)
+        {
+            if (openConnection())
+            {
+                using (MySqlTransaction trans = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        string sql = "UPDATE person ";
+                        sql += "SET PERCENT = '" + Percent+ "'";
+                        sql += "WHERE NAVYID = '" + navyid + "'";
+
+                        using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        trans.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        string e = ex.InnerException.Message;
+                        trans.Rollback();
+                        throw;
+                    }
+                    finally
+                    {
+                        closeConnection();
+                    }
+                }
+                closeConnection();
             }
             return true;
         }
