@@ -44,10 +44,7 @@
             this.addNLabelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addsubuint = new System.Windows.Forms.ToolStripMenuItem();
             this.Indictment_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-<<<<<<< HEAD
-            this.AddTeplephonNUmberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-=======
->>>>>>> origin/Server
+            //this.AddTeplephonNUmberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddkptclassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.รายงานToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,12 +69,9 @@
             this.dateFormatSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ScancardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-<<<<<<< HEAD
             this.AddictiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-=======
             this.AddscoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TelephoneNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
->>>>>>> origin/Server
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,15 +131,13 @@
             this.addNLabelToolStripMenuItem,
             this.addsubuint,
             this.Indictment_ToolStripMenuItem,
-<<<<<<< HEAD
-            this.AddTeplephonNUmberToolStripMenuItem,
+            //this.AddTeplephonNUmberToolStripMenuItem,
             this.AddkptclassToolStripMenuItem,
-            this.AddictiveToolStripMenuItem});
-=======
+            this.AddictiveToolStripMenuItem,
             this.TelephoneNumberToolStripMenuItem,
             this.AddkptclassToolStripMenuItem,
-            this.AddscoreToolStripMenuItem});
->>>>>>> origin/Server
+            this.AddscoreToolStripMenuItem
+            });
             this.toolSubUnit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.toolSubUnit.Name = "toolSubUnit";
             this.toolSubUnit.Size = new System.Drawing.Size(73, 23);
@@ -235,10 +227,10 @@
             // 
             // AddkptclassToolStripMenuItem
             // 
-            this.AddkptclassToolStripMenuItem.Name = "AddkptclassToolStripMenuItem";
-            this.AddkptclassToolStripMenuItem.Size = new System.Drawing.Size(348, 28);
-            this.AddkptclassToolStripMenuItem.Text = "งานเพิ่มคพท";
-            this.AddkptclassToolStripMenuItem.Click += new System.EventHandler(this.AddkptclassToolStripMenuItem_Click);
+            //this.AddkptclassToolStripMenuItem.Name = "AddkptclassToolStripMenuItem";
+            //this.AddkptclassToolStripMenuItem.Size = new System.Drawing.Size(348, 28);
+            //this.AddkptclassToolStripMenuItem.Text = "งานเพิ่มคพท";
+            //this.AddkptclassToolStripMenuItem.Click += new System.EventHandler(this.AddkptclassToolStripMenuItem_Click);
             // 
             // รายงานToolStripMenuItem
             // 
@@ -418,14 +410,12 @@
             this.AboutToolStripMenuItem.Text = "เกี่ยวกับ";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
-<<<<<<< HEAD
             // AddictiveToolStripMenuItem
             // 
             this.AddictiveToolStripMenuItem.Name = "AddictiveToolStripMenuItem";
             this.AddictiveToolStripMenuItem.Size = new System.Drawing.Size(348, 28);
             this.AddictiveToolStripMenuItem.Text = "งานเพื่มผลตรวจสารเสพติด";
             this.AddictiveToolStripMenuItem.Click += new System.EventHandler(this.AddictiveToolStripMenuItem_Click);
-=======
             // TelephoneNumberToolStripMenuItem
             // 
             this.TelephoneNumberToolStripMenuItem.Name = "TelephoneNumberToolStripMenuItem";
@@ -439,7 +429,6 @@
             this.AddscoreToolStripMenuItem.Size = new System.Drawing.Size(288, 24);
             this.AddscoreToolStripMenuItem.Text = "คะแนนสอบ";
             this.AddscoreToolStripMenuItem.Click += new System.EventHandler(this.AddscoreToolStripMenuItem_Click);
->>>>>>> origin/Server
             // 
             // MainWindowForm
             // 
@@ -505,11 +494,8 @@
         private System.Windows.Forms.ToolStripMenuItem CheckRuncodeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LostInformation_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AddkptclassToolStripMenuItem;
-<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem AddictiveToolStripMenuItem;
-=======
         private System.Windows.Forms.ToolStripMenuItem TelephoneNumberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AddscoreToolStripMenuItem;
->>>>>>> origin/Server
     }
 }

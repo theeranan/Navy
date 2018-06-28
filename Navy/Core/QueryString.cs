@@ -369,9 +369,6 @@ namespace Navy.Core
                 sql = sqlSelect + sqlWhere;
                 return sql;
             }
-<<<<<<< HEAD
-            public string searchPersonAddDoc(string name, string sname, string id8,string mode)
-=======
             public string searchScore(string batt, string company, string name, string sname, string id8)
             {
                 string sql = "";
@@ -385,8 +382,7 @@ namespace Navy.Core
                 sql = sqlSelect + sqlWhere;
                 return sql;
             }
-            public string searchPersonkpt(string name, string sname, string id8)
->>>>>>> origin/Server
+            public string searchPersonAddDoc(string name, string sname, string id8,string mode)
             {
                 string sql = "";
                 string sqlSelect = "select navyid,`NAME`,SNAME,ID8, \n";
