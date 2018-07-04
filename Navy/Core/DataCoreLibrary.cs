@@ -291,7 +291,8 @@ namespace Navy.Core
         {
             LimitMySQL limit = Function.GetLimitFromPage(itemsPerPage, pageNo);
             DataTable dt = new DataTable();
-            dt = base.getSearchPrototype(search.searchPersonNivy(id13, name, sname, yearBD, limit.limit1, limit.limit2, true), search.searchPersonNivyCountRecord(id13, name, sname, yearBD), out count);
+            dt = base.getSearchPrototype
+                (search.searchPersonNivy(id13, name, sname, yearBD, limit.limit1, limit.limit2, true), search.searchPersonNivyCountRecord(id13, name, sname, yearBD), out count);
             return dt;
         }
 
