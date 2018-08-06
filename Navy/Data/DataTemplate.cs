@@ -309,6 +309,7 @@ namespace Navy.Data.DataTemplate
         public string runcodeto { get; set; }
         public string BankCode { get; set; }
         public string AccountNum { get; set; }
+        public string oldyearin { get; set; }
         public ParamPerson()
         {
 
@@ -318,6 +319,7 @@ namespace Navy.Data.DataTemplate
         {
             navyid = reader["navyid"].ToString();
             yearin = reader["yearin"].ToString();
+            oldyearin = reader["oldyearin"].ToString();
             armid = reader["armid"].ToString();
             regDate = DateTime.Parse(reader["regDate"].ToString());
             repDate = DateTime.Parse(reader["repDate"].ToString());

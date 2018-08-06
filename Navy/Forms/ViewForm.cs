@@ -256,26 +256,57 @@ namespace Navy.Forms
         //Load ID_card
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string filePath = @"\\192.168.0.1\d\TranscriptionForm\" + rtcDetails.yearin.Replace("/", ".") + '/' + rtcDetails.id13 + ".pdf";
-
-            if (File.Exists(filePath))
+            string filePath    = @"\\192.168.0.1\d\TranscriptionForm\" + rtcDetails.yearin.Replace("/", ".") + '/' + rtcDetails.id13 + ".pdf";
+            string filePathJPG = @"\\192.168.0.1\d\TranscriptionForm\" + rtcDetails.yearin.Replace("/", ".") + '/' + rtcDetails.id13 + ".jpg";    
+            string filePathNavyID    = @"\\192.168.0.1\d\TranscriptionForm\" + rtcDetails.yearin.Replace("/", ".") + '/' + rtcDetails.navyid + ".pdf";
+            string filePathJPGNavyID = @"\\192.168.0.1\d\TranscriptionForm\" + rtcDetails.yearin.Replace("/", ".") + '/' + rtcDetails.navyid + ".jpg";
+            if (File.Exists(filePath)) //ถ้่า "เจอ" ชื่อไฟล์นั้น
             {
                 OpenIDCardFile(filePath);
             }
-            else
-            {                
+            else if (File.Exists(filePathJPG))
+            {
+                OpenIDCardFile(filePathJPG);
+            }
+            else if (File.Exists(filePathNavyID))
+            {
+                OpenIDCardFile(filePathNavyID);
+            }
+            else if (File.Exists(filePathJPGNavyID))
+            {
+                OpenIDCardFile(filePathJPGNavyID);
+            }
+            else //เป็น ผลัดสมทบฝึก ให้หาจาก folder ของ oldyearin
+            {
                 if (rtcDetails.oldyearin == "" || rtcDetails.oldyearin == null)
-                {                
+                {
                     MessageBox.Show("ไม่พบไฟล์");
                 }
                 else
                 {
-                    filePath = @"\\192.168.0.1\d\TranscriptionForm\" + rtcDetails.oldyearin.Replace("/", ".") + '/' + rtcDetails.id13 + ".pdf";
+                    filePath    = @"\\192.168.0.1\d\TranscriptionForm\" + rtcDetails.oldyearin.Replace("/", ".") + '/' + rtcDetails.id13 + ".pdf";
+                    filePathJPG = @"\\192.168.0.1\d\TranscriptionForm\" + rtcDetails.oldyearin.Replace("/", ".") + '/' + rtcDetails.id13 + ".jpg";
+                    filePathNavyID    = @"\\192.168.0.1\d\TranscriptionForm\" + rtcDetails.oldyearin.Replace("/", ".") + '/' + rtcDetails.navyid + ".pdf";
+                    filePathJPGNavyID = @"\\192.168.0.1\d\TranscriptionForm\" + rtcDetails.oldyearin.Replace("/", ".") + '/' + rtcDetails.navyid + ".jpg";
+
                     if (File.Exists(filePath))
                     {
                         OpenIDCardFile(filePath);
                     }
-                    else {
+                    else if (File.Exists(filePathJPG))
+                    {
+                        OpenIDCardFile(filePathJPG);
+                    }
+                    else if (File.Exists(filePathNavyID))
+                    {
+                        OpenIDCardFile(filePathNavyID);
+                    }
+                    else if (File.Exists(filePathJPGNavyID))
+                    {
+                        OpenIDCardFile(filePathJPGNavyID);
+                    }
+                    else
+                    {
                         MessageBox.Show("ไม่พบไฟล์");
                     }
                 }
