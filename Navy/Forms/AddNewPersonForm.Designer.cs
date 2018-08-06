@@ -249,9 +249,9 @@
             this.label4.Location = new System.Drawing.Point(245, 71);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 20);
+            this.label4.Size = new System.Drawing.Size(86, 20);
             this.label4.TabIndex = 676;
-            this.label4.Text = "วันเดือนปีเกิด ";
+            this.label4.Text = "วันเดือนปีเกิด";
             // 
             // mtextBoxBD
             // 

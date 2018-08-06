@@ -149,49 +149,49 @@ namespace Navy.Forms
             mtextBoxBD.Invoke(new MethodInvoker(delegate { mtextBoxBD.Text = personal.Birthday.ToString("dd/MM/yyyy"); }));
             textBoxName.Invoke(new MethodInvoker(delegate { textBoxName.Text = personal.Th_Firstname; }));
             textBoxSName.Invoke(new MethodInvoker(delegate { textBoxSName.Text = personal.Th_Lastname; }));
-            if (personal.addrHouseNo != "")
-            {
-                textBoxHomeNum.Invoke(new MethodInvoker(delegate { textBoxHomeNum.Text = personal.addrHouseNo; }));
-            }
-            if (personal.addrVillageNo != "")
-            {
-                textBoxMoo.Invoke(new MethodInvoker(delegate { textBoxMoo.Text = personal.addrVillageNo.Substring(8); }));
-            }
-            if (personal.addrLane != "")
-            {
-                textBoxSoy.Invoke(new MethodInvoker(delegate { textBoxSoy.Text = personal.addrLane.Substring(4); }));
-            }
-            if (personal.addrRoad != "")
-            {
-                textBoxRoad.Invoke(new MethodInvoker(delegate { textBoxRoad.Text = personal.addrRoad.Substring(4); }));
-            }
-            if (personal.addrProvince != "")
-            {
-                cbbProvince.Invoke(new MethodInvoker(delegate
-                {
-                    cbbProvince.SelectedIndex = cbbProvince.FindStringExact(personal.addrProvince.Substring(0, 7) == "จังหวัด" ? personal.addrProvince.Substring(7) : personal.addrProvince);
+            //if (personal.addrHouseNo != "")
+            //{
+            //    textBoxHomeNum.Invoke(new MethodInvoker(delegate { textBoxHomeNum.Text = personal.addrHouseNo; }));
+            //}
+            //if (personal.addrVillageNo != "")
+            //{
+            //    textBoxMoo.Invoke(new MethodInvoker(delegate { textBoxMoo.Text = personal.addrVillageNo.Substring(8); }));
+            //}
+            //if (personal.addrLane != "")
+            //{
+            //    textBoxSoy.Invoke(new MethodInvoker(delegate { textBoxSoy.Text = personal.addrLane.Substring(4); }));
+            //}
+            //if (personal.addrRoad != "")
+            //{
+            //    textBoxRoad.Invoke(new MethodInvoker(delegate { textBoxRoad.Text = personal.addrRoad.Substring(4); }));
+            //}
+            //if (personal.addrProvince != "")
+            //{
+            //    cbbProvince.Invoke(new MethodInvoker(delegate
+            //    {
+            //        cbbProvince.SelectedIndex = cbbProvince.FindStringExact(personal.addrProvince.Substring(0, 7) == "จังหวัด" ? personal.addrProvince.Substring(7) : personal.addrProvince);
 
-                }));
-            }
-            if (personal.addrAmphur != "")
-            {
-                cbbCity.Invoke(new MethodInvoker(delegate
-                {
-                    cbbCity.SelectedIndex = cbbCity.FindString(personal.addrAmphur.Substring(0, 5) == "อำเภอ" ? personal.addrAmphur.Substring(5) : personal.addrAmphur);
-                    if (cbbCity.SelectedIndex == -1)
-                    {
-                        cbbCity.SelectedIndex = cbbCity.FindString(personal.addrAmphur.Substring(0, 5) == "อำเภอ" ? "กิ่งอำเภอ" + personal.addrAmphur.Substring(5) : "กิ่งอำเภอ" + personal.addrAmphur);
-                    }
-                }));
-            }
+            //    }));
+            //}
+            //if (personal.addrAmphur != "")
+            //{
+            //    cbbCity.Invoke(new MethodInvoker(delegate
+            //    {
+            //        cbbCity.SelectedIndex = cbbCity.FindString(personal.addrAmphur.Substring(0, 5) == "อำเภอ" ? personal.addrAmphur.Substring(5) : personal.addrAmphur);
+            //        if (cbbCity.SelectedIndex == -1)
+            //        {
+            //            cbbCity.SelectedIndex = cbbCity.FindString(personal.addrAmphur.Substring(0, 5) == "อำเภอ" ? "กิ่งอำเภอ" + personal.addrAmphur.Substring(5) : "กิ่งอำเภอ" + personal.addrAmphur);
+            //        }
+            //    }));
+            //}
 
-            if (personal.addrTambol != "")
-            {
-                cbbTumbon.Invoke(new MethodInvoker(delegate
-                {
-                    cbbTumbon.SelectedIndex = cbbTumbon.FindString(personal.addrTambol.Substring(0, 4) == "ตำบล" ? personal.addrTambol.Substring(4) : personal.addrTambol);
-                }));
-            }
+            //if (personal.addrTambol != "")
+            //{
+            //    cbbTumbon.Invoke(new MethodInvoker(delegate
+            //    {
+            //        cbbTumbon.SelectedIndex = cbbTumbon.FindString(personal.addrTambol.Substring(0, 4) == "ตำบล" ? personal.addrTambol.Substring(4) : personal.addrTambol);
+            //    }));
+            //}
             cbbType.Invoke(new MethodInvoker(delegate { cbbType.Focus(); }));
         }
 
@@ -500,117 +500,122 @@ namespace Navy.Forms
             //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
+        private void setTextAddress() {
+
+        }
+
         private void LoadValueFromPersonNavyToControls(PersonNavy personRow)
         {
             textBoxID13.Text = personRow.pid;
             textBoxName.Text = personRow.fname.Trim();
             textBoxSName.Text = personRow.lname.Trim();
-            textBoxFname.Text = personRow.faname.Trim();
-            textBoxFSname.Text = personRow.fa_sname == "" ? personRow.lname.Trim() : personRow.fa_sname.Trim();
-            textBoxMname.Text = personRow.maname.Trim();
-            textBoxMSname.Text = personRow.ma_sname == "" ? personRow.lname.Trim() : personRow.ma_sname.Trim();
+            //textBoxFname.Text = personRow.faname.Trim();
+            //textBoxFSname.Text = personRow.fa_sname == "" ? personRow.lname.Trim() : personRow.fa_sname.Trim();
+            //textBoxMname.Text = personRow.maname.Trim();
+            //textBoxMSname.Text = personRow.ma_sname == "" ? personRow.lname.Trim() : personRow.ma_sname.Trim();
 
             try
             {
                 mtextBoxBD.Text = personRow.birthdate;
             }
             catch
-            { mtextBoxBD.ResetText(); }
-
-            if (personRow.m_tt != "")
-            {
-                string tcode = DataDefinition.GetTowncodeByGOVID(personRow.m_tt);
-                param.towncode = tcode;
-                try
-                {
-                    cbbProvince.SelectedValue = tcode.Substring(0, 2) + "0000";
-                    townnameManage.LoadCityToComboBox(cbbCity, tcode.Substring(0, 2) + "0000", tcode.Substring(0, 4) + "00");
-                    townnameManage.LoadTumbonToComboBox(cbbTumbon, tcode.Substring(0, 4) + "00", tcode);
-                }
-                catch { }
+            { //mtextBoxBD.ResetText();
             }
 
-            if (personRow.m_home != "")
-            {
-                personRow.m_home = personRow.m_home.Trim();
-                string[] addressPrefix = { "ม.", "หมู่", "ซ.", "ซอย", "ถ.", "ถนน" };
-                string[] address;
-                try
-                {
-                    address = personRow.m_home.Split(' ');
-                    textBoxHomeNum.ResetText();
-                    textBoxMoo.ResetText();
-                    textBoxSoy.ResetText();
-                    textBoxRoad.ResetText();
+            //if (personRow.m_tt != "")
+            //{
+            //    string tcode = DataDefinition.GetTowncodeByGOVID(personRow.m_tt);
+            //    param.towncode = tcode;
+            //    try
+            //    {
+            //        cbbProvince.SelectedValue = tcode.Substring(0, 2) + "0000";
+            //        townnameManage.LoadCityToComboBox(cbbCity, tcode.Substring(0, 2) + "0000", tcode.Substring(0, 4) + "00");
+            //        townnameManage.LoadTumbonToComboBox(cbbTumbon, tcode.Substring(0, 4) + "00", tcode);
+            //    }
+            //    catch { }
+            //}
 
-                    string tempS = personRow.m_home.Trim();
-                    if (tempS.IndexOfAny("0123456789/".ToCharArray()) == 0)
-                    {
-                        string addrPrefix = "";
-                        while (GetAddressValue(tempS, out addrPrefix) == "")
-                        {
-                            if (tempS.IndexOf('/') == 0 || char.IsDigit(tempS, 0))
-                            {
-                                textBoxHomeNum.Text += tempS.Substring(0, 1);
-                                tempS = tempS.Remove(0, 1);
-                            }
-                            else
-                            {
-                                break;
-                            }
-                        }
-                    }
+            //if (personRow.m_home != "")
+            //{
+            //    personRow.m_home = personRow.m_home.Trim();
+            //    string[] addressPrefix = { "ม.", "หมู่", "ซ.", "ซอย", "ถ.", "ถนน" };
+            //    string[] address;
+            //    try
+            //    {
+            //        address = personRow.m_home.Split(' ');
+            //        textBoxHomeNum.ResetText();
+            //        textBoxMoo.ResetText();
+            //        textBoxSoy.ResetText();
+            //        textBoxRoad.ResetText();
 
-                    tempS = tempS.Trim();
-                    if (tempS.IndexOfAny("ม.".ToCharArray()) == 0 || tempS.IndexOfAny("หมู่".ToCharArray()) == 0)
-                    {
-                        string addrPrefix = "";
-                        tempS = GetAddressValue(tempS, out addrPrefix);
-                        while (GetAddressValue(tempS, out addrPrefix) == "")
-                        {
-                            if (char.IsDigit(tempS, 0))
-                            {
-                                textBoxMoo.Text += tempS.Substring(0, 1);
-                                tempS = tempS.Remove(0, 1);
-                            }
-                            else
-                            {
-                                break;
-                            }
-                        }
-                    }
+                    //string tempS = personRow.m_home.Trim();
+                    //if (tempS.IndexOfAny("0123456789/".ToCharArray()) == 0)
+                    //{
+                    //    string addrPrefix = "";
+                    //    while (GetAddressValue(tempS, out addrPrefix) == "")
+                    //    {
+                    //        if (tempS.IndexOf('/') == 0 || char.IsDigit(tempS, 0))
+                    //        {
+                    //            textBoxHomeNum.Text += tempS.Substring(0, 1);
+                    //            tempS = tempS.Remove(0, 1);
+                    //        }
+                    //        else
+                    //        {
+                    //            break;
+                    //        }
+                    //    }
+                    //}
 
-                    tempS = tempS.Trim();
-                    if (tempS.IndexOfAny("ซ.".ToCharArray()) == 0 || tempS.IndexOfAny("ซอย".ToCharArray()) == 0)
-                    {
-                        string addrPrefix = "";
-                        tempS = GetAddressValue(tempS, out addrPrefix);
-                        while (GetAddressValue(tempS, out addrPrefix) == "")
-                        {
-                            textBoxSoy.Text += tempS.Substring(0, 1);
-                            tempS = tempS.Remove(0, 1);
-                        }
-                    }
+                    //tempS = tempS.Trim();
+                    //if (tempS.IndexOfAny("ม.".ToCharArray()) == 0 || tempS.IndexOfAny("หมู่".ToCharArray()) == 0)
+                    //{
+                    //    string addrPrefix = "";
+                    //    tempS = GetAddressValue(tempS, out addrPrefix);
+                    //    while (GetAddressValue(tempS, out addrPrefix) == "")
+                    //    {
+                    //        if (char.IsDigit(tempS, 0))
+                    //        {
+                    //            textBoxMoo.Text += tempS.Substring(0, 1);
+                    //            tempS = tempS.Remove(0, 1);
+                    //        }
+                    //        else
+                    //        {
+                    //            break;
+                    //        }
+                    //    }
+                    //}
 
-                    tempS = tempS.Trim();
-                    if (tempS.IndexOfAny("ถ.".ToCharArray()) == 0 || tempS.IndexOfAny("ถนน".ToCharArray()) == 0)
-                    {
-                        string addrPrefix = "";
-                        tempS = GetAddressValue(tempS, out addrPrefix);
-                        while (GetAddressValue(tempS, out addrPrefix) == "")
-                        {
-                            textBoxRoad.Text += tempS.Substring(0, 1);
-                            tempS = tempS.Remove(0, 1);
-                        }
-                    }
-                }
-                catch { }
-            }
+                    //tempS = tempS.Trim();
+                    //if (tempS.IndexOfAny("ซ.".ToCharArray()) == 0 || tempS.IndexOfAny("ซอย".ToCharArray()) == 0)
+                    //{
+                    //    string addrPrefix = "";
+                    //    tempS = GetAddressValue(tempS, out addrPrefix);
+                    //    while (GetAddressValue(tempS, out addrPrefix) == "")
+                    //    {
+                    //        textBoxSoy.Text += tempS.Substring(0, 1);
+                    //        tempS = tempS.Remove(0, 1);
+                    //    }
+                    //}
 
-            textBoxMark.Text = personRow.scare.Trim();
-            textBoxHeight.Text = personRow.tall.Trim();
-            textBoxChessIn.Text = personRow.chess_in.Trim();
-            textBoxChessOut.Text = personRow.chess_out.Trim();
+                    //tempS = tempS.Trim();
+                    //if (tempS.IndexOfAny("ถ.".ToCharArray()) == 0 || tempS.IndexOfAny("ถนน".ToCharArray()) == 0)
+                    //{
+                    //    string addrPrefix = "";
+                    //    tempS = GetAddressValue(tempS, out addrPrefix);
+                    //    while (GetAddressValue(tempS, out addrPrefix) == "")
+                    //    {
+                    //        textBoxRoad.Text += tempS.Substring(0, 1);
+                    //        tempS = tempS.Remove(0, 1);
+                    //    }
+                //    //}
+                //}
+                //catch { }
+            //}
+
+            //textBoxMark.Text = personRow.scare.Trim();
+            //textBoxHeight.Text = personRow.tall.Trim();
+            //textBoxChessIn.Text = personRow.chess_in.Trim();
+            //textBoxChessOut.Text = personRow.chess_out.Trim();
 
             try
             {
@@ -758,11 +763,11 @@ namespace Navy.Forms
             string value = "";
             bool isDuplicate = false;
             isDuplicate = dcore.CheckPersonDuplicateKeys(param, out key, out value);
-            if (IsValidCheckPersonID(param.id13))
-            {
-                MessageBox.Show("เลขบัตรประชาชนไม่ถูกต้อง");
-                isDuplicate = true;
-            }
+            //if (IsValidCheckPersonID(param.id13))
+            //{
+            //    MessageBox.Show("เลขบัตรประชาชนไม่ถูกต้อง");
+            //    isDuplicate = true;
+            //}
             if (key == "ID13")
             {
                 MessageBox.Show("ข้อมูล [" + key + ":" + value + "] มีอยู่ในระบบแล้ว");

@@ -43,3 +43,12 @@ D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\bin\Debug\PCSC.Iso7816.x
 D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.csprojResolveAssemblyReference.cache
 D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.dll
 D:\แก้ไข Program Navy\Navy\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.pdb
+D:\แก้ไข Program Navy\Navy Edit datafrom NRD\ThaiNationalIDCard\bin\Debug\ThaiNationalIDCard.dll
+D:\แก้ไข Program Navy\Navy Edit datafrom NRD\ThaiNationalIDCard\bin\Debug\ThaiNationalIDCard.pdb
+D:\แก้ไข Program Navy\Navy Edit datafrom NRD\ThaiNationalIDCard\bin\Debug\PCSC.dll
+D:\แก้ไข Program Navy\Navy Edit datafrom NRD\ThaiNationalIDCard\bin\Debug\PCSC.Iso7816.dll
+D:\แก้ไข Program Navy\Navy Edit datafrom NRD\ThaiNationalIDCard\bin\Debug\PCSC.xml
+D:\แก้ไข Program Navy\Navy Edit datafrom NRD\ThaiNationalIDCard\bin\Debug\PCSC.Iso7816.xml
+D:\แก้ไข Program Navy\Navy Edit datafrom NRD\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.csprojResolveAssemblyReference.cache
+D:\แก้ไข Program Navy\Navy Edit datafrom NRD\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.dll
+D:\แก้ไข Program Navy\Navy Edit datafrom NRD\ThaiNationalIDCard\obj\Debug\ThaiNationalIDCard.pdb
