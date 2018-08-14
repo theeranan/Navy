@@ -11,6 +11,7 @@ using System.Drawing;
 using System.IO;
 using System.Drawing.Printing;
 using System.Text;
+using System.Diagnostics;
 
 namespace Navy.Forms
 {
@@ -1648,6 +1649,66 @@ if (modecard != "")
             print_dialog();
         }
 
+        private void LinkLabel_IDCard_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string filePath = @"\\192.168.0.1\d\TranscriptionForm\" + param.yearin.Replace("/", ".") + '/' + param.id13 + ".pdf";
+            string filePathJPG = @"\\192.168.0.1\d\TranscriptionForm\" + param.yearin.Replace("/", ".") + '/' + param.id13 + ".jpg";
+            string filePathNavyID = @"\\192.168.0.1\d\TranscriptionForm\" + param.yearin.Replace("/", ".") + '/' + param.navyid + ".pdf";
+            string filePathJPGNavyID = @"\\192.168.0.1\d\TranscriptionForm\" + param.yearin.Replace("/", ".") + '/' + param.navyid + ".jpg";
+            if (File.Exists(filePath)) //ถ้่า "เจอ" ชื่อไฟล์นั้น
+            {
+                OpenIDCardFile(filePath);
+            }
+            else if (File.Exists(filePathJPG))
+            {
+                OpenIDCardFile(filePathJPG);
+            }
+            else if (File.Exists(filePathNavyID))
+            {
+                OpenIDCardFile(filePathNavyID);
+            }
+            else if (File.Exists(filePathJPGNavyID))
+            {
+                OpenIDCardFile(filePathJPGNavyID);
+            }
+            else //เป็น ผลัดสมทบฝึก ให้หาจาก folder ของ oldyearin
+            {
+                if (param.oldyearin == "" || param.oldyearin == null)
+                {
+                    MessageBox.Show("ไม่พบไฟล์");
+                }
+                else
+                {
+                    filePath = @"\\192.168.0.1\d\TranscriptionForm\" + param.oldyearin.Replace("/", ".") + '/' + param.id13 + ".pdf";
+                    filePathJPG = @"\\192.168.0.1\d\TranscriptionForm\" + param.oldyearin.Replace("/", ".") + '/' + param.id13 + ".jpg";
+                    filePathNavyID = @"\\192.168.0.1\d\TranscriptionForm\" + param.oldyearin.Replace("/", ".") + '/' + param.navyid + ".pdf";
+                    filePathJPGNavyID = @"\\192.168.0.1\d\TranscriptionForm\" + param.oldyearin.Replace("/", ".") + '/' + param.navyid + ".jpg";
+
+                    if (File.Exists(filePath))
+                    {
+                        OpenIDCardFile(filePath);
+                    }
+                    else if (File.Exists(filePathJPG))
+                    {
+                        OpenIDCardFile(filePathJPG);
+                    }
+                    else if (File.Exists(filePathNavyID))
+                    {
+                        OpenIDCardFile(filePathNavyID);
+                    }
+                    else if (File.Exists(filePathJPGNavyID))
+                    {
+                        OpenIDCardFile(filePathJPGNavyID);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่พบไฟล์");
+                    }
+                }
+
+            }
+        }
+
 
         /*private void Button_Connect_Click(object sender, EventArgs e)
         {
@@ -1731,6 +1792,13 @@ if (modecard != "")
                 lbl_IDCard.Text = "ข้อมูลจากสด.";
             }
 
+        }
+        private void OpenIDCardFile(string filePath)
+        {
+            Process p = new Process();
+            ProcessStartInfo s = new ProcessStartInfo(filePath);
+            p.StartInfo = s;
+            p.Start();
         }
     }
 }

@@ -145,6 +145,7 @@
             this.textBoxBatt = new System.Windows.Forms.TextBox();
             this.lblbatt = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.LinkLabel_IDCard = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -159,6 +160,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.groupBox1.Controls.Add(this.LinkLabel_IDCard);
             this.groupBox1.Controls.Add(this.lbl_IDCard);
             this.groupBox1.Controls.Add(this.textBoxName);
             this.groupBox1.Controls.Add(this.btnReadcard);
@@ -1547,6 +1549,18 @@
             this.panel4.Size = new System.Drawing.Size(860, 33);
             this.panel4.TabIndex = 1004;
             // 
+            // LinkLabel_IDCard
+            // 
+            this.LinkLabel_IDCard.AutoSize = true;
+            this.LinkLabel_IDCard.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkLabel_IDCard.Location = new System.Drawing.Point(291, 23);
+            this.LinkLabel_IDCard.Name = "LinkLabel_IDCard";
+            this.LinkLabel_IDCard.Size = new System.Drawing.Size(68, 15);
+            this.LinkLabel_IDCard.TabIndex = 1005;
+            this.LinkLabel_IDCard.TabStop = true;
+            this.LinkLabel_IDCard.Text = "บัตรประชาชน";
+            this.LinkLabel_IDCard.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel_IDCard_LinkClicked);
+            // 
             // AddNewPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1707,5 +1721,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox cbbBankID;
         private System.Windows.Forms.Label lbl_IDCard;
+        private System.Windows.Forms.LinkLabel LinkLabel_IDCard;
     }
 }
